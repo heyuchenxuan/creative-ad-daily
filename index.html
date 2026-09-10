@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每周优秀创意广告案例合集 · CREATIVE AD CASES</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
+  
+  :root {
+    --pink: #FF4D8D;
+    --orange: #FF7A3D;
+    --yellow: #FFD23F;
+    --mint: #3DDC97;
+    --blue: #3D7EFF;
+    --purple: #9B4DFF;
+    --coral: #FF5C5C;
+    --cream: #FFF8E7;
+    --ink: #1A1A2E;
+    --white: #FFFFFF;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: "Noto Serif SC", "PingFang SC", serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  
+  /* ===== 马蒂斯装饰形状 ===== */
+  .matisse-shape {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .shape-blob-1 {
+    width: 300px; height: 300px;
+    background: var(--pink);
+    border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+    top: -80px; right: -60px;
+    opacity: 0.85;
+  }
+  .shape-blob-2 {
+    width: 200px; height: 200px;
+    background: var(--mint);
+    border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%;
+    bottom: 100px; left: -50px;
+    opacity: 0.7;
+  }
+  .shape-leaf {
+    width: 120px; height: 60px;
+    background: var(--yellow);
+    border-radius: 0 100% 0 100%;
+    transform: rotate(-20deg);
+  }
+  .shape-circle {
+    border-radius: 50%;
+  }
+  
+  /* ===== 顶部刊头 ===== */
+  .masthead {
+    position: relative;
+    background-image: url('https://aka.doubaocdn.com/s/MdAjSCOJsg');
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    padding: 40px;
+    overflow: hidden;
+    border-bottom: 6px solid var(--ink);
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .masthead h1 {
+    font-family: "Playfair Display", "Noto Serif SC", serif;
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.3);
+  }
+  .masthead h1 .line-pink { 
+    color: #fff;
+  }
+  .masthead h1 .line-yellow { 
+    color: #fff;
+  }
+  .masthead h1 .line-mint { 
+    color: #fff;
+    font-size: 42px;
+  }
+  .masthead .kicker {
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    color: rgba(255,255,255,0.85);
+    font-weight: 700;
+    margin-top: 14px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+  }
+  .masthead .subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 16px;
+    max-width: 500px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ===== 期数导航 ===== */
+  .issue-nav {
+    background: var(--yellow);
+    padding: 16px 40px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-bottom: 3px solid var(--ink);
+    flex-wrap: wrap;
+  }
+  .issue-nav .label {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    color: var(--ink);
+    margin-right: 8px;
+  }
+  .issue-tab {
+    padding: 8px 20px;
+    background: var(--white);
+    border: 3px solid var(--ink);
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .issue-tab:hover {
+    background: var(--pink);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+  .issue-tab.active {
+    background: var(--ink);
+    color: var(--yellow);
+  }
+  .issue-tab.coming {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* ===== 主内容区 ===== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    position: relative;
+  }
+  
+  /* ===== 案例目录 ===== */
+  .toc-section {
+    margin-bottom: 50px;
+    position: relative;
+  }
+  .toc-title {
+    font-family: "Playfair Display", "Noto Serif SC", serif;
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .toc-title::before {
+    content: '';
+    width: 50px; height: 8px;
+    background: var(--pink);
+    display: inline-block;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .toc-card {
+    background: var(--white);
+    border: 3px solid var(--ink);
+    border-radius: 16px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .toc-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 6px;
+  }
+  .toc-card:nth-child(1)::before { background: var(--pink); }
+  .toc-card:nth-child(2)::before { background: var(--orange); }
+  .toc-card:nth-child(3)::before { background: var(--yellow); }
+  .toc-card:nth-child(4)::before { background: var(--mint); }
+  .toc-card:nth-child(5)::before { background: var(--blue); }
+  .toc-card:nth-child(6)::before { background: var(--purple); }
+  .toc-card:nth-child(7)::before { background: var(--coral); }
+  .toc-card:nth-child(8)::before { background: var(--pink); }
+  .toc-card:hover {
+    transform: translateY(-4px) rotate(-1deg);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .toc-card .num {
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .toc-card:nth-child(1) .num { color: var(--pink); }
+  .toc-card:nth-child(2) .num { color: var(--orange); }
+  .toc-card:nth-child(3) .num { color: #E6B800; }
+  .toc-card:nth-child(4) .num { color: #2AB57A; }
+  .toc-card:nth-child(5) .num { color: var(--blue); }
+  .toc-card:nth-child(6) .num { color: var(--purple); }
+  .toc-card:nth-child(7) .num { color: var(--coral); }
+  .toc-card:nth-child(8) .num { color: var(--pink); }
+  .toc-card h3 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 6px;
+  }
+  .toc-card .sub {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  /* ===== 案例详情 ===== */
+  .case-section {
+    margin-bottom: 70px;
+    padding-top: 30px;
+    border-top: 4px dashed var(--ink);
+    position: relative;
+  }
+  .case-section:first-of-type {
+    border-top: none;
+  }
+  .case-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .case-num {
+    font-family: "Playfair Display", serif;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 0.9;
+    -webkit-text-stroke: 3px var(--ink);
+    color: transparent;
+  }
+  .case-section:nth-child(odd) .case-num { -webkit-text-stroke-color: var(--pink); }
+  .case-section:nth-child(even) .case-num { -webkit-text-stroke-color: var(--blue); }
+  .case-title-block h2 {
+    font-family: "Playfair Display", "Noto Serif SC", serif;
+    font-size: 38px;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .case-title-block .subtitle {
+    font-size: 15px;
+    color: var(--pink);
+    font-weight: 700;
+  }
+  .case-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .meta-tag {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 2px solid var(--ink);
+  }
+  .meta-tag.brand { background: var(--yellow); }
+  .meta-tag.agency { background: var(--mint); }
+  .meta-tag.type { background: var(--pink); color: white; }
+  .meta-tag.date { background: var(--blue); color: white; }
+  .meta-tag.score { background: var(--purple); color: white; }
+  
+  /* ===== 图片画廊（完整不裁剪）===== */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .gallery-item {
+    position: relative;
+    cursor: zoom-in;
+    border: 3px solid var(--ink);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--white);
+    transition: transform 0.2s;
+  }
+  .gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+  .gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .gallery-item.featured {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .gallery-item.large {
+    flex: 1 1 45%;
+    min-width: 300px;
+  }
+  .gallery-item.medium {
+    flex: 1 1 30%;
+    min-width: 220px;
+  }
+  .gallery-item.small {
+    flex: 1 1 22%;
+    min-width: 160px;
+  }
+  .gallery-item .zoom-icon {
+    position: absolute;
+    top: 10px; right: 10px;
+    width: 36px; height: 36px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .gallery-item:hover .zoom-icon {
+    opacity: 1;
+  }
+  
+  /* ===== 视频区域 ===== */
+  .video-section {
+    margin-bottom: 24px;
+    background: var(--ink);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 3px solid var(--ink);
+  }
+  .video-placeholder {
+    position: relative;
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+  }
+  .video-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+  }
+  .play-btn {
+    width: 80px; height: 80px;
+    background: var(--pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    border: 4px solid white;
+    transition: transform 0.2s;
+  }
+  .play-btn:hover {
+    transform: scale(1.1);
+  }
+  .play-btn::after {
+    content: '';
+    width: 0; height: 0;
+    border-left: 24px solid white;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    margin-left: 6px;
+  }
+
+  .bilibili-player {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+    border-radius: 0;
+  }
+  .video-link {
+    text-decoration: none;
+    display: block;
+  }
+  .video-label {
+    position: absolute;
+    bottom: 16px; left: 16px;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    z-index: 1;
+    background: rgba(0,0,0,0.6);
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+  
+  /* ===== 分析文字 ===== */
+  .analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .analysis-box {
+    padding: 20px;
+    border-radius: 12px;
+    border: 3px solid var(--ink);
+  }
+  .analysis-box.insight {
+    background: var(--yellow);
+  }
+  .analysis-box.execution {
+    background: var(--mint);
+  }
+  .analysis-box h3 {
+    font-size: 14px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .analysis-box h3::before {
+    content: '';
+    width: 20px; height: 4px;
+    background: var(--ink);
+  }
+  .analysis-box p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  
+  .case-source {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--ink);
+    color: var(--yellow);
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.2s;
+  }
+  .case-source:hover {
+    background: var(--pink);
+    color: white;
+    transform: translateX(4px);
+  }
+  
+  /* ===== Lightbox ===== */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+  }
+  .lightbox.active {
+    display: flex;
+  }
+  .lightbox img {
+    max-width: 92vw;
+    max-height: 92vh;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 20px; right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    font-weight: 300;
+    line-height: 1;
+  }
+  
+  /* ===== 页脚 ===== */
+  .footer {
+    background: var(--ink);
+    color: white;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: -40px; left: 50%;
+    transform: translateX(-50%);
+    width: 200px; height: 80px;
+    background: var(--pink);
+    border-radius: 50%;
+  }
+  .footer .brand {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--yellow);
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .footer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ===== 板块切换导航 ===== */
+  .section-tabs {
+    background: var(--ink);
+    padding: 14px 40px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    border-bottom: 4px solid var(--ink);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+  }
+  .section-tab {
+    padding: 10px 26px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 900;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.2s;
+    font-family: inherit;
+    letter-spacing: 0.05em;
+  }
+  .section-tab.daily {
+    background: var(--pink);
+    color: white;
+  }
+  .section-tab.weekly {
+    background: var(--blue);
+    color: white;
+  }
+  .section-tab.active {
+    border-color: var(--yellow);
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 var(--yellow);
+  }
+  .section-tab:not(.active) {
+    background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.75);
+  }
+  .section-tab:not(.active):hover {
+    background: rgba(255,255,255,0.3);
+    color: white;
+  }
+
+  /* ===== 内容板块显隐 ===== */
+  .content-section {
+    display: none;
+  }
+  .content-section.active {
+    display: block;
+  }
+
+  /* ===== 每日创意资讯板块 ===== */
+  .daily-date-nav {
+    background: var(--yellow);
+    padding: 14px 40px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 3px solid var(--ink);
+  }
+  .daily-date-nav .label {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    color: var(--ink);
+    margin-right: 8px;
+  }
+  .date-tab {
+    padding: 8px 20px;
+    background: var(--white);
+    border: 3px solid var(--ink);
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .date-tab:hover {
+    background: var(--pink);
+    color: white;
+    transform: translateY(-2px);
+  }
+  .date-tab.active {
+    background: var(--ink);
+    color: var(--yellow);
+  }
+  .daily-panel {
+    display: none;
+  }
+  .daily-panel.active {
+    display: block;
+  }
+  /* ===== 每周案例期数面板显隐（卡片式切换）===== */
+  .issue-panel {
+    display: none;
+  }
+  .issue-panel.active {
+    display: block;
+  }
+  .daily-head {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 36px 40px 6px;
+  }
+  .daily-head h2 {
+    font-family: "Playfair Display", "Noto Serif SC", serif;
+    font-size: 32px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .daily-head h2::before {
+    content: '';
+    width: 50px; height: 8px;
+    background: var(--pink);
+    display: inline-block;
+  }
+  .daily-head p {
+    font-size: 13px;
+    color: #666;
+  }
+  .news-list {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 40px 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .news-card {
+    background: var(--white);
+    border: 3px solid var(--ink);
+    border-radius: 16px;
+    padding: 22px 26px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s;
+  }
+  .news-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 6px;
+    background: var(--pink);
+  }
+  .news-card:nth-child(5n+2)::before { background: var(--orange); }
+  .news-card:nth-child(5n+3)::before { background: var(--yellow); }
+  .news-card:nth-child(5n+4)::before { background: var(--mint); }
+  .news-card:nth-child(5n+5)::before { background: var(--purple); }
+  .news-card:hover {
+    transform: translateY(-3px) rotate(-0.3deg);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .news-thumb {
+    margin: 0 0 16px;
+    border: 3px solid var(--ink);
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: zoom-in;
+    background: #fff;
+    box-shadow: 5px 5px 0 rgba(0,0,0,0.12);
+    position: relative;
+    transition: transform 0.25s;
+  }
+  .news-thumb:hover { transform: scale(1.02) rotate(-0.5deg); }
+  .news-thumb img {
+    width: 100%;
+    max-height: 340px;
+    object-fit: contain;
+    display: block;
+    background: #f4f1ea;
+  }
+  .news-thumb .news-img-tag {
+    position: absolute;
+    left: 10px; bottom: 10px;
+    background: var(--ink);
+    color: var(--yellow);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .news-top {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .news-rank {
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 0.9;
+    -webkit-text-stroke: 2px var(--ink);
+    color: transparent;
+    flex-shrink: 0;
+  }
+  .news-card:nth-child(5n+1) .news-rank { -webkit-text-stroke-color: var(--pink); }
+  .news-card:nth-child(5n+2) .news-rank { -webkit-text-stroke-color: var(--orange); }
+  .news-card:nth-child(5n+3) .news-rank { -webkit-text-stroke-color: #E6B800; }
+  .news-card:nth-child(5n+4) .news-rank { -webkit-text-stroke-color: #2AB57A; }
+  .news-card:nth-child(5n+5) .news-rank { -webkit-text-stroke-color: var(--purple); }
+  .news-title {
+    font-size: 19px;
+    font-weight: 900;
+    line-height: 1.45;
+  }
+  .news-summary {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.85;
+    margin: 10px 0 14px;
+  }
+  .news-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .news-source {
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    background: var(--yellow);
+    border: 2px solid var(--ink);
+  }
+  .news-link {
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    background: var(--ink);
+    color: var(--yellow);
+    text-decoration: none;
+    border: 2px solid var(--ink);
+    transition: all 0.2s;
+  }
+  .news-link:hover {
+    background: var(--pink);
+    color: white;
+    transform: translateX(3px);
+  }
+  .news-time {
+    font-size: 12px;
+    color: #999;
+    font-weight: 700;
+  }
+
+  /* ===== 悬浮返回菜单按钮 ===== */
+  .float-menu {
+    position: fixed;
+    right: 24px;
+    bottom: 32px;
+    z-index: 8000;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--yellow);
+    border: 3px solid var(--ink);
+    border-radius: 40px;
+    padding: 12px 18px;
+    cursor: pointer;
+    box-shadow: 5px 5px 0 var(--ink);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition: all 0.3s ease;
+    user-select: none;
+  }
+  .float-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .float-menu:hover {
+    background: var(--pink);
+    box-shadow: 7px 7px 0 var(--ink);
+    transform: translateY(-3px);
+  }
+  .float-menu:hover .float-arrow { color: #fff; }
+  .float-menu:hover .float-label { color: #fff; }
+  .float-arrow {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .float-label {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: 1px;
+  }
+
+  /* ===== 响应式 ===== */
+  @media (max-width: 768px) {
+    .masthead h1 { font-size: 36px; }
+    .case-num { font-size: 56px; }
+    .case-title-block h2 { font-size: 28px; }
+    .analysis-grid { grid-template-columns: 1fr; }
+    .container { padding: 20px; }
+    .gallery-item.large, .gallery-item.medium, .gallery-item.small {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== 顶部刊头 ===== -->
+<header class="masthead">
+  <h1>
+    <span class="line-pink">CREATIVE</span><br>
+    <span class="line-yellow">AD CASES</span><br>
+    <span class="line-mint">合集</span>
+  </h1>
+  <div class="kicker">WEEKLY CREATIVE AD CASES · 每周创意广告案例</div>
+</header>
+
+<!-- ===== 板块切换导航 ===== -->
+<nav class="section-tabs">
+  <button class="section-tab daily active" onclick="showSection('daily')">DAILY · 每日创意资讯</button>
+  <button class="section-tab weekly" onclick="showSection('weekly')">WEEKLY · 每周优秀案例</button>
+</nav>
+
+<!-- ===== 每日创意资讯板块 ===== -->
+<section class="content-section active" id="section-daily">
+  <nav class="daily-date-nav" id="daily-date-nav">
+    <span class="label">DAILY ARCHIVE · 每日资讯归档（从新到旧）</span>
+  </nav>
+  <div id="daily-panels"></div>
+</section>
+
+<!-- ===== 每周优秀案例板块 ===== -->
+<section class="content-section" id="section-weekly">
+
+<!-- ===== 期数导航 ===== -->
+<nav class="issue-nav">
+  <span class="label">ARCHIVE · 期数归档（从新到旧）</span>
+  <button class="issue-tab active" onclick="showIssue(2)">第002期 · 2026.09.04—09.10</button>
+  <button class="issue-tab" onclick="showIssue(1)">第001期 · 2026.08.27—09.03</button>
+  <button class="issue-tab coming">第003期 · 即将更新</button>
+</nav>
+
+<div class="container">
+
+<!-- ===== 案例目录 ===== -->
+<div class="issue-panel active" id="issue-panel-2">
+<section class="toc-section" id="issue-2" style="scroll-margin-top: 90px;">
+  <h2 class="toc-title">第002期收录 · 2026.09.04—09.10</h2>
+  <div class="toc-grid">
+    <div class="toc-card" onclick="scrollToIssueCase(2,1)">
+      <div class="num">01</div>
+      <h3>欢迎来到1996</h3>
+      <div class="sub">GAP × Hailey Bieber 联名系列</div>
+    </div>
+    <div class="toc-card" onclick="scrollToIssueCase(2,2)">
+      <div class="num">02</div>
+      <h3>预谋将秋天藏起来</h3>
+      <div class="sub">观夏2026金秋限定「藏秋」系列</div>
+    </div>
+    <div class="toc-card" onclick="scrollToIssueCase(2,3)">
+      <div class="num">03</div>
+      <h3>建议某些cp分手</h3>
+      <div class="sub">三九胃泰七夕反向营销 · TICO</div>
+    </div>
+    <div class="toc-card" onclick="scrollToIssueCase(2,4)">
+      <div class="num">04</div>
+      <h3>广告牌里住了个活人</h3>
+      <div class="sub">Netflix《最后孤屋》体验式宣发</div>
+    </div>
+    <div class="toc-card" onclick="scrollToIssueCase(2,5)">
+      <div class="num">05</div>
+      <h3>门店爆改巨型手办盒</h3>
+      <div class="sub">小米汽车杭州门店创意改造</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 第002期 · 2026.09.04—09.10 ===== -->
+
+<!-- ===== 案例 01：GAP × Hailey Bieber ===== -->
+<section class="case-section" id="case-1">
+  <div class="case-header">
+    <div class="case-num">01</div>
+    <div class="case-title-block">
+      <h2>欢迎来到1996</h2>
+      <div class="subtitle">GAP × Hailey Bieber 联名牛仔系列</div>
+    </div>
+  </div>
+  <div class="case-meta">
+    <span class="meta-tag brand">品牌：GAP 盖璞</span>
+    <span class="meta-tag agency">创意代理：GAP in-house</span>
+    <span class="meta-tag type">类型：联名营销 / 时尚广告</span>
+    <span class="meta-tag date">收录：2026-09-03</span>
+    <span class="meta-tag score">数英评分：热门推荐</span>
+  </div>
+  <div class="case-desc">
+    <p>GAP携手海莉·比伯（Hailey Bieber）推出"The Hailey Jean"限定牛仔系列，以1996年——海莉出生年份也是GAP牛仔黄金年代——为灵感，重新诠释90年代末松弛随性的穿搭风格。系列包含Extra Baggy和Low Rise Loose两款版型，硬件和后贴标上都印有"1996"细节，口袋内衬印有海莉签名。</p>
+    <p>营销campaign以"Est. 1996"为视觉核心，用极简工作室大片致敬90年代时尚广告美学，同时通过社交媒体和线下门店同步发售，成为GAP近年最受关注的联名项目之一。</p>
+  </div>
+  <div class="video-section">
+    <div class="video-placeholder" style="background-image: url('https://aka.doubaocdn.com/s/PNt3uA0o9q');" onclick="window.open('https://m.digitaling.com/projects/374821.html', '_blank')" style="cursor:pointer;">
+      <div class="play-btn"></div>
+      <div class="video-label">▶ 点击跳转数英观看 · GAP《欢迎来到1996》 ↗</div>
+    </div>
+  </div>
+  <div class="gallery">
+    <div class="gallery-item featured" onclick="openLightbox('https://aka.doubaocdn.com/s/PNt3uA0o9q')">
+      <img src="https://aka.doubaocdn.com/s/PNt3uA0o9q" alt="GAP × Hailey Bieber Est.1996 广告大片">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item large" onclick="openLightbox('https://aka.doubaocdn.com/s/pYU3dIt5az')">
+      <img src="https://aka.doubaocdn.com/s/pYU3dIt5az" alt="Hailey Bieber 身着联名牛仔系列">
+      <div class="zoom-icon">+</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 案例 02：观夏 藏秋 ===== -->
+<section class="case-section" id="case-2">
+  <div class="case-header">
+    <div class="case-num">02</div>
+    <div class="case-title-block">
+      <h2>立秋，预谋将秋天藏起来</h2>
+      <div class="subtitle">观夏2026金秋限定「藏秋」系列</div>
+    </div>
+  </div>
+  <div class="case-meta">
+    <span class="meta-tag brand">品牌：To summer 观夏</span>
+    <span class="meta-tag type">类型：季节限定 / 东方美学营销</span>
+    <span class="meta-tag date">收录：2026-08-24</span>
+    <span class="meta-tag score">数英评分：9.7</span>
+  </div>
+  <div class="case-desc">
+    <p>观夏于立秋之际发布2026金秋限定系列「藏秋」，灵感源自苏轼诗句"收拾小山藏社瓮"。全系列围绕"藏"这一核心动作，铺陈三个篇章：藏·秋心（文人笔墨间对秋的细腻感知）、藏·秋实（草木果实等秋日物产）、藏·秋息（香氛的嗅觉体验）。</p>
+    <p>礼盒囊括经典返场的「颐和金桂」与限定新香「门中月」，内含精油木芯香薰蜡烛、陶瓷精油香插、兔子精油砖、毛绒香囊及祈福挂签。视觉上用俯拍的橘园和果实筐笼呈现"藏秋"的意境，将东方文人的旷达心性转化为可感知的香气产品。</p>
+  </div>
+  <div class="video-section">
+    <div class="video-placeholder" style="background-image: url('https://aka.doubaocdn.com/s/bNt0qZVoMr');" onclick="window.open('https://m.digitaling.com/projects/375185.html', '_blank')" style="cursor:pointer;">
+      <div class="play-btn"></div>
+      <div class="video-label">▶ 点击跳转数英观看 · 观夏《藏秋》 ↗</div>
+    </div>
+  </div>
+  <div class="gallery">
+    <div class="gallery-item featured" onclick="openLightbox('https://aka.doubaocdn.com/s/bNt0qZVoMr')">
+      <img src="https://aka.doubaocdn.com/s/bNt0qZVoMr" alt="观夏藏秋系列主视觉 橘园俯拍">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item large" onclick="openLightbox('https://aka.doubaocdn.com/s/zC2j9ccWbz')">
+      <img src="https://aka.doubaocdn.com/s/zC2j9ccWbz" alt="观夏2026藏秋限定系列海报">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/dowmRUFuTw')">
+      <img src="https://aka.doubaocdn.com/s/dowmRUFuTw" alt="观夏藏秋系列三折页设计">
+      <div class="zoom-icon">+</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 案例 03：三九胃泰 七夕 ===== -->
+<section class="case-section" id="case-3">
+  <div class="case-header">
+    <div class="case-num">03</div>
+    <div class="case-title-block">
+      <h2>七夕，建议某些cp分手</h2>
+      <div class="subtitle">三九胃泰七夕反向营销</div>
+    </div>
+  </div>
+  <div class="case-meta">
+    <span class="meta-tag brand">品牌：华润三九 999</span>
+    <span class="meta-tag agency">创意代理：TICO 微观宇宙 北京</span>
+    <span class="meta-tag type">类型：节日营销 / 反向创意</span>
+    <span class="meta-tag date">收录：2026-08-25</span>
+    <span class="meta-tag score">数英评分：9.2</span>
+  </div>
+  <div class="case-desc">
+    <p>七夕前后全城都被粉红色包裹，约会、送花、表白，而三九胃泰却做了一件"不解风情"的事——劝分。不是劝情侣分手，是劝那些"看着很配、实则伤胃"的食物cp分手。</p>
+    <p>系列海报用撕裂效果将"天生cp看似般配"和"实则伤胃"并置：冰西瓜配小龙虾、火锅配冰淇淋、烤串配冰啤酒、小龙虾配冰西瓜。每一组都是年轻人夏天最爱的搭配，但同时也是最伤胃的组合。配合线下"和平分手"快闪活动，让消费者手撕伤胃CP食物卡，在趣味互动中传递护胃理念。</p>
+  </div>
+  <div class="video-section">
+    <div class="video-placeholder" style="background-image: url('https://aka.doubaocdn.com/s/0E8IYPhRv9');" onclick="window.open('https://m.digitaling.com/projects/375640.html', '_blank')" style="cursor:pointer;">
+      <div class="play-btn"></div>
+      <div class="video-label">▶ 点击跳转数英观看 · 三九胃泰《建议某些cp分手》 ↗</div>
+    </div>
+  </div>
+  <div class="gallery">
+    <div class="gallery-item featured" onclick="openLightbox('https://aka.doubaocdn.com/s/0E8IYPhRv9')">
+      <img src="https://aka.doubaocdn.com/s/0E8IYPhRv9" alt="三九胃泰七夕海报 冰沙vs火锅撕裂效果">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item large" onclick="openLightbox('https://aka.doubaocdn.com/s/WXC12OFoYK')">
+      <img src="https://aka.doubaocdn.com/s/WXC12OFoYK" alt="三九胃泰劝伤胃CP和平分手系列海报">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/hUxlFX17fa')">
+      <img src="https://aka.doubaocdn.com/s/hUxlFX17fa" alt="三九胃泰烤串配啤酒伤胃CP海报">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/VVwkCwDhEF')">
+      <img src="https://aka.doubaocdn.com/s/VVwkCwDhEF" alt="三九胃泰小龙虾配冰西瓜伤胃CP海报">
+      <div class="zoom-icon">+</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 案例 04：Netflix 广告牌 ===== -->
+<section class="case-section" id="case-4">
+  <div class="case-header">
+    <div class="case-num">04</div>
+    <div class="case-title-block">
+      <h2>广告牌里住了个活人</h2>
+      <div class="subtitle">Netflix《最后孤屋》体验式宣发</div>
+    </div>
+  </div>
+  <div class="case-meta">
+    <span class="meta-tag brand">品牌：Netflix 奈飞</span>
+    <span class="meta-tag type">类型：体验式营销 / 户外创意</span>
+    <span class="meta-tag date">收录：2026-08-24</span>
+    <span class="meta-tag score">数英评分：8.6</span>
+  </div>
+  <div class="case-desc">
+    <p>Netflix为2026年最新科幻惊悚片《The Last House》（最后孤屋）量身定制线下宣发，在洛杉矶日落大道繁华路口打造了一座巨型"房屋广告牌"。广告牌不再是扁平的，而是一个完整的房屋造型，房檐、屋顶、门窗一应俱全，透过窗户还能看到温馨的家具陈列。</p>
+    <p>而这间房子里真的住着一个活生生的真人。表演者在距地面约30英尺高的广告牌内生活三天，听歌、看书、拉伸、吃麦片，偶尔隔着窗户向路人挥手，或在白板上写字与下方好奇的群众交流。这种"现实版楚门的世界"直接呼应了电影中"一家四口被困家中无法逃脱"的核心设定，将影视内容延伸至屏幕之外。</p>
+  </div>
+  <div class="video-section">
+    <div class="video-placeholder" style="background-image: url('https://aka.doubaocdn.com/s/LWARqgUS2k');" onclick="window.open('https://m.digitaling.com/projects/374947.html', '_blank')" style="cursor:pointer;">
+      <div class="play-btn"></div>
+      <div class="video-label">▶ 点击跳转数英观看 · Netflix《广告牌里住了个活人》 ↗</div>
+    </div>
+  </div>
+  <div class="gallery">
+    <div class="gallery-item featured" onclick="openLightbox('https://aka.doubaocdn.com/s/LWARqgUS2k')">
+      <img src="https://aka.doubaocdn.com/s/LWARqgUS2k" alt="Netflix日落大道房屋广告牌 黄昏全景">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item large" onclick="openLightbox('https://aka.doubaocdn.com/s/K3iMYDjTtv')">
+      <img src="https://aka.doubaocdn.com/s/K3iMYDjTtv" alt="Netflix The Last House 可居住广告牌夜景">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/rVATyccH4J')">
+      <img src="https://aka.doubaocdn.com/s/rVATyccH4J" alt="广告牌内真人表演者 藤蔓装饰">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/bElVZC7TO2')">
+      <img src="https://aka.doubaocdn.com/s/bElVZC7TO2" alt="广告牌窗户内表演者 HOW LONG CAN YOU SURVIVE">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/pDU3khUhwS')">
+      <img src="https://aka.doubaocdn.com/s/pDU3khUhwS" alt="广告牌内表演者用望远镜眺望日落大道">
+      <div class="zoom-icon">+</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 案例 05：小米汽车 手办盒 ===== -->
+<section class="case-section" id="case-5">
+  <div class="case-header">
+    <div class="case-num">05</div>
+    <div class="case-title-block">
+      <h2>门店爆改巨型手办盒</h2>
+      <div class="subtitle">小米汽车杭州门店创意改造</div>
+    </div>
+  </div>
+  <div class="case-meta">
+    <span class="meta-tag brand">品牌：MI 小米</span>
+    <span class="meta-tag type">类型：线下空间创意 / 经销商营销</span>
+    <span class="meta-tag date">收录：2026-08-25</span>
+    <span class="meta-tag score">数英评分：8.1</span>
+  </div>
+  <div class="case-desc">
+    <p>杭州石祥西路的一家小米汽车门店对自家展厅进行了爆改：20多款不同颜色的小米汽车分布在各个格子中，从外面看过去，整个门店就像一个巨型手办盒，格外赏心悦目。</p>
+    <p>创意起因是门店老板晚上下班时发现整栋楼黑漆漆的观感不好。观察时发现大楼立柱刚好隔成20个橱窗格子，完全是现成的模型盒。于是从手上的汽车模型盒找到灵感，在每个格子里各停了一辆小米汽车，并配备了48块升降幕布和专属射灯。白天幕布升起正常营业，夜晚幕布放下、灯光亮起，整栋楼就像放满了"真车手办"的展示盒。这一经销商自发的创意改造被央视点名报道，成为杭州新晋网红打卡地，日均2000人到访。</p>
+  </div>
+  <div class="gallery">
+    <div class="gallery-item featured" onclick="openLightbox('https://aka.doubaocdn.com/s/rZTTdwz84T')">
+      <img src="https://aka.doubaocdn.com/s/rZTTdwz84T" alt="小米汽车门店巨型手办盒 夜景全景">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item large" onclick="openLightbox('https://aka.doubaocdn.com/s/XMUFlh9D4u')">
+      <img src="https://aka.doubaocdn.com/s/XMUFlh9D4u" alt="小米汽车手办盒 三层楼玻璃幕墙全景">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/D7NBL1AVvY')">
+      <img src="https://aka.doubaocdn.com/s/D7NBL1AVvY" alt="小米汽车手办盒 各色车辆陈列特写">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/NeUjWmrD5G')">
+      <img src="https://aka.doubaocdn.com/s/NeUjWmrD5G" alt="小米汽车手办盒 白天外观航拍">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/Ats2j5EIUU')">
+      <img src="https://aka.doubaocdn.com/s/Ats2j5EIUU" alt="小米汽车手办盒 夜晚灯光效果">
+      <div class="zoom-icon">+</div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- ===== 第001期 · 2026.08.27—09.03 ===== -->
+<div class="issue-panel" id="issue-panel-1">
+<div id="issue-1" style="text-align:center; padding: 40px 0 20px; border-top: 4px dashed var(--ink); margin-top: 40px; scroll-margin-top: 90px;">
+  <span style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; color: var(--ink);">ISSUE 001</span>
+  <span style="font-size: 14px; color: #666; margin-left: 12px;">2026.08.27 — 09.03</span>
+</div>
+
+<!-- ===== 第001期 案例目录 ===== -->
+<section class="toc-section" id="issue-1-toc">
+  <h2 class="toc-title">第001期收录 · 2026.08.27—09.03</h2>
+  <div class="toc-grid">
+    <div class="toc-card" onclick="scrollToIssueCase(1,1)">
+      <div class="num">01</div>
+      <h3>手搓爱情</h3>
+      <div class="sub">快手七夕特别短片</div>
+    </div>
+    <div class="toc-card" onclick="scrollToIssueCase(1,2)">
+      <div class="num">02</div>
+      <h3>小候鸟的食堂</h3>
+      <div class="sub">美团外卖暑期人文影片</div>
+    </div>
+    <div class="toc-card" onclick="scrollToIssueCase(1,3)">
+      <div class="num">03</div>
+      <h3>一波"重"量级广告来袭</h3>
+      <div class="sub">京东买药「这夏全城不难瘦」</div>
+    </div>
+    <div class="toc-card" onclick="scrollToIssueCase(1,4)">
+      <div class="num">04</div>
+      <h3>世界上最美的名字</h3>
+      <div class="sub">日丰公益十年主题展</div>
+    </div>
+    <div class="toc-card" onclick="scrollToIssueCase(1,5)">
+      <div class="num">05</div>
+      <h3>睡觉第一名</h3>
+      <div class="sub">亚朵星球 × 邵艺辉品牌短片</div>
+    </div>
+    <div class="toc-card" onclick="scrollToIssueCase(1,6)">
+      <div class="num">06</div>
+      <h3>全家福</h3>
+      <div class="sub">AI 公益短片</div>
+    </div>
+    <div class="toc-card" onclick="scrollToIssueCase(1,7)">
+      <div class="num">07</div>
+      <h3>天降横祸</h3>
+      <div class="sub">泰国金融创意广告</div>
+    </div>
+    <div class="toc-card" onclick="scrollToIssueCase(1,8)">
+      <div class="num">08</div>
+      <h3>Misinterpreted</h3>
+      <div class="sub">新西兰电信反短信营销广告</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 案例 01 ===== -->
+<section class="case-section" id="issue1-case-1">
+  <div class="case-header">
+    <div class="case-num">01</div>
+    <div class="case-title-block">
+      <h2>手搓爱情</h2>
+      <div class="subtitle">快手七夕特别短片</div>
+    </div>
+  </div>
+  <div class="case-meta">
+    <span class="meta-tag brand">品牌：快手 Kuaishou</span>
+    <span class="meta-tag agency">创意代理：LPI</span>
+    <span class="meta-tag type">类型：视频广告 / 整合营销</span>
+    <span class="meta-tag date">收录：2026-08-27</span>
+    <span class="meta-tag score">数英评分：9.9</span>
+  </div>
+  
+  <div class="video-section">
+    <div class="video-placeholder" style="background-image: url('https://aka.doubaocdn.com/s/SAv3MCQHYB');" onclick="window.open('https://m.digitaling.com/projects/375948.html', '_blank')" style="cursor:pointer;">
+      <div class="play-btn"></div>
+      <div class="video-label">▶ 点击观看完整视频 · 快手《手搓爱情》 ↗</div>
+    </div>
+  </div>
+  
+  <div class="gallery">
+    <div class="gallery-item featured" onclick="openLightbox('https://aka.doubaocdn.com/s/SAv3MCQHYB')">
+      <img src="https://aka.doubaocdn.com/s/SAv3MCQHYB" alt="手搓爱情主KV">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item large" onclick="openLightbox('https://aka.doubaocdn.com/s/LP5fVOp15X')">
+      <img src="https://aka.doubaocdn.com/s/LP5fVOp15X" alt="快手村婚礼现场">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/1aFtsGhnWm')">
+      <img src="https://aka.doubaocdn.com/s/1aFtsGhnWm" alt="视频截图">
+      <div class="zoom-icon">+</div>
+    </div>
+  </div>
+  
+  <div class="analysis-grid">
+    <div class="analysis-box insight">
+      <h3>洞察 INSIGHT</h3>
+      <p>截至2025年，中国60岁以上老人超过3.2亿，其中绝大多数老人一生没办过婚礼、没拍过婚纱照。他们这辈人的浪漫，往往被藏在心底，长在手里。七夕营销惯有的年轻人浪漫叙事，恰好遮蔽了这群更需要被看见的人。</p>
+    </div>
+    <div class="analysis-box execution">
+      <h3>创意执行 EXECUTION</h3>
+      <p>以黑龙江巴彦县为舞台，由三农创作者牵头，全村老铁集体出动，为相守半生却从未举办婚礼的老年夫妻「手搓」一场迟到的集体婚礼。「手搓」是这片黑土地的生活方式——手擀面把日子搓好，手打家具把小家搓起来。七夕当天进行婚礼直播，鸵鸟当伴郎、全村随礼，近千万网友在线见证。</p>
+    </div>
+  </div>
+  <a class="case-source" href="https://m.digitaling.com/articles/1567152.html" target="_blank">查看数英项目页 →</a>
+</section>
+
+<!-- ===== 案例 02 ===== -->
+<section class="case-section" id="issue1-case-2">
+  <div class="case-header">
+    <div class="case-num">02</div>
+    <div class="case-title-block">
+      <h2>小候鸟的食堂</h2>
+      <div class="subtitle">美团外卖暑期人文影片</div>
+    </div>
+  </div>
+  <div class="case-meta">
+    <span class="meta-tag brand">品牌：美团外卖 Meituan</span>
+    <span class="meta-tag agency">创意代理：中好 上海</span>
+    <span class="meta-tag type">类型：视频广告 / 公益营销</span>
+    <span class="meta-tag date">收录：2026-08-27</span>
+    <span class="meta-tag score">数英评分：9.8</span>
+  </div>
+  
+  <div class="video-section">
+    <div class="video-placeholder" style="background-image: url('https://aka.doubaocdn.com/s/FJn05nM0YN');" onclick="window.open('https://m.digitaling.com/projects/375493.html', '_blank')" style="cursor:pointer;">
+      <div class="play-btn"></div>
+      <div class="video-label">▶ 点击观看完整视频 · 美团外卖《小候鸟的食堂》 ↗</div>
+    </div>
+  </div>
+  
+  <div class="gallery">
+    <div class="gallery-item featured" onclick="openLightbox('https://aka.doubaocdn.com/s/FJn05nM0YN')">
+      <img src="https://aka.doubaocdn.com/s/FJn05nM0YN" alt="一点都不辣海报">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item large" onclick="openLightbox('https://aka.doubaocdn.com/s/elkHaqVUia')">
+      <img src="https://aka.doubaocdn.com/s/elkHaqVUia" alt="美团外卖砖墙logo">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/1IsKh7ptEj')">
+      <img src="https://aka.doubaocdn.com/s/1IsKh7ptEj" alt="孩子吃饭视频截图">
+      <div class="zoom-icon">+</div>
+    </div>
+  </div>
+  
+  <div class="analysis-grid">
+    <div class="analysis-box insight">
+      <h3>洞察 INSIGHT</h3>
+      <p>每年暑假，无数孩子像「小候鸟」一样从老家出发，到父母工作的城市短暂团聚。但父母白天忙于生计，孩子的一日三餐如何照料，成为许多外来务工家庭的现实难题。大众习惯把孩子称作小候鸟，却忽略了奔波谋生的父母同样是漂泊的大候鸟。</p>
+    </div>
+    <div class="analysis-box execution">
+      <h3>创意执行 EXECUTION</h3>
+      <p>美团外卖在东莞、佛山上线「候鸟亲子食堂」儿童友好餐频道，并拍摄纪录短片记录真实家庭故事。短片完成温柔的视角转换——两代人共同承受相聚短暂、分离常态化的遗憾。入驻商家均为品质堂食店，菜品以低盐不辣为基准，原料信息公示，9.9元起小份规格，让商业服务与真实需求温柔对接。</p>
+    </div>
+  </div>
+  <a class="case-source" href="https://www.4anet.com/p/01m0btgbf8xgytev39xpy2eq00" target="_blank">查看数英项目页 →</a>
+</section>
+
+<!-- ===== 案例 03 ===== -->
+<section class="case-section" id="issue1-case-3">
+  <div class="case-header">
+    <div class="case-num">03</div>
+    <div class="case-title-block">
+      <h2>一波"重"量级广告来袭</h2>
+      <div class="subtitle">京东买药「这夏全城不难瘦」主题传播</div>
+    </div>
+  </div>
+  <div class="case-meta">
+    <span class="meta-tag brand">品牌：京东买药 JD Health</span>
+    <span class="meta-tag agency">创意代理：WMY 五米外</span>
+    <span class="meta-tag type">类型：户外广告 / 整合营销</span>
+    <span class="meta-tag date">收录：2026-08-28</span>
+    <span class="meta-tag score">数英评分：10.0</span>
+  </div>
+  
+  <div class="gallery">
+    <div class="gallery-item featured" onclick="openLightbox('https://aka.doubaocdn.com/s/W49lUtpaWS')">
+      <img src="https://aka.doubaocdn.com/s/W49lUtpaWS" alt="国贸地铁站变形广告牌">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item large" onclick="openLightbox('https://aka.doubaocdn.com/s/lWmTVR3ws7')">
+      <img src="https://aka.doubaocdn.com/s/lWmTVR3ws7" alt="地铁站红色墙全景">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/blofCMpN6N')">
+      <img src="https://aka.doubaocdn.com/s/blofCMpN6N" alt="变形广告牌双图">
+      <div class="zoom-icon">+</div>
+    </div>
+  </div>
+  
+  <div class="analysis-grid">
+    <div class="analysis-box insight">
+      <h3>洞察 INSIGHT</h3>
+      <p>减重是一个自带「讨人厌」属性的营销命题。在身材焦虑四处蔓延、各类减重广告铺天盖地的时代，大众抗拒的从来不是好好管理身体，而是传统叙事里那套审视的目光。不煽情、不说教、甚至不主动劝你减重，反而更能走进目标人群。</p>
+    </div>
+    <div class="analysis-box execution">
+      <h3>创意执行 EXECUTION</h3>
+      <p>国贸的「重到变形的广告牌」把超重通过视觉语言具象化——广告牌因重量而下垂变形，极具视觉冲击力；大吉巷的石墩子套着短袖、挺着小肚腩，圆滚滚的形象配上共情文案，堪称目标人群的「嘴替」。用幽默自嘲的视觉语言重新对话体重管理议题，把令人焦虑的减重话题转化为轻松共鸣的社交话题。</p>
+    </div>
+  </div>
+  <a class="case-source" href="https://m.digitaling.com/projects/376060.html" target="_blank">查看数英项目页 →</a>
+</section>
+
+<!-- ===== 案例 04 ===== -->
+<section class="case-section" id="issue1-case-4">
+  <div class="case-header">
+    <div class="case-num">04</div>
+    <div class="case-title-block">
+      <h2>世界上最美的名字</h2>
+      <div class="subtitle">日丰公益十年主题展</div>
+    </div>
+  </div>
+  <div class="case-meta">
+    <span class="meta-tag brand">品牌：日丰集团 Rifeng</span>
+    <span class="meta-tag type">类型：公益艺术展 / 整合传播</span>
+    <span class="meta-tag date">收录：2026-09-02</span>
+    <span class="meta-tag score">数英评分：9.3</span>
+  </div>
+  
+  <div class="gallery">
+    <div class="gallery-item featured" onclick="openLightbox('https://aka.doubaocdn.com/s/U6XTiqRD8O')">
+      <img src="https://aka.doubaocdn.com/s/U6XTiqRD8O" alt="日丰公益展现场">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item large" onclick="openLightbox('https://aka.doubaocdn.com/s/MPkd2s8Yei')">
+      <img src="https://aka.doubaocdn.com/s/MPkd2s8Yei" alt="公益短片海报">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/FeHuUIn2cZ')">
+      <img src="https://aka.doubaocdn.com/s/FeHuUIn2cZ" alt="远山有回响蓝色教室">
+      <div class="zoom-icon">+</div>
+    </div>
+  </div>
+  
+  <div class="analysis-grid">
+    <div class="analysis-box insight">
+      <h3>洞察 INSIGHT</h3>
+      <p>在大凉山美姑县，「日丰索玛班」的孩子们拥有一个个如诗如画的彝族名字：额其拉果是「了不起的老虎」，阿尔石作是「多彩的绸缎」，俄木尔石是「金子一样会发光的石头」。这些独特的姓名，是大山家人赠予孩子最质朴、最浪漫的成长祝福，却很少被城市看见。</p>
+    </div>
+    <div class="analysis-box execution">
+      <h3>创意执行 EXECUTION</h3>
+      <p>日丰公益第十年，在佛山岭南天地举办沉浸式主题展。现场以十六张彝族少年姓名卡片复刻大凉山教室，让大山孩子的名字第一次以可触摸、可翻动、可念出的方式呈现。将彝族姓名背后的山川、万物与信仰转化为可感知的艺术装置，配合同名短片和诗歌朗诵，探索出一条艺术化、情感化的公益传播新范式。</p>
+    </div>
+  </div>
+  <a class="case-source" href="https://m.digitaling.com/projects/376550.html" target="_blank">查看数英项目页 →</a>
+</section>
+
+<!-- ===== 案例 05 ===== -->
+<section class="case-section" id="issue1-case-5">
+  <div class="case-header">
+    <div class="case-num">05</div>
+    <div class="case-title-block">
+      <h2>睡觉第一名</h2>
+      <div class="subtitle">亚朵星球 × 邵艺辉品牌短片</div>
+    </div>
+  </div>
+  <div class="case-meta">
+    <span class="meta-tag brand">品牌：亚朵星球 ATOUR</span>
+    <span class="meta-tag agency">导演：邵艺辉</span>
+    <span class="meta-tag type">类型：品牌短片 / 内容营销</span>
+    <span class="meta-tag date">收录：2026-08-27</span>
+    <span class="meta-tag score">数英评分：9.1</span>
+  </div>
+  
+  <div class="video-section">
+    <iframe class="bilibili-player" src="//player.bilibili.com/player.html?bvid=BV1Lj8K6DEGY&page=1&high_quality=1&danmaku=0" allowfullscreen="allowfullscreen" scrolling="no" frameborder="0"></iframe>
+  </div>
+  
+  <div class="gallery">
+    <div class="gallery-item featured" onclick="openLightbox('https://aka.doubaocdn.com/s/YkQJA4zwmf')">
+      <img src="https://aka.doubaocdn.com/s/YkQJA4zwmf" alt="睡觉第一名主KV">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item large" onclick="openLightbox('https://aka.doubaocdn.com/s/MhlrZDeNcr')">
+      <img src="https://aka.doubaocdn.com/s/MhlrZDeNcr" alt="奖杯海报横幅">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/tyBqgI1Pks')">
+      <img src="https://aka.doubaocdn.com/s/tyBqgI1Pks" alt="母女对话视频截图">
+      <div class="zoom-icon">+</div>
+    </div>
+  </div>
+  
+  <div class="analysis-grid">
+    <div class="analysis-box insight">
+      <h3>洞察 INSIGHT</h3>
+      <p>在一个短视频平台把用户注意力按秒计费的时代，亚朵星球干了一件几乎算得上行为艺术的事——找来《爱情神话》《好东西》导演邵艺辉，拍了一支13分钟的品牌短片，全片几乎没有出现枕头。当下竞争、内卷的社会议题中，「睡觉」成为那个不需要努力去争的第一名。</p>
+    </div>
+    <div class="analysis-box execution">
+      <h3>创意执行 EXECUTION</h3>
+      <p>短片由齐溪、邱天主演，以孩童视角切入内卷议题。故事围绕从没拿过第一名的小孩王苗苗展开——她可以是吃饭第一名、放学第一名、不在乎第一名。采用「产品后置」叙事策略，抓住大众被KPI裹挟、渴望休息的集体情绪，把睡觉升华为对抗内卷的精神出口，传递「睡眠是最小的长假」品牌哲学。</p>
+    </div>
+  </div>
+  <a class="case-source" href="https://m.digitaling.com/projects/375836.html" target="_blank">查看数英项目页 →</a>
+</section>
+
+<!-- ===== 案例 06 ===== -->
+<section class="case-section" id="issue1-case-6">
+  <div class="case-header">
+    <div class="case-num">06</div>
+    <div class="case-title-block">
+      <h2>全家福</h2>
+      <div class="subtitle">AI 公益短片</div>
+    </div>
+  </div>
+  <div class="case-meta">
+    <span class="meta-tag type">类型：AI短片 / 公益广告</span>
+    <span class="meta-tag date">收录：2026-09-02</span>
+    <span class="meta-tag score">数英评分：9.0</span>
+  </div>
+  
+  <div class="video-section">
+    <div class="video-placeholder" style="background-image: url('https://aka.doubaocdn.com/s/qZ5yWUJRFU');" onclick="window.open('https://m.digitaling.com/projects/376067.html', '_blank')" style="cursor:pointer;">
+      <div class="play-btn"></div>
+      <div class="video-label">▶ 点击观看完整视频 · AI短片《全家福》 ↗</div>
+    </div>
+  </div>
+  
+  <div class="gallery">
+    <div class="gallery-item featured" onclick="openLightbox('https://aka.doubaocdn.com/s/qZ5yWUJRFU')">
+      <img src="https://aka.doubaocdn.com/s/qZ5yWUJRFU" alt="全家福标题画面">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item large" onclick="openLightbox('https://aka.doubaocdn.com/s/zThp5wLLbq')">
+      <img src="https://aka.doubaocdn.com/s/zThp5wLLbq" alt="外星人给老夫妻拍照">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/mgOoDu5d3C')">
+      <img src="https://aka.doubaocdn.com/s/mgOoDu5d3C" alt="外星人拿米面粮油">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/SKU6oA7RQI')">
+      <img src="https://aka.doubaocdn.com/s/SKU6oA7RQI" alt="儿子看照片">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item medium" onclick="openLightbox('https://aka.doubaocdn.com/s/ZO0eSb2kAs')">
+      <img src="https://aka.doubaocdn.com/s/ZO0eSb2kAs" alt="老母亲">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item large" onclick="openLightbox('https://aka.doubaocdn.com/s/aHvvWDQvVX')">
+      <img src="https://aka.doubaocdn.com/s/aHvvWDQvVX" alt="墙上的全家福照片">
+      <div class="zoom-icon">+</div>
+    </div>
+  </div>
+  
+  <div class="analysis-grid">
+    <div class="analysis-box insight">
+      <h3>洞察 INSIGHT</h3>
+      <p>对于许多家庭而言，一张完整的全家福可能是奢望——亲人离世、异地分离、时光流逝，让「团圆」成为难以触及的念想。AI技术的发展，为弥补这份遗憾提供了新的可能。而小时候公益广告的集体记忆，恰好是连接情感与技术的最佳载体。</p>
+    </div>
+    <div class="analysis-box execution">
+      <h3>创意执行 EXECUTION</h3>
+      <p>这支AI生成的公益短片用充满怀旧质感的画面和叙事，唤起观众对小时候公益广告的集体记忆。通过AI技术还原不同年代家庭拍摄全家福的场景，从黑白照片到彩色合影，从胶片时代到数字当下。巧妙利用AI在影像生成上的优势，营造出「似真似幻」的怀旧氛围，展示了AI技术在情感叙事领域的独特表现力。</p>
+    </div>
+  </div>
+  <a class="case-source" href="https://m.digitaling.com/projects/376067.html" target="_blank">查看数英项目页 →</a>
+</section>
+
+<!-- ===== 案例 07 ===== -->
+<section class="case-section" id="issue1-case-7">
+  <div class="case-header">
+    <div class="case-num">07</div>
+    <div class="case-title-block">
+      <h2>天降横祸</h2>
+      <div class="subtitle">泰国金融创意广告</div>
+    </div>
+  </div>
+  <div class="case-meta">
+    <span class="meta-tag brand">品牌：AYUDHYA CAPITAL</span>
+    <span class="meta-tag agency">创意代理：LEO BANGKOK</span>
+    <span class="meta-tag type">类型：视频广告 / 创意特效</span>
+    <span class="meta-tag date">收录：2026-09-02</span>
+    <span class="meta-tag score">海外精选</span>
+  </div>
+  
+  <div class="video-section">
+    <div class="video-placeholder" style="background-image: url('https://aka.doubaocdn.com/s/iz4uzNZVx6');" onclick="window.open('https://www.digitaling.com/projects/international/all/3', '_blank')" style="cursor:pointer;">
+      <div class="play-btn"></div>
+      <div class="video-label">▶ 点击跳转数英观看 · 泰国广告《天降横祸》 ↗</div>
+    </div>
+  </div>
+  
+  <div class="gallery">
+    <div class="gallery-item featured" onclick="openLightbox('https://aka.doubaocdn.com/s/iz4uzNZVx6')">
+      <img src="https://aka.doubaocdn.com/s/iz4uzNZVx6" alt="泰国广告天降横祸">
+      <div class="zoom-icon">+</div>
+    </div>
+  </div>
+  
+  <div class="analysis-grid">
+    <div class="analysis-box insight">
+      <h3>洞察 INSIGHT</h3>
+      <p>泰国广告以天马行空的创意和反转叙事闻名世界。在金融服务领域，如何把枯燥的贷款/保险概念转化为引人入胜的故事，是泰国广告人持续探索的命题。「意外风险」这个抽象概念，需要被具象化为荒诞却直观的场景，才能在娱乐化的观看体验中完成品牌信息的有效传递。</p>
+    </div>
+    <div class="analysis-box execution">
+      <h3>创意执行 EXECUTION</h3>
+      <p>广告以超现实的夸张设定开场：一栋房子被「巨人的口水」砸中，天降横祸般的灾难瞬间降临。用极具视觉冲击力的特效场面和黑色幽默的叙事节奏，将意外风险具象化为荒诞却直观的场景。随后自然引出金融服务产品如何在意外发生时提供保障，完成从创意奇观到产品信息的顺滑过渡，延续泰国广告「先惊后笑、最后走心」的创作节奏。</p>
+    </div>
+  </div>
+  <a class="case-source" href="https://www.digitaling.com/projects/international/all/3" target="_blank">查看数英海外项目页 →</a>
+</section>
+
+<!-- ===== 案例 08 ===== -->
+<section class="case-section" id="issue1-case-8">
+  <div class="case-header">
+    <div class="case-num">08</div>
+    <div class="case-title-block">
+      <h2>Misinterpreted</h2>
+      <div class="subtitle">新西兰电信反短信营销广告</div>
+    </div>
+  </div>
+  <div class="case-meta">
+    <span class="meta-tag brand">品牌：One New Zealand</span>
+    <span class="meta-tag agency">创意代理：McCann</span>
+    <span class="meta-tag type">类型：视频广告 / 品牌传播</span>
+    <span class="meta-tag date">收录：2026-09-02</span>
+    <span class="meta-tag score">海外精选</span>
+  </div>
+  
+  <div class="gallery">
+    <div class="gallery-item large" onclick="openLightbox('https://aka.doubaocdn.com/s/Wyot38U9aj')">
+      <img src="https://aka.doubaocdn.com/s/Wyot38U9aj" alt="公交站户外广告">
+      <div class="zoom-icon">+</div>
+    </div>
+    <div class="gallery-item large" onclick="openLightbox('https://aka.doubaocdn.com/s/QntdZeukz4')">
+      <img src="https://aka.doubaocdn.com/s/QntdZeukz4" alt="Haha气泡广告牌">
+      <div class="zoom-icon">+</div>
+    </div>
+  </div>
+  
+  <div class="analysis-grid">
+    <div class="analysis-box insight">
+      <h3>洞察 INSIGHT</h3>
+      <p>在即时通讯时代，文字、表情符号和缩写语言成为人们日常沟通的主要方式。但这种高效的沟通方式也带来了新的问题——信息在传递中容易被误读，跨代际、跨关系的沟通误解时有发生。「已读不回」「词不达意」「表情误会」成为数字时代人们的普遍痛点。</p>
+    </div>
+    <div class="analysis-box execution">
+      <h3>创意执行 EXECUTION</h3>
+      <p>One New Zealand 联合 McCann 推出「Misinterpreted」系列广告，鼓励人们「多打电话、少发短信」。展示一系列因短信、表情符号和缩写语言而产生的沟通混乱场景——从跨代际的误解到亲密关系中的信息偏差，用幽默夸张的方式呈现文字沟通的局限性。作为电信运营商，没有直接宣传网络速度或套餐价格，而是从「沟通质量」这一情感角度切入，在同质化的电信营销中走出差异化路线。</p>
+    </div>
+  </div>
+  <a class="case-source" href="https://m.digitaling.com/projects/376627.html" target="_blank">查看数英项目页 →</a>
+</section>
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer class="footer">
+  <div class="brand">CREATIVE AD · 每日创意资讯 × 每周优秀案例</div>
+  <p style="margin-top: 14px; font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', serif; font-weight: 100; letter-spacing: 0.55em; font-size: 10px; color: #F0E6C8; text-indent: 0.55em;">DESIGN BY SILVIA.HE</p>
+</footer>
+
+<!-- ===== Lightbox ===== -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-close">×</div>
+  <img id="lightbox-img" src="" alt="放大查看">
+</div>
+
+<!-- ===== 悬浮返回按钮 ===== -->
+<div class="float-menu" id="float-menu" onclick="scrollToTopMenu()" title="返回顶部菜单">
+  <span class="float-arrow">↑</span>
+  <span class="float-label">菜单</span>
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function scrollToCase(num) {
+    document.getElementById('case-' + num).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  // 跨期案例跳转：issue=期数, num=案例序号（先切到对应期面板再滚动）
+  function scrollToIssueCase(issue, num) {
+    showIssue(issue);
+    var id = (issue === 1) ? 'issue1-case-' + num : 'case-' + num;
+    var el = document.getElementById(id);
+    if (el) {
+      setTimeout(function() {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 60);
+    }
+  }
+  // 每周期数卡片式切换：类似每日日期的 panel 切换
+  function showIssue(num) {
+    document.querySelectorAll('.issue-tab').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelectorAll('.issue-panel').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.issue-tab').forEach(function(t) {
+      if (t.getAttribute('onclick') && t.getAttribute('onclick').indexOf('showIssue(' + num + ')') !== -1) t.classList.add('active');
+    });
+    var panel = document.getElementById('issue-panel-' + num);
+    if (panel) {
+      panel.classList.add('active');
+      setTimeout(function() {
+        panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 60);
+    }
+  }
+  function scrollToIssue(num) {
+    showIssue(num);
+  }
+  // 悬浮按钮：返回上层菜单（顶部导航）
+  function scrollToTopMenu() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('float-menu');
+    if (btn) btn.classList.toggle('show', window.scrollY > 600);
+  });
+  // 板块切换：daily / weekly
+  function showSection(name) {
+    document.querySelectorAll('.section-tab').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelector('.section-tab.' + name).classList.add('active');
+    document.getElementById('section-daily').classList.toggle('active', name === 'daily');
+    document.getElementById('section-weekly').classList.toggle('active', name === 'weekly');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  // 每日资讯日期切换
+  function showDate(day) {
+    document.querySelectorAll('.date-tab').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelectorAll('.daily-panel').forEach(function(p) { p.classList.remove('active'); });
+    document.getElementById('day-' + day).classList.add('active');
+    // 高亮对应tab
+    document.querySelectorAll('.date-tab').forEach(function(t) {
+      if (t.getAttribute('onclick').indexOf(day) !== -1) t.classList.add('active');
+    });
+  }
+  // ESC关闭lightbox
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+
+<script>
+// ============================================================
+// 每日资讯数据区（持续更新）
+// 定时任务：把新一天的数据对象插入到 DAILY_DATA = [ 之后即可（新日期在最前）
+// NEW_DAY_INSERT_POINT
+// ============================================================
+const DAILY_DATA = [
+ {
+  "id": "0910",
+  "date": "2026.09.10",
+  "weekday": "周四",
+  "items": [
+   {
+    "tag": "IKEA × Droga5",
+    "thumb": "https://aka.doubaocdn.com/s/sPWlCps6IA",
+    "title": "IKEA×Droga5推出\"Reverse Shop\"反向广告，连热狗都变成\"DOG HOT\"",
+    "summary": "宜家沙特为推广回购服务，与Droga5 London合作推出\"Reverse Shop\"campaign，整个广告从文案到画面全部反向播放，连标志性热狗都变成\"DOG HOT\"。创意核心是\"你卖，宜家买\"——购物的反向，用极致的视觉反转让回购服务一目了然。",
+    "source": "Creative Salon",
+    "link": "https://creative.salon/articles/work/droga5-ikea-reverse-shop",
+    "time": "2026-09-09"
+   },
+   {
+    "tag": "Boots",
+    "thumb": "https://aka.doubaocdn.com/s/0jUiKUCIkf",
+    "title": "Boots发布新品牌平台\"Give it Some Boots\"，庆祝人生\"brutiful\"时刻",
+    "summary": "英国药妆连锁Boots推出全新品牌平台\"Give it Some Boots\"，提出\"brutiful\"（beautiful+brutal）概念，从白发到潮热，展现人生每个阶段的真实时刻。campaign覆盖TV、影院、数字户外、社媒和店内，标志着Boots从品类营销转向以消费者需求为中心的品牌叙事。",
+    "source": "Boots UK",
+    "link": "https://www.boots-uk.com/newsroom/news-item/boots-launches-new-brand-platform-give-it-some-boots-with-high-impact-campaign/",
+    "time": "2026-09-09"
+   },
+   {
+    "tag": "Dunkin' × Spice Girls",
+    "thumb": "https://aka.doubaocdn.com/s/gWvMZBOIFj",
+    "title": "Dunkin'联手Spice Girls两位成员，虚构\"第六位成员Pumpkin Spice\"",
+    "summary": "Dunkin'秋季南瓜香料拿铁campaign请来Baby Spice和Ginger Spice重聚，由喜剧演员Rachel Dratch扮演被遗忘的\"第六位成员\"Pumpkin Spice。短片用怀旧流行文化梗讲述Pumpkin Spice离开乐坛专注拿铁事业的故事，配合免费拿铁促销活动，将季节性产品变成文化事件。",
+    "source": "QSR Web",
+    "link": "https://www.qsrweb.com/news/dunkin-reunites-spice-girls-for-new-pumpkin-spice-launch/",
+    "time": "2026-09-08"
+   },
+   {
+    "tag": "Autodesk × Giant Spoon",
+    "thumb": "https://aka.doubaocdn.com/s/S638E56QNL",
+    "title": "Autodesk发布全球品牌campaign，致敬近3亿\"设计与制造者\"",
+    "summary": "Autodesk推出\"The World Is Yours for the Making\"全球品牌campaign，与创意机构Giant Spoon合作，由导演Salomon Ligthelm执导。campaign致敬全球近3亿设计、制造和运营者，展现他们如何用Autodesk技术塑造我们生活的世界，标志着Autodesk从工具品牌向平台品牌的升级。",
+    "source": "PR Newswire",
+    "link": "https://kessler-prod.reta52d8.eas.morningstar.com/news/pr-newswire/20260909sf43272/autodesk-unveils-brand-campaign-putting-the-people-who-design-and-make-the-digital-and-physical-world-in-the-spotlight",
+    "time": "2026-09-09"
+   },
+   {
+    "tag": "芬必得 线下创意",
+    "thumb": "https://aka.doubaocdn.com/s/7nEc8atiFQ",
+    "title": "芬必得把世界名画搬进地铁站，蒙娜丽莎牙痛、沉思者关节炎",
+    "summary": "芬必得在北京国贸和上海人民广场地铁站打造\"金芬必得艺术长廊\"，将《蒙娜丽莎》《戴珍珠耳环的少女》《掷铁饼者》《倒牛奶的女仆》《沉思者》五幅名画改编为\"疼痛版\"。左侧\"崩坏瞬间\"与右侧\"服药还原\"形成强烈反差，用艺术化幽默消解消费者对止痛药广告的抵触。",
+    "source": "数英网",
+    "link": "https://m.digitaling.com/projects/376991.html",
+    "time": "2026-09-08"
+   },
+   {
+    "tag": "Samsung × Crispin",
+    "thumb": "https://aka.doubaocdn.com/s/QVsB2y3lJC",
+    "title": "Samsung推出\"Be More You\"campaign，在AI时代捍卫人文创造力",
+    "summary": "三星与创意机构Crispin合作推出\"Be More You\"全球campaign，在AI逐渐渗透创意行业的背景下，主张AI不应让人远离真实，而应解放人类时间去做真正属于人的体验——创造、连接和表达。campaign用电影化叙事展现AI作为工具如何放大而非替代人类创造力。",
+    "source": "MediaMarketing",
+    "link": "https://mediamarketing.ma/article/AFPBEDDC/samsung_mise",
+    "time": "2026-09-09"
+   },
+   {
+    "tag": "Lucid Motors × BarkleyOKRP",
+    "thumb": "https://aka.doubaocdn.com/s/bG80mVt1jV",
+    "title": "Lucid Motors反套路SUV广告：不测试车，测试家庭",
+    "summary": "Lucid Motors为Gravity电动SUV推出全球campaign\"The Test\"，与独立机构BarkleyOKRP合作，由导演Niclas Larsson执导。一反SUV广告\"测试车辆性能\"的套路，短片将一个疏离的家庭放进未来感Lucid设施中进行\"评估\"，随着在车内相处时间增加，家庭成员关系逐渐变得紧密。",
+    "source": "Ad Age",
+    "link": "https://adage.com/creativity/work/aa-lucid-motors-test-drive-your-family/",
+    "time": "2026-09-03"
+   },
+   {
+    "tag": "Comic Relief × Quality Meats",
+    "thumb": "https://aka.doubaocdn.com/s/LursQlZ7jR",
+    "title": "Comic Relief用荒诞讽刺拍儿童贫困公益广告，\"这不是我的问题\"",
+    "summary": "英国慈善机构Comic Relief与美国创意机构Quality Meats合作推出\"Not Our Problem\"全国campaign，用黑色幽默讽刺公众对儿童贫困的\"旁观者效应\"。短片中普通人理直气壮地解释为什么儿童贫困\"不是自己的责任\"，配合户外广告，用uncomfortable humor逼观众直面自己的冷漠。",
+    "source": "Creative Review",
+    "link": "https://www.creativereview.co.uk/comic-relief-satirises-our-indifference-to-childhood-poverty-in-new-campaign/",
+    "time": "2026-09-08"
+   },
+   {
+    "tag": "SAL 新加坡法律学院",
+    "thumb": "https://aka.doubaocdn.com/s/ZyVaQtVRRt",
+    "title": "新加坡法律学院用幽默拍遗嘱规划广告，\"最后的签名\"",
+    "summary": "新加坡法律学院（SAL）推出\"The Last Sign\"公众教育campaign，用幽默手法tackle遗嘱规划这个令人不适的话题。短片强调提前做好安排的重要性，让亲人在需要时能找到遗嘱。campaign同时推出Wills Repository Service，允许个人通过参与律所安全存储遗嘱数字副本。",
+    "source": "MARKETECH APAC",
+    "link": "https://marketech-apac.com/sal-uses-humour-in-the-last-sign-campaign-to-make-will-planning-impossible-to-ignore/",
+    "time": "2026-09-09"
+   },
+   {
+    "tag": "IKEA Singapore × Volvo",
+    "thumb": "https://aka.doubaocdn.com/s/4JahLVN9Wi",
+    "title": "宜家新加坡跨界健身，把收纳家具变成健身器材\"HEJ-FIT挑战\"",
+    "summary": "宜家新加坡推出\"Make space for what you love\"campaign，与Volvo合作打造首个\"HEJ-FIT challenge\"功能性健身比赛，把日常家居产品变成健身器材。活动将于9月19-20日在宜家淡滨尼店举行，将家具收纳的\"整理压力测试\"转化为趣味健身挑战，是品牌用体验营销重新定义\"家居\"概念的创新尝试。",
+    "source": "Marketing-Interactive",
+    "link": "https://www.marketing-interactive.com/ikea-makes-room-for-gains-with-first-fitness-challenge",
+    "time": "2026-09-09"
+   }
+  ]
+ },
+ {
+  "id": "0909",
+  "date": "2026.09.09",
+  "weekday": "周三",
+  "items": [
+   {
+    "tag": "Red Bull × 马德里地铁",
+    "thumb": "https://aka.doubaocdn.com/s/6zB0i7lTUm",
+    "title": "Red Bull把F1赛车开上马德里地铁轨道，城市空间极限品牌体验",
+    "summary": "Red Bull在马德里开展了一场疯狂的城市营销：把RB8 F1赛车直接开上马德里地铁轨道，让赛车在地铁隧道中穿行，以MadRing赛道与地铁网络的连接为核心打造品牌体验，形成强烈的视觉冲击和话题性。",
+    "source": "B&amp;T / El Publicista",
+    "link": "https://www.bandt.com.au/red-bulls-f1-car-put-on-the-train-tracks-in-surreal-madrid-stunt/",
+    "time": "2026-09-09"
+   },
+   {
+    "tag": "De'Longhi × Brad Pitt",
+    "thumb": "https://aka.doubaocdn.com/s/DDKmHDkQsV",
+    "title": "De'Longhi × Brad Pitt × Spike Jonze：影帝与16只狗狗室友的喜剧广告",
+    "summary": "德龙（De'Longhi）新广告请来Brad Pitt出演，由Spike Jonze执导、LOLA Madrid制作。短片中Pitt被16只狗狗室友不断打断，喜剧感十足，用\"被毛孩子包围的生活\"传递咖啡机融入日常的陪伴感。",
+    "source": "Ad Age",
+    "link": "https://adage.com/creativity/work/aa-delonghi-hot-or-cold-always-perfetto/",
+    "time": "2026-09-08"
+   },
+   {
+    "tag": "Guinness LoVely",
+    "thumb": "https://aka.doubaocdn.com/s/AtIXIIuu5L",
+    "title": "Guinness把竖琴logo变成\"V\"字母，激活90年老签名",
+    "summary": "Guinness推出新campaign「LoVely」，由AMV BBDO操刀，将品牌标志性的竖琴图形转化为\"LoVely\"一词中的\"V\"字母，以户外广告为主阵地重新演绎品牌最经典资产，是经典品牌资产创意活化的标杆案例。",
+    "source": "Creapills",
+    "link": "https://creapills.com/guinness-lovely-harpe-amv-bbdo-20260908",
+    "time": "2026-09-08"
+   },
+   {
+    "tag": "ChatGPT 教师节",
+    "thumb": "https://aka.doubaocdn.com/s/QtIneUVuSk",
+    "title": "ChatGPT教师节campaign：提醒老师们\"AI写的作业我一眼就看得出来\"",
+    "summary": "教师节之际，ChatGPT推出一支应景campaign，幽默地提醒老师AI生成的作业一眼就能识别，以老师的视角切入AI话题，用轻松方式消解教育领域对AI的普遍焦虑，是AI品牌\"幽默共情\"式沟通的巧妙示范。",
+    "source": "Creapills",
+    "link": "https://creapills.com/chatgpt-fete-professeurs-devoirs-ia-20260908",
+    "time": "2026-09-08"
+   },
+   {
+    "tag": "CIMB Moving You Forward",
+    "thumb": "https://aka.doubaocdn.com/s/a9sBHYOVDL",
+    "title": "CIMB银行用\"红色=前进\"重新定义品牌色，东盟五国同步campaign",
+    "summary": "马来西亚CIMB银行推出东盟范围品牌campaign「Moving You Forward」，由Chariot Agency操刀，把\"红色代表停止\"的普遍认知反转定义为\"红色=勇气、野心与前进\"，将品牌标志性红色从视觉资产升维为品牌精神符号。",
+    "source": "MARKETECH APAC",
+    "link": "https://marketech-apac.com/cimb-malaysia-turns-red-into-go-with-new-asean-wide-moving-you-forward-campaign-via-chariot/",
+    "time": "2026-09-08"
+   },
+   {
+    "tag": "Maybelline Instant Eraser",
+    "thumb": "https://aka.doubaocdn.com/s/GKw6UKswlM",
+    "title": "Maybelline为Instant Eraser遮瑕膏发起全球\"社交优先\"campaign",
+    "summary": "美宝莲为经典产品Instant Eraser遮瑕膏推出全球社交优先（social-first）campaign，用\"日常生活的真实瞬间\"重新演绎这款品类定义级产品，把遮瑕膏从\"完美妆容工具\"重塑为日常生活的真实陪伴。",
+    "source": "Marketing Communication News",
+    "link": "https://marcommnews.com/maybelline-launches-global-social-first-campaign-for-instant-eraser/",
+    "time": "2026-09-08"
+   },
+   {
+    "tag": "金瞳奖 · 赵丽颖《小城大事》",
+    "thumb": "https://aka.doubaocdn.com/s/OARdCMGyd9",
+    "title": "2026金瞳奖落幕：赵丽颖《小城大事》三奖、成毅《赴山海》双奖出圈",
+    "summary": "\"国内广告行业风向标\"金瞳奖落幕，剧集营销成最大赢家：赵丽颖《小城大事》拿下最具商业价值、最佳传播效果、剧集类三项铜奖，成毅《赴山海》获最佳传播效果银奖和最具商业价值铜奖，折射内容营销与电商深度绑定趋势。",
+    "source": "今日头条",
+    "link": "http://m.toutiao.com/group/7683292169926476332/",
+    "time": "2026-09-09"
+   },
+   {
+    "tag": "Gucci × Kate Moss",
+    "thumb": "https://aka.doubaocdn.com/s/uUJKLFzyCl",
+    "title": "Gucci春季campaign由Kate Moss出演：\"And We Shall Dance Again\"",
+    "summary": "Gucci发布2026春季系列campaign，由超模Kate Moss出演，主题「And We Shall Dance Again」，延续近期复古浪漫美学，用舞蹈意象传递春季系列的轻盈与活力，在创意总监交接期用标志性面孔重建品牌形象。",
+    "source": "Brand News",
+    "link": "https://theimpression.com/gucci-the-primavera-2026-ad-campaign-review/",
+    "time": "2026-09-08"
+   },
+   {
+    "tag": "Madrid Beats",
+    "thumb": "https://aka.doubaocdn.com/s/YcP75BoaqI",
+    "title": "马德里推出\"Madrid Beats\"高价值旅游campaign，Havas操刀覆盖13国30城",
+    "summary": "马德里推出全新旅游campaign「Madrid Beats」，由Havas打造，旨在吸引高价值游客，覆盖13个国家30座城市，预计累计触达超2.87亿次曝光，显示城市旅游营销正从\"拼景点\"转向\"拼品牌资产\"。",
+    "source": "Brand News",
+    "link": "https://www.brandinginasia.com/madrid-beats-campaign-launches-across-13-countries/",
+    "time": "2026-09-08"
+   },
+   {
+    "tag": "Dyson 首款牙刷",
+    "thumb": "https://aka.doubaocdn.com/s/OBh1NtsrZa",
+    "title": "戴森终于对牙刷下手：口腔护理界的\"奢侈品\"来了",
+    "summary": "戴森（Dyson）推出全新牙刷产品，延续\"重新定义品类\"的产品营销逻辑，把工业设计与工程创新延伸至口腔护理赛道。这是家电品牌向个护领域横向扩张的重要信号。",
+    "source": "SocialBeta",
+    "link": "https://www.dezeen.com/2026/09/01/dyson-camerajet-first-toothbrush-floss/",
+    "time": "2026-09-08"
+   }
+  ]
+ },
+ {
+  "id": "0908",
+  "date": "2026.09.08",
+  "weekday": "周二",
+  "items": [
+   {
+    "tag": "Adidas 单只鞋",
+    "thumb": "https://aka.doubaocdn.com/s/pJXQevVRmL",
+    "title": "阿迪达斯\"单只鞋\"广告选用前以军士兵引全球抵制，品牌致歉",
+    "summary": "阿迪达斯在以色列推出面向截肢运动员的\"单只鞋\"（Single Shoe）销售服务，因在宣传中选用2021年在加沙受伤的前以色列士兵沙莱夫·比顿，引发亲巴勒斯坦活动人士强烈批评和全球抵制呼声。阿迪达斯于9月7日发表声明致歉，强调该campaign仅用于以色列本地，并非全球营销活动的一部分。",
+    "source": "环球时报 / The New Arab",
+    "link": "https://hqtime.huanqiu.com/share/article/4T7Q7ontokR",
+    "time": "2026-09-08"
+   },
+   {
+    "tag": "Samsung Z Fold 8",
+    "thumb": "https://aka.doubaocdn.com/s/6iFHRkGhWB",
+    "title": "三星开启折叠屏全球广告攻势，Z Fold 8亮相6大国际地标",
+    "summary": "三星电子以\"Welcome to Foldables\"为主题推进全球数字户外广告活动，重点展示Galaxy Z Fold 8系列，9月2日率先在首尔光化门启动，随后在东京涩谷等全球6大地标同步亮相，是折叠屏品类迄今规模最大的全球户外campaign。",
+    "source": "CNMO科技 / 今日头条",
+    "link": "http://m.toutiao.com/group/7682969557400601122/",
+    "time": "2026-09-08"
+   },
+   {
+    "tag": "GUCCI × TOD'S × 肖战",
+    "thumb": "https://aka.doubaocdn.com/s/FR9h24V4K4",
+    "title": "GUCCI和TOD'S同天官宣肖战全球广告，两大意大利奢牌为同一人同日发布",
+    "summary": "GUCCI与TOD'S两大意大利顶级奢侈品牌，把2026秋冬全球广告发布选在了同一天，都为肖战。GUCCI方面这是创意总监Demna上任后第一季时装秀广告，两大奢牌同日为同一中国代言人发布全球广告，折射中国明星在全球奢侈品营销中日益核心的地位。",
+    "source": "东街娱乐 / 今日头条",
+    "link": "http://m.toutiao.com/group/7682931178625614375/",
+    "time": "2026-09-08"
+   },
+   {
+    "tag": "Jo Malone 宠物沐浴露",
+    "thumb": "https://aka.doubaocdn.com/s/VINGOCgd32",
+    "title": "祖·玛珑×WildWash推出宠物沐浴露，Tom Hardy出镜为法斗Blue洗澡",
+    "summary": "Jo Malone London首次跨界宠物护理领域，与英国天然宠物护理品牌WildWash合作推出柑橘与雪松宠物沐浴露。品牌大使Tom Hardy出镜广告大片，亲自为他的法国斗牛犬Blue洗澡，是高端香氛品牌跨界宠物经济的标杆案例。",
+    "source": "SocialBeta / 凤凰网时尚",
+    "link": "https://socialbeta.com/campaign/28447",
+    "time": "2026-09-07"
+   },
+   {
+    "tag": "AXA Improbable Risks",
+    "thumb": "https://aka.doubaocdn.com/s/m66XZPBF02",
+    "title": "AXA推出多国健康campaign\"Improbable Risks\"，Publicis Conseil操刀",
+    "summary": "安盛（AXA）携手Publicis Conseil推出多国健康campaign「Improbable Risks」，聚焦人们担心的\"小概率事件\"，提醒人们关注真正重要的健康问题，是保险品牌从\"恐惧营销\"转向\"生活关怀\"叙事的又一次尝试。",
+    "source": "Publicis Groupe France",
+    "link": "https://france.publicisgroupe.com/axas-new-health-campaign-improbable-risks-reminds-us-to-take-care-of-what-truly-matters/?lang=fr",
+    "time": "2026-09-07"
+   },
+   {
+    "tag": "Samsung Mírame",
+    "thumb": "https://aka.doubaocdn.com/s/UVTJJliA1v",
+    "title": "三星Galaxy推出社交恐怖系列\"Mírame\"，把手机产品融入剧情",
+    "summary": "三星在西班牙等市场的社交平台推出恐怖系列短剧「Mírame」（看着我），全部用Galaxy手机拍摄，并把产品功能自然融入恐怖剧情中，是手机品牌从\"参数展示\"转向\"内容植入\"的社交营销创新。",
+    "source": "Dircomfidencial / El Publicista",
+    "link": "https://news.samsung.com/es/samsung-lleva-el-terror-a-sus-redes-con-mirame-una-serie-rodada-con-galaxy-que-convierte-el-producto-en-parte-de-la-trama",
+    "time": "2026-09-07"
+   },
+   {
+    "tag": "Nucleus Genomics",
+    "thumb": "https://aka.doubaocdn.com/s/C7Zy2FQECo",
+    "title": "Nucleus Genomics\"Have Your Best Baby\"争议广告回归，十多位IVF医生出镜5城户外",
+    "summary": "基因检测公司Nucleus Genomics的争议性广告「Have Your Best Baby」回归，邀请十多位IVF医生出现在五个城市的户外广告中。该广告因涉及胚胎筛选和\"设计婴儿\"的伦理争议，去年曾引发生物伦理界激烈辩论，今年扩大多城并加入医生背书。",
+    "source": "Ad Age",
+    "link": "https://adage.com/creativity/work/aa-nucleus-genomics-have-your-best-baby-ivf-doctors/",
+    "time": "2026-09-07"
+   },
+   {
+    "tag": "Saatchi & Saatchi India",
+    "thumb": "https://aka.doubaocdn.com/s/xBJpUnytYa",
+    "title": "Mayuresh Dubhashi回归阳狮集团，出任Saatchi &amp; Saatchi印度首席创意官",
+    "summary": "阳狮集团宣布Mayuresh Dubhashi回归，出任Saatchi &amp; Saatchi印度首席创意官（CCO）。Dubhashi此前在FCB Neo India担任CCO，这一人事变动是阳狮强化印度市场创意领导团队的重要布局。",
+    "source": "Campaign India",
+    "link": "https://www.campaignindia.in/article/mayuresh-dubhashi-returns-to-publicis-groupe-as-cco-for-saatchi-saatchi-india/4v3aec3w3j0sj5w0mx654h9emx",
+    "time": "2026-09-07"
+   },
+   {
+    "tag": "ALO × JISOO",
+    "thumb": "https://aka.doubaocdn.com/s/nKfTbNDNkY",
+    "title": "ALO×金智秀JISOO发布秋季大片，运动品牌持续时尚化升级",
+    "summary": "运动生活方式品牌ALO官宣全球品牌大使金智秀（JISOO）演绎2026秋季系列大片，以简约克制造型捕捉其专注从容状态，诠释Wellness理念。从lululemon到ALO，运动品牌持续通过时尚大片撕掉\"运动服\"标签。",
+    "source": "华丽志",
+    "link": "https://hypebae.com/2026/8/alo-jisoo-fall-campaign-pink-marshmallow-pilates-activewear-info-where-to-buy",
+    "time": "2026-09-08"
+   },
+   {
+    "tag": "Channel 4 Black in Business",
+    "thumb": "https://aka.doubaocdn.com/s/yVagMHJ0qO",
+    "title": "Channel 4×Lloyds颁发Black in Business奖项，四位黑人创业者各获20万英镑广告时段",
+    "summary": "英国Channel 4与劳埃德银行（Lloyds）联合宣布第三届Black in Business计划的四位获奖者，每位将获得价值20万英镑的广告时段及商业支持包，是媒体平台践行社会责任、推动商业多样性的代表性项目。",
+    "source": "Ethical Marketing News",
+    "link": "https://ethicalmarketingnews.com/channel-4-and-lloyds-award-four-black-in-business-winners-200000-each-in-advertising-airtime",
+    "time": "2026-09-07"
+   }
+  ]
+ }
+];
+
+function esc(s){ var d=document.createElement('div'); d.textContent=s||''; return d.innerHTML; }
+
+function renderDaily(){
+  var nav = document.getElementById('daily-date-nav');
+  var wrap = document.getElementById('daily-panels');
+  DAILY_DATA.forEach(function(day, di){
+    // date tab
+    var btn = document.createElement('button');
+    btn.className = 'date-tab' + (di===0 ? ' active' : '');
+    btn.textContent = day.date.slice(5).replace('.','.') + ' ' + day.weekday;
+    btn.setAttribute('onclick', "showDate('" + day.id + "')");
+    nav.appendChild(btn);
+    // panel
+    var panel = document.createElement('div');
+    panel.className = 'daily-panel' + (di===0 ? ' active' : '');
+    panel.id = 'day-' + day.id;
+    var cards = day.items.map(function(it, i){
+      var rank = String(i+1).padStart(2,'0');
+      var thumb = it.thumb
+        ? '<div class="news-thumb" onclick="openLightbox(\''+it.thumb+'\')"><img src="'+esc(it.thumb)+'" alt="'+esc(it.tag)+'" loading="lazy"><span class="news-img-tag">'+esc(it.tag)+'</span></div>'
+        : '<div class="news-thumb" style="background:linear-gradient(135deg,#FF4D8D,#FFD23F);min-height:120px;display:flex;align-items:center;justify-content:center;"><span class="news-img-tag">'+esc(it.tag)+'</span></div>';
+      return '<div class="news-card">' + thumb +
+        '<div class="news-top"><div class="news-rank">'+rank+'</div><div class="news-title">'+esc(it.title)+'</div></div>' +
+        '<div class="news-summary">'+esc(it.summary)+'</div>' +
+        '<div class="news-meta"><span class="news-source">'+esc(it.source)+'</span>' +
+        '<a class="news-link" href="'+esc(it.link)+'" target="_blank">查看原文 ↗</a>' +
+        '<span class="news-time">'+esc(it.time)+'</span></div></div>';
+    }).join('');
+    panel.innerHTML = '<div class="daily-head"><h2>每日创意资讯 · '+day.date+'</h2><p>全球广告创意动态精选 '+day.items.length+' 条，按重要性从高到低排序</p></div><div class="news-list">'+cards+'</div>';
+    wrap.appendChild(panel);
+  });
+}
+renderDaily();
+</script>
+
+</body>
+</html>
