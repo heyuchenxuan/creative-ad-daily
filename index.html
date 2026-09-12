@@ -1732,430 +1732,518 @@
 // NEW_DAY_INSERT_POINT
 // ============================================================
 const DAILY_DATA = [
-{
-  "id": "0911",
-  "date": "2026.09.11",
-  "weekday": "周五",
-  "items": [
-    {
-      "tag": "Duolingo",
-      "thumb": "assets/img/Hyjdy9jHuz.jpg",
-      "title": "Duolingo 进军纽约时装周，把 Hermès 读音印在衣服上",
-      "summary": "Duolingo 联手《Next in Fashion》选手 Megan O'Cain 推出「The Phonetic Collection」，把 Hermès、Jacquemus 等奢侈品牌名的音标拼写印上纽约时装周服装。品牌数据显示，62% 的人自信能读对这些名字，实际只有 15% 读对。campaign 还让用户以学习连胜天数为服装竞拍，把发音尴尬变成产品原生的玩笑。",
-      "source": "Marketing-Interactive",
-      "link": "https://www.marketing-interactive.com/can-t-pronounce-hermes-duolingo-has-something-you-can-wear",
-      "time": "2026-09-10"
-    },
-    {
-      "tag": "Tubi × Mischief",
-      "thumb": "assets/img/mqt4OBGcY1.png",
-      "title": "Tubi 首个全球campaign：任何情绪，免费来看",
-      "summary": "免费流媒体 Tubi 携手 Mischief 推出首个全球品牌campaign「Find Any Feeling For Free」，以九支荒诞短片对应从温柔到惊悚的各种情绪。片中人们为追逐某种感受不惜假死、深夜狂奔，最后都落回同一句「Or You Could Tubi」。campaign 还开通复古电话热线 TubiFone（1-833-605-TUBI），把「免费」从价格利益点转成情绪选择权。",
-      "source": "LBBOnline",
-      "link": "https://lbbonline.com/news/tubi-find-any-feeling-nicole-parlapiano-emotion-fakin-it-baby-bird-unhaunted-tubifone",
-      "time": "2026-09-10"
-    },
-    {
-      "tag": "Cadbury × LUAR",
-      "thumb": "assets/img/4AP4kkLr0h.jpg",
-      "title": "Cadbury 把 XL 巧克力棒做成水晶手拿包，登陆时装周",
-      "summary": "Cadbury 推出美国市场迄今规模最大的campaign「There's Magic in More」，为 XL 巧克力棒造势。品牌联名设计师 LUAR 打造镶水晶手拿包登陆纽约时装周，包袋专为容纳和分享 XL 巧克力棒设计，还内置保温层让巧克力随时保持最佳状态。",
-      "source": "PR Newswire",
-      "link": "https://www.prnewswire.com/news-releases/cadbury-brings-together-style-and-generosity-with-theres-magic-in-more-302875252.html",
-      "time": "2026-09-10"
-    },
-    {
-      "tag": "Whistles × Weirdo",
-      "thumb": "assets/img/6hZBOQ8mAg.jpg",
-      "title": "Whistles 50周年重塑：让50位真实顾客接管campaign",
-      "summary": "英国品牌 Whistles 以「Designed for an Open Mind」完成 50 周年品牌重塑，由 Weirdo 操刀。campaign 在街头投放游击式选角海报，从约 2000 名应聘者中选出 50 位 19-72 岁的真实顾客出镜 AW26 大片，取代职业模特，把「开放心态」的品牌主张落到具体的人身上。",
-      "source": "Creative Review",
-      "link": "https://www.creativereview.co.uk/whistles-identity-brand-platform-50-years",
-      "time": "2026-09-10"
-    },
-    {
-      "tag": "麦当劳 × TBWA\\NEBOKO",
-      "thumb": "assets/img/WACmQ52Pe9.jpg",
-      "title": "荷兰麦当劳只拍产品影子，你也能一眼认出",
-      "summary": "麦当劳荷兰携手 TBWA\\NEBOKO 推出极简户外campaign：薯条、开心乐园餐、麦旋风和麦乐鸡只以影子出现，没有色彩、产品细节和传统产品镜头。当影子就足够让人认出产品，品牌资产的深入人心被一次证明。数英评分 8.7。",
-      "source": "数英网",
-      "link": "https://www.digitaling.com/projects/377215.html",
-      "time": "2026-09-09"
-    },
-    {
-      "tag": "Snickers × BBDO",
-      "thumb": "assets/img/kAnGLfZiPO.png",
-      "title": "Snickers：AI 饿了也不是它自己",
-      "summary": "Snickers 把「饿了就不是你自己」的经典口号延伸到 AI 时代：AI 出现幻觉、胡乱附和，只是因为 AI 饿了。BBDO 操刀推出 Hungr.AI——号称全球第一根专为 AI 打造的数字巧克力棒，用户可从官网复制「投喂」给自己的 AI 助手。作品获 Muse by Clios 评为本周最佳广告。",
-      "source": "Muse by Clios",
-      "link": "https://musebyclios.com/advertising/snickers-says-even-ai-isnt-itself-when-its-hungry",
-      "time": "2026-09-04"
-    },
-    {
-      "tag": "香港旅游局",
-      "thumb": "assets/img/QGUFmiU8Zz.jpg",
-      "title": "香港旅游局新campaign：一座用来感受的城市",
-      "summary": "香港旅游局推出全新全球campaign「Only in Hong Kong」，取代此前的「Hello Hong Kong」，主张「A City Made to See. A City Made to Feel.」。campaign 抛开精修的目的地大片，从天星小轮、麻将桌、街坊社区到隐秘海滩，用日常质感呈现一座多维度的香港。",
-      "source": "GlobeNewswire",
-      "link": "https://finance.yahoo.com/media-advertising/articles/hong-kong-tourism-board-launches-192200725.html",
-      "time": "2026-09-09"
-    },
-    {
-      "tag": "Clash Royale × Supercell",
-      "thumb": "assets/img/IXJyFQRCyc.jpg",
-      "title": "皇室战争十周年：10487个真气球手拧定格动画",
-      "summary": "Clash Royale 十周年之际，Supercell 联手 Uncommon Stockholm 与 DAVID New York 做长期品牌建设，撕掉手游买量广告 playbook。「Copycats Welcome」向山寨游戏的玩家敞开怀抱，「Hero Balloon」影片则手工拧制 10487 个真实气球打造定格动画战场，用实体制作价值对抗廉价 AI 与 CGI。",
-      "source": "Creative Review",
-      "link": "https://www.creativereview.co.uk/clash-royale-comes-of-age",
-      "time": "2026-09-10"
-    },
-    {
-      "tag": "Geico",
-      "thumb": "assets/img/orHcjFRtg0.jpg",
-      "title": "Geico「Hump Day」骆驼13年后回归",
-      "summary": "NBC Sports 在周三 NFL 开赛宣传片中玩梗「Hump Day」，Geico 顺势复活 2013 年由 The Martin Agency 打造的骆驼病毒广告重新投放。一支 13 年前的老广告借新的文化时刻完成低成本、高共鸣的回归，示范了品牌资产长尾复利的打法。",
-      "source": "Ad Age",
-      "link": "https://adage.com/brand-marketing/aa-geico-hump-day-camel-nbc-sports-nfl-kickoff-2026",
-      "time": "2026-09-09"
-    },
-    {
-      "tag": "Levi's",
-      "thumb": "assets/img/3ePR56fWpv.jpg",
-      "title": "Levi's 印度第二章：万千方式，同一个原创",
-      "summary": "Levi's 全球campaign「Behind Every Original」在印度推出第二章「Many Ways, One Original」，全球品牌大使 Alia Bhatt 再度出镜。新章节以混带（mixtape）为灵感的品牌片强调：个性从不由单一版本定义，多种版型与单品的自由组合，才是原创精神的多种表达。",
-      "source": "ET BrandEquity",
-      "link": "https://brandequity.economictimes.indiatimes.com/news/marketing/levis-launches-campaign-many-ways-one-original-ft-alia-bhatt/133706478",
-      "time": "2026-09-09"
-    },
-    {
-      "tag": "Durex",
-      "thumb": "assets/img/0XA3xb1Dp6.png",
-      "title": "Durex 推出西地那非，把ED从「老年病」叙事里拽出来",
-      "summary": "Durex 母公司 Reckitt 在英国推出 50mg 西地那非 ED 治疗药物，把品牌带入比避孕套更医疗化的领域。Reckitt 研究显示，1/5 英国男性至少偶尔经历勃起问题，其中 40% 未做任何治疗；30-39 岁人群中 11% 有症状，压力、表现焦虑、生活方式与心理健康是常见诱因。品牌借此打破「ED 是老年人问题」的刻板印象，让年轻男性更自然地寻求帮助。",
-      "source": "LBBOnline",
-      "link": "https://lbbonline.com/news/The-Hard-Sell-How-Durex-Is-Reframing-Erectile-Dysfunction",
-      "time": "2026-09-09"
-    },
-    {
-      "tag": "Johnsonville",
-      "thumb": "assets/img/fiUkCZuRUG.webp",
-      "title": "Johnsonville让香肠「竞选晚餐」，借政治广告噪音反向抢注意力",
-      "summary": "在美国中期选举广告密集来临前，Johnsonville推出「Sausage for Dinner 2026」，用竞选语言、庭院牌与户外广告为香肠拉票。作品以「每个空气炸锅里都该有一根香肠」等政治口号变体，连接平价晚餐与反饥饿募款。",
-      "source": "Marketing Dive",
-      "link": "https://www.marketingdive.com/news/johnsonville-puts-sausage-on-the-ballot-to-cut-through-election-ads/829950",
-      "time": "2026-09-10"
-    },
-    {
-      "tag": "KFC Australia × Special",
-      "thumb": "assets/img/LC1spb2bZl.jpg",
-      "title": "KFC把「Picklecore」酸黄瓜热潮扩写成整套品牌语境",
-      "summary": "KFC澳大利亚推出Picklecore限时菜单，并由Special将产品热潮延展为完整品牌campaign。除汉堡、薯条与炸酸黄瓜外，创意还抛出可自行调配腌黄瓜汁的Pickle Pepsi，以极端产品设定放大社媒讨论度。",
-      "source": "campaignbrief.com",
-      "link": "https://campaignbrief.com/kfc-taps-into-pickle-obsession-with-new-picklecore-brand-campaign-via-special",
-      "time": "2026-09-11"
-    },
-    {
-      "tag": "AdPower × Global",
-      "thumb": "assets/img/F2M57SwiKB.png",
-      "title": "AdPower给100个品牌写「广告牌情书」，把户外媒体推介做成一对一创意",
-      "summary": "Global旗下AdPower向潜在品牌主寄出用打字机完成的个性化「情书」，以暧昧语气邀请它们尝试广告牌媒介。B2B媒介营销不再只讲覆盖率，而以定制化文案先示范户外广告的创意亲和力。",
-      "source": "LBBOnline",
-      "link": "https://lbbonline.com/news/adpower-swipes-right-on-ambitious-brands-with-personalised-billboard-love-letters",
-      "time": "2026-09-10"
-    }
-  ]
-},
- {
-  "id": "0910",
-  "date": "2026.09.10",
-  "weekday": "周四",
-  "items": [
-   {
-    "tag": "IKEA × Droga5",
-    "thumb": "assets/img/sPWlCps6IA.jpg",
-    "title": "IKEA×Droga5推出\"Reverse Shop\"反向广告，连热狗都变成\"DOG HOT\"",
-    "summary": "宜家沙特为推广回购服务，与Droga5 London合作推出\"Reverse Shop\"campaign，整个广告从文案到画面全部反向播放，连标志性热狗都变成\"DOG HOT\"。创意核心是\"你卖，宜家买\"——购物的反向，用极致的视觉反转让回购服务一目了然。",
-    "source": "Creative Salon",
-    "link": "https://creative.salon/articles/work/droga5-ikea-reverse-shop",
-    "time": "2026-09-09"
-   },
-   {
-    "tag": "Boots",
-    "thumb": "assets/img/0jUiKUCIkf.jpg",
-    "title": "Boots发布新品牌平台\"Give it Some Boots\"，庆祝人生\"brutiful\"时刻",
-    "summary": "英国药妆连锁Boots推出全新品牌平台\"Give it Some Boots\"，提出\"brutiful\"（beautiful+brutal）概念，从白发到潮热，展现人生每个阶段的真实时刻。campaign覆盖TV、影院、数字户外、社媒和店内，标志着Boots从品类营销转向以消费者需求为中心的品牌叙事。",
-    "source": "Boots UK",
-    "link": "https://www.boots-uk.com/newsroom/news-item/boots-launches-new-brand-platform-give-it-some-boots-with-high-impact-campaign/",
-    "time": "2026-09-09"
-   },
-   {
-    "tag": "Dunkin' × Spice Girls",
-    "thumb": "assets/img/gWvMZBOIFj.jpg",
-    "title": "Dunkin'联手Spice Girls两位成员，虚构\"第六位成员Pumpkin Spice\"",
-    "summary": "Dunkin'秋季南瓜香料拿铁campaign请来Baby Spice和Ginger Spice重聚，由喜剧演员Rachel Dratch扮演被遗忘的\"第六位成员\"Pumpkin Spice。短片用怀旧流行文化梗讲述Pumpkin Spice离开乐坛专注拿铁事业的故事，配合免费拿铁促销活动，将季节性产品变成文化事件。",
-    "source": "QSR Web",
-    "link": "https://www.qsrweb.com/news/dunkin-reunites-spice-girls-for-new-pumpkin-spice-launch/",
-    "time": "2026-09-08"
-   },
-   {
-    "tag": "Autodesk × Giant Spoon",
-    "thumb": "assets/img/S638E56QNL.jpg",
-    "title": "Autodesk发布全球品牌campaign，致敬近3亿\"设计与制造者\"",
-    "summary": "Autodesk推出\"The World Is Yours for the Making\"全球品牌campaign，与创意机构Giant Spoon合作，由导演Salomon Ligthelm执导。campaign致敬全球近3亿设计、制造和运营者，展现他们如何用Autodesk技术塑造我们生活的世界，标志着Autodesk从工具品牌向平台品牌的升级。",
-    "source": "PR Newswire",
-    "link": "https://kessler-prod.reta52d8.eas.morningstar.com/news/pr-newswire/20260909sf43272/autodesk-unveils-brand-campaign-putting-the-people-who-design-and-make-the-digital-and-physical-world-in-the-spotlight",
-    "time": "2026-09-09"
-   },
-   {
-    "tag": "芬必得 线下创意",
-    "thumb": "assets/img/7nEc8atiFQ.jpg",
-    "title": "芬必得把世界名画搬进地铁站，蒙娜丽莎牙痛、沉思者关节炎",
-    "summary": "芬必得在北京国贸和上海人民广场地铁站打造\"金芬必得艺术长廊\"，将《蒙娜丽莎》《戴珍珠耳环的少女》《掷铁饼者》《倒牛奶的女仆》《沉思者》五幅名画改编为\"疼痛版\"。左侧\"崩坏瞬间\"与右侧\"服药还原\"形成强烈反差，用艺术化幽默消解消费者对止痛药广告的抵触。",
-    "source": "数英网",
-    "link": "https://m.digitaling.com/projects/376991.html",
-    "time": "2026-09-08"
-   },
-   {
-    "tag": "Samsung × Crispin",
-    "thumb": "assets/img/QVsB2y3lJC.jpg",
-    "title": "Samsung推出\"Be More You\"campaign，在AI时代捍卫人文创造力",
-    "summary": "三星与创意机构Crispin合作推出\"Be More You\"全球campaign，在AI逐渐渗透创意行业的背景下，主张AI不应让人远离真实，而应解放人类时间去做真正属于人的体验——创造、连接和表达。campaign用电影化叙事展现AI作为工具如何放大而非替代人类创造力。",
-    "source": "MediaMarketing",
-    "link": "https://mediamarketing.ma/article/AFPBEDDC/samsung_mise",
-    "time": "2026-09-09"
-   },
-   {
-    "tag": "Lucid Motors × BarkleyOKRP",
-    "thumb": "assets/img/bG80mVt1jV.jpg",
-    "title": "Lucid Motors反套路SUV广告：不测试车，测试家庭",
-    "summary": "Lucid Motors为Gravity电动SUV推出全球campaign\"The Test\"，与独立机构BarkleyOKRP合作，由导演Niclas Larsson执导。一反SUV广告\"测试车辆性能\"的套路，短片将一个疏离的家庭放进未来感Lucid设施中进行\"评估\"，随着在车内相处时间增加，家庭成员关系逐渐变得紧密。",
-    "source": "Ad Age",
-    "link": "https://adage.com/creativity/work/aa-lucid-motors-test-drive-your-family/",
-    "time": "2026-09-03"
-   },
-   {
-    "tag": "Comic Relief × Quality Meats",
-    "thumb": "assets/img/LursQlZ7jR.jpg",
-    "title": "Comic Relief用荒诞讽刺拍儿童贫困公益广告，\"这不是我的问题\"",
-    "summary": "英国慈善机构Comic Relief与美国创意机构Quality Meats合作推出\"Not Our Problem\"全国campaign，用黑色幽默讽刺公众对儿童贫困的\"旁观者效应\"。短片中普通人理直气壮地解释为什么儿童贫困\"不是自己的责任\"，配合户外广告，用uncomfortable humor逼观众直面自己的冷漠。",
-    "source": "Creative Review",
-    "link": "https://www.creativereview.co.uk/comic-relief-satirises-our-indifference-to-childhood-poverty-in-new-campaign/",
-    "time": "2026-09-08"
-   },
-   {
-    "tag": "SAL 新加坡法律学院",
-    "thumb": "assets/img/ZyVaQtVRRt.jpg",
-    "title": "新加坡法律学院用幽默拍遗嘱规划广告，\"最后的签名\"",
-    "summary": "新加坡法律学院（SAL）推出\"The Last Sign\"公众教育campaign，用幽默手法tackle遗嘱规划这个令人不适的话题。短片强调提前做好安排的重要性，让亲人在需要时能找到遗嘱。campaign同时推出Wills Repository Service，允许个人通过参与律所安全存储遗嘱数字副本。",
-    "source": "MARKETECH APAC",
-    "link": "https://marketech-apac.com/sal-uses-humour-in-the-last-sign-campaign-to-make-will-planning-impossible-to-ignore/",
-    "time": "2026-09-09"
-   },
-   {
-    "tag": "IKEA Singapore × Volvo",
-    "thumb": "assets/img/4JahLVN9Wi.jpg",
-    "title": "宜家新加坡跨界健身，把收纳家具变成健身器材\"HEJ-FIT挑战\"",
-    "summary": "宜家新加坡推出\"Make space for what you love\"campaign，与Volvo合作打造首个\"HEJ-FIT challenge\"功能性健身比赛，把日常家居产品变成健身器材。活动将于9月19-20日在宜家淡滨尼店举行，将家具收纳的\"整理压力测试\"转化为趣味健身挑战，是品牌用体验营销重新定义\"家居\"概念的创新尝试。",
-    "source": "Marketing-Interactive",
-    "link": "https://www.marketing-interactive.com/ikea-makes-room-for-gains-with-first-fitness-challenge",
-    "time": "2026-09-09"
-   }
-  ]
- },
- {
-  "id": "0909",
-  "date": "2026.09.09",
-  "weekday": "周三",
-  "items": [
-   {
-    "tag": "Red Bull × 马德里地铁",
-    "thumb": "assets/img/6zB0i7lTUm.jpg",
-    "title": "Red Bull把F1赛车开上马德里地铁轨道，城市空间极限品牌体验",
-    "summary": "Red Bull在马德里开展了一场疯狂的城市营销：把RB8 F1赛车直接开上马德里地铁轨道，让赛车在地铁隧道中穿行，以MadRing赛道与地铁网络的连接为核心打造品牌体验，形成强烈的视觉冲击和话题性。",
-    "source": "B&amp;T / El Publicista",
-    "link": "https://www.bandt.com.au/red-bulls-f1-car-put-on-the-train-tracks-in-surreal-madrid-stunt/",
-    "time": "2026-09-09"
-   },
-   {
-    "tag": "De'Longhi × Brad Pitt",
-    "thumb": "assets/img/DDKmHDkQsV.jpg",
-    "title": "De'Longhi × Brad Pitt × Spike Jonze：影帝与16只狗狗室友的喜剧广告",
-    "summary": "德龙（De'Longhi）新广告请来Brad Pitt出演，由Spike Jonze执导、LOLA Madrid制作。短片中Pitt被16只狗狗室友不断打断，喜剧感十足，用\"被毛孩子包围的生活\"传递咖啡机融入日常的陪伴感。",
-    "source": "Ad Age",
-    "link": "https://adage.com/creativity/work/aa-delonghi-hot-or-cold-always-perfetto/",
-    "time": "2026-09-08"
-   },
-   {
-    "tag": "Guinness LoVely",
-    "thumb": "assets/img/AtIXIIuu5L.jpg",
-    "title": "Guinness把竖琴logo变成\"V\"字母，激活90年老签名",
-    "summary": "Guinness推出新campaign「LoVely」，由AMV BBDO操刀，将品牌标志性的竖琴图形转化为\"LoVely\"一词中的\"V\"字母，以户外广告为主阵地重新演绎品牌最经典资产，是经典品牌资产创意活化的标杆案例。",
-    "source": "Creapills",
-    "link": "https://creapills.com/guinness-lovely-harpe-amv-bbdo-20260908",
-    "time": "2026-09-08"
-   },
-   {
-    "tag": "ChatGPT 教师节",
-    "thumb": "assets/img/QtIneUVuSk.jpg",
-    "title": "ChatGPT教师节campaign：提醒老师们\"AI写的作业我一眼就看得出来\"",
-    "summary": "教师节之际，ChatGPT推出一支应景campaign，幽默地提醒老师AI生成的作业一眼就能识别，以老师的视角切入AI话题，用轻松方式消解教育领域对AI的普遍焦虑，是AI品牌\"幽默共情\"式沟通的巧妙示范。",
-    "source": "Creapills",
-    "link": "https://creapills.com/chatgpt-fete-professeurs-devoirs-ia-20260908",
-    "time": "2026-09-08"
-   },
-   {
-    "tag": "CIMB Moving You Forward",
-    "thumb": "assets/img/a9sBHYOVDL.jpg",
-    "title": "CIMB银行用\"红色=前进\"重新定义品牌色，东盟五国同步campaign",
-    "summary": "马来西亚CIMB银行推出东盟范围品牌campaign「Moving You Forward」，由Chariot Agency操刀，把\"红色代表停止\"的普遍认知反转定义为\"红色=勇气、野心与前进\"，将品牌标志性红色从视觉资产升维为品牌精神符号。",
-    "source": "MARKETECH APAC",
-    "link": "https://marketech-apac.com/cimb-malaysia-turns-red-into-go-with-new-asean-wide-moving-you-forward-campaign-via-chariot/",
-    "time": "2026-09-08"
-   },
-   {
-    "tag": "Maybelline Instant Eraser",
-    "thumb": "assets/img/GKw6UKswlM.jpg",
-    "title": "Maybelline为Instant Eraser遮瑕膏发起全球\"社交优先\"campaign",
-    "summary": "美宝莲为经典产品Instant Eraser遮瑕膏推出全球社交优先（social-first）campaign，用\"日常生活的真实瞬间\"重新演绎这款品类定义级产品，把遮瑕膏从\"完美妆容工具\"重塑为日常生活的真实陪伴。",
-    "source": "Marketing Communication News",
-    "link": "https://marcommnews.com/maybelline-launches-global-social-first-campaign-for-instant-eraser/",
-    "time": "2026-09-08"
-   },
-   {
-    "tag": "金瞳奖 · 赵丽颖《小城大事》",
-    "thumb": "assets/img/OARdCMGyd9.jpg",
-    "title": "2026金瞳奖落幕：赵丽颖《小城大事》三奖、成毅《赴山海》双奖出圈",
-    "summary": "\"国内广告行业风向标\"金瞳奖落幕，剧集营销成最大赢家：赵丽颖《小城大事》拿下最具商业价值、最佳传播效果、剧集类三项铜奖，成毅《赴山海》获最佳传播效果银奖和最具商业价值铜奖，折射内容营销与电商深度绑定趋势。",
-    "source": "今日头条",
-    "link": "http://m.toutiao.com/group/7683292169926476332/",
-    "time": "2026-09-09"
-   },
-   {
-    "tag": "Gucci × Kate Moss",
-    "thumb": "assets/img/uUJKLFzyCl.png",
-    "title": "Gucci春季campaign由Kate Moss出演：\"And We Shall Dance Again\"",
-    "summary": "Gucci发布2026春季系列campaign，由超模Kate Moss出演，主题「And We Shall Dance Again」，延续近期复古浪漫美学，用舞蹈意象传递春季系列的轻盈与活力，在创意总监交接期用标志性面孔重建品牌形象。",
-    "source": "Brand News",
-    "link": "https://theimpression.com/gucci-the-primavera-2026-ad-campaign-review/",
-    "time": "2026-09-08"
-   },
-   {
-    "tag": "Madrid Beats",
-    "thumb": "assets/img/YcP75BoaqI.jpg",
-    "title": "马德里推出\"Madrid Beats\"高价值旅游campaign，Havas操刀覆盖13国30城",
-    "summary": "马德里推出全新旅游campaign「Madrid Beats」，由Havas打造，旨在吸引高价值游客，覆盖13个国家30座城市，预计累计触达超2.87亿次曝光，显示城市旅游营销正从\"拼景点\"转向\"拼品牌资产\"。",
-    "source": "Brand News",
-    "link": "https://www.brandinginasia.com/madrid-beats-campaign-launches-across-13-countries/",
-    "time": "2026-09-08"
-   },
-   {
-    "tag": "Dyson 首款牙刷",
-    "thumb": "assets/img/OBh1NtsrZa.jpg",
-    "title": "戴森终于对牙刷下手：口腔护理界的\"奢侈品\"来了",
-    "summary": "戴森（Dyson）推出全新牙刷产品，延续\"重新定义品类\"的产品营销逻辑，把工业设计与工程创新延伸至口腔护理赛道。这是家电品牌向个护领域横向扩张的重要信号。",
-    "source": "SocialBeta",
-    "link": "https://www.dezeen.com/2026/09/01/dyson-camerajet-first-toothbrush-floss/",
-    "time": "2026-09-08"
-   }
-  ]
- },
- {
-  "id": "0908",
-  "date": "2026.09.08",
-  "weekday": "周二",
-  "items": [
-   {
-    "tag": "Adidas 单只鞋",
-    "thumb": "assets/img/pJXQevVRmL.jpg",
-    "title": "阿迪达斯\"单只鞋\"广告选用前以军士兵引全球抵制，品牌致歉",
-    "summary": "阿迪达斯在以色列推出面向截肢运动员的\"单只鞋\"（Single Shoe）销售服务，因在宣传中选用2021年在加沙受伤的前以色列士兵沙莱夫·比顿，引发亲巴勒斯坦活动人士强烈批评和全球抵制呼声。阿迪达斯于9月7日发表声明致歉，强调该campaign仅用于以色列本地，并非全球营销活动的一部分。",
-    "source": "环球时报 / The New Arab",
-    "link": "https://hqtime.huanqiu.com/share/article/4T7Q7ontokR",
-    "time": "2026-09-08"
-   },
-   {
-    "tag": "Samsung Z Fold 8",
-    "thumb": "assets/img/6iFHRkGhWB.jpg",
-    "title": "三星开启折叠屏全球广告攻势，Z Fold 8亮相6大国际地标",
-    "summary": "三星电子以\"Welcome to Foldables\"为主题推进全球数字户外广告活动，重点展示Galaxy Z Fold 8系列，9月2日率先在首尔光化门启动，随后在东京涩谷等全球6大地标同步亮相，是折叠屏品类迄今规模最大的全球户外campaign。",
-    "source": "CNMO科技 / 今日头条",
-    "link": "http://m.toutiao.com/group/7682969557400601122/",
-    "time": "2026-09-08"
-   },
-   {
-    "tag": "GUCCI × TOD'S × 肖战",
-    "thumb": "assets/img/FR9h24V4K4.jpg",
-    "title": "GUCCI和TOD'S同天官宣肖战全球广告，两大意大利奢牌为同一人同日发布",
-    "summary": "GUCCI与TOD'S两大意大利顶级奢侈品牌，把2026秋冬全球广告发布选在了同一天，都为肖战。GUCCI方面这是创意总监Demna上任后第一季时装秀广告，两大奢牌同日为同一中国代言人发布全球广告，折射中国明星在全球奢侈品营销中日益核心的地位。",
-    "source": "东街娱乐 / 今日头条",
-    "link": "http://m.toutiao.com/group/7682931178625614375/",
-    "time": "2026-09-08"
-   },
-   {
-    "tag": "Jo Malone 宠物沐浴露",
-    "thumb": "assets/img/VINGOCgd32.png",
-    "title": "祖·玛珑×WildWash推出宠物沐浴露，Tom Hardy出镜为法斗Blue洗澡",
-    "summary": "Jo Malone London首次跨界宠物护理领域，与英国天然宠物护理品牌WildWash合作推出柑橘与雪松宠物沐浴露。品牌大使Tom Hardy出镜广告大片，亲自为他的法国斗牛犬Blue洗澡，是高端香氛品牌跨界宠物经济的标杆案例。",
-    "source": "SocialBeta / 凤凰网时尚",
-    "link": "https://socialbeta.com/campaign/28447",
-    "time": "2026-09-07"
-   },
-   {
-    "tag": "AXA Improbable Risks",
-    "thumb": "assets/img/m66XZPBF02.jpg",
-    "title": "AXA推出多国健康campaign\"Improbable Risks\"，Publicis Conseil操刀",
-    "summary": "安盛（AXA）携手Publicis Conseil推出多国健康campaign「Improbable Risks」，聚焦人们担心的\"小概率事件\"，提醒人们关注真正重要的健康问题，是保险品牌从\"恐惧营销\"转向\"生活关怀\"叙事的又一次尝试。",
-    "source": "Publicis Groupe France",
-    "link": "https://france.publicisgroupe.com/axas-new-health-campaign-improbable-risks-reminds-us-to-take-care-of-what-truly-matters/?lang=fr",
-    "time": "2026-09-07"
-   },
-   {
-    "tag": "Samsung Mírame",
-    "thumb": "assets/img/UVTJJliA1v.jpg",
-    "title": "三星Galaxy推出社交恐怖系列\"Mírame\"，把手机产品融入剧情",
-    "summary": "三星在西班牙等市场的社交平台推出恐怖系列短剧「Mírame」（看着我），全部用Galaxy手机拍摄，并把产品功能自然融入恐怖剧情中，是手机品牌从\"参数展示\"转向\"内容植入\"的社交营销创新。",
-    "source": "Dircomfidencial / El Publicista",
-    "link": "https://news.samsung.com/es/samsung-lleva-el-terror-a-sus-redes-con-mirame-una-serie-rodada-con-galaxy-que-convierte-el-producto-en-parte-de-la-trama",
-    "time": "2026-09-07"
-   },
-   {
-    "tag": "Nucleus Genomics",
-    "thumb": "assets/img/C7Zy2FQECo.jpg",
-    "title": "Nucleus Genomics\"Have Your Best Baby\"争议广告回归，十多位IVF医生出镜5城户外",
-    "summary": "基因检测公司Nucleus Genomics的争议性广告「Have Your Best Baby」回归，邀请十多位IVF医生出现在五个城市的户外广告中。该广告因涉及胚胎筛选和\"设计婴儿\"的伦理争议，去年曾引发生物伦理界激烈辩论，今年扩大多城并加入医生背书。",
-    "source": "Ad Age",
-    "link": "https://adage.com/creativity/work/aa-nucleus-genomics-have-your-best-baby-ivf-doctors/",
-    "time": "2026-09-07"
-   },
-   {
-    "tag": "Saatchi & Saatchi India",
-    "thumb": "assets/img/xBJpUnytYa.jpg",
-    "title": "Mayuresh Dubhashi回归阳狮集团，出任Saatchi &amp; Saatchi印度首席创意官",
-    "summary": "阳狮集团宣布Mayuresh Dubhashi回归，出任Saatchi &amp; Saatchi印度首席创意官（CCO）。Dubhashi此前在FCB Neo India担任CCO，这一人事变动是阳狮强化印度市场创意领导团队的重要布局。",
-    "source": "Campaign India",
-    "link": "https://www.campaignindia.in/article/mayuresh-dubhashi-returns-to-publicis-groupe-as-cco-for-saatchi-saatchi-india/4v3aec3w3j0sj5w0mx654h9emx",
-    "time": "2026-09-07"
-   },
-   {
-    "tag": "ALO × JISOO",
-    "thumb": "assets/img/nKfTbNDNkY.webp",
-    "title": "ALO×金智秀JISOO发布秋季大片，运动品牌持续时尚化升级",
-    "summary": "运动生活方式品牌ALO官宣全球品牌大使金智秀（JISOO）演绎2026秋季系列大片，以简约克制造型捕捉其专注从容状态，诠释Wellness理念。从lululemon到ALO，运动品牌持续通过时尚大片撕掉\"运动服\"标签。",
-    "source": "华丽志",
-    "link": "https://hypebae.com/2026/8/alo-jisoo-fall-campaign-pink-marshmallow-pilates-activewear-info-where-to-buy",
-    "time": "2026-09-08"
-   },
-   {
-    "tag": "Channel 4 Black in Business",
-    "thumb": "assets/img/yVagMHJ0qO.jpg",
-    "title": "Channel 4×Lloyds颁发Black in Business奖项，四位黑人创业者各获20万英镑广告时段",
-    "summary": "英国Channel 4与劳埃德银行（Lloyds）联合宣布第三届Black in Business计划的四位获奖者，每位将获得价值20万英镑的广告时段及商业支持包，是媒体平台践行社会责任、推动商业多样性的代表性项目。",
-    "source": "Ethical Marketing News",
-    "link": "https://ethicalmarketingnews.com/channel-4-and-lloyds-award-four-black-in-business-winners-200000-each-in-advertising-airtime",
-    "time": "2026-09-07"
-   }
-  ]
- }
+  {
+    "id": "0912",
+    "date": "2026.09.12",
+    "weekday": "周六",
+    "items": [
+      {
+        "tag": "Financial Times",
+        "thumb": "",
+        "title": "FT 把记者请进粉红房间，卖的不是新闻是“为什么”",
+        "summary": "Financial Times 携 New Commercial Arts 为全球订阅平台「For The Why」推出新篇章，把可信新闻的价值做成可延展的创意资产。伦敦与纽约户外用 Ozempic 如何改变超市销售、数据中心进后院等尖锐问题展示 FT 的解释力；社媒系列《The Pink Room》则让 AI 编辑、数据记者等走到镜头前。作品横跨美、英、EMEA 和 APAC，在信息失序时把“人类专业判断”本身变成产品。",
+        "source": "Creative Salon",
+        "link": "https://creative.salon/articles/work/the-pink-room-financial-times-new-commercial-arts",
+        "time": "2026-09-11"
+      },
+      {
+        "tag": "Cheez-It × BBDO",
+        "thumb": "",
+        "title": "Cheez-It 造了张饼干沙发，专治大学橄榄球热评",
+        "summary": "Mars 旗下 Cheez-It 与 BBDO New York 将大学橄榄球最真实的赛场外文化——人人都爱争论——拟人成「Couch Committee」。镜头里，教练、金主、戴皮头盔的高龄球员与吉祥物 Ched-Z 围坐一张橙色 Cheez-It 造型躺椅，举「In／Out」牌评判九年级老生、头盔贴纸等热议。6、15、30 秒版本覆盖电视、CTV、在线视频与社媒，把“沙发上吃零食看球”升级为可持续调用的品牌场景。",
+        "source": "Marketing Dive",
+        "link": "https://www.marketingdive.com/news/campaign-trail-cheez-it-convenes-couch-committee-for-college-football/830011/",
+        "time": "2026-09-11"
+      },
+      {
+        "tag": "Jeep × Highdive",
+        "thumb": "",
+        "title": "Jeep 让 85 年老车主素材，拼出一整个“Jeep 国度”",
+        "summary": "Jeep 与芝加哥代理商 Highdive 发布「This Is Jeep Country」，没有把越野性能讲成参数，而是把品牌历史与车主社群拍成一种美国式性格。影片在军用车档案、沙漠溪流和真实用户自拍视频之间切换，以“America’s SUV”收束；并针对西语裔与非裔受众制作版本。电视、流媒体、数字、社媒、体验和 OOH 全线铺开，意在让 Wrangler 到 Recon 的全车系共享同一文化旗帜。",
+        "source": "Brand Innovators",
+        "link": "https://brand-innovators.com/jeep-ties-its-brand-to-the-country-that-made-it/",
+        "time": "2026-09-10"
+      },
+      {
+        "tag": "IKEA × Mother",
+        "thumb": "",
+        "title": "IKEA 进《上古卷轴》当会说话的收纳架，替玩家背包",
+        "summary": "IKEA UK/IE 与 Mother、模组团队 Kinggath Creations 把经典 KALLAX 架做成《上古卷轴V：天际》免费模组「KALLAX Storageborn」。它不仅是游戏里的全语音伙伴，还能提供无限库存、自动拾取附近战利品和一键整理房屋，正面解决玩家被“负重”机制困扰 15 年的梗。BAFTA 得主 Matt Berry 配音，玩家通过新任务、家具店与 Clutter Golem Boss 战解锁；这是把收纳品类专长直接做进玩家日常，而非只在游戏旁边投广告。",
+        "source": "Creative Salon",
+        "link": "https://creative.salon/articles/work/ikea-mother-kallax-storageborn",
+        "time": "2026-09-10"
+      },
+      {
+        "tag": "Johnsonville",
+        "thumb": "",
+        "title": "Johnsonville 让香肠参选晚餐，把政治广告变成捐款入口",
+        "summary": "Johnsonville 用「Sausage for Dinner 2026」戏仿美国中期选举广告轰炸：30 秒片、广告牌、草坪牌、周边与社区活动全按竞选套路执行，候选人却是“晚餐吃香肠”。洞察来自 Harris Poll：75% 受访者厌烦政治广告，53% 厌倦每天想晚餐；品牌借此把被遗忘的晚餐使用场景重新提上议程。它还承诺向 Hunger Free America 捐 10 万美元，让挪用政治语法不止停在段子。",
+        "source": "Campaign US",
+        "link": "https://www.campaignlive.com/article/johnsonville-puts-sausage-dinner-ballot-ahead-midterm-elections/1969727",
+        "time": "2026-09-10"
+      },
+      {
+        "tag": "Poshmark × Nice&Frank",
+        "thumb": "",
+        "title": "Poshmark 在纽约时装周开“干洗店”，让二手衣试穿新自己",
+        "summary": "二手时尚平台 Poshmark 联手 Nice&Frank 发布迄今最大整合 campaign「Try Yourself On」，把衣柜定义为自我探索的入口，而非转售库存。影片以一套套衣服带人进入不同人格与场景，放大“下一件最爱可能已挂在别人衣柜里”的发现感。9 月 13 日还会把 SoHo 四代传承干洗店 Jeeves 改造成「Poshmark Dry Cleaners」互动体验，用 NYFW 的实体打卡把平台供给变成时尚文化现场。",
+        "source": "Muse by Clios",
+        "link": "https://musebyclios.com/fashion-and-beauty/poshmark-says-try-yourself-on-for-n-y-fashion-week",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "e.l.f. × 72andSunny",
+        "thumb": "",
+        "title": "e.l.f. 把妆底翻车拍成恐怖片，逃离“丑谷”",
+        "summary": "e.l.f. Cosmetics 与 72andSunny Amsterdam 将「uncanny valley」改写为「Unglammy Valley」，给 Soft Glam Satin Foundation 拍了一支美妆恐怖喜剧。Sara Waisglass 在空旷商场遭遇色号不对、起皮、斑驳等自己的“失败底妆分身”，把用户最熟悉却少被品牌直说的痛点做成怪诞场景。用惊悚类型片的视听去反衬自然妆效，既避开了传统功效演示，也为社媒切片提供了强钩子。",
+        "source": "LBBOnline",
+        "link": "https://lbbonline.com/news/Unglammy-Valley-elf-Cosmetics-Foundation",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "Desigual × PSG",
+        "thumb": "",
+        "title": "Desigual 让 Vivian Wilson 教机器人叛逆，结果它崩溃了",
+        "summary": "Desigual 秋季「Born to Disobey」由导演组合 PSG 操刀，找来 Vivian Wilson 与一台 Tesla Optimus 视觉化身 DESI 84 对戏。她不断教机器人做不在训练集里的事、甚至教它读品牌名；机器无法理解后撞墙、试图拆自己，反向证明“完美执行”不是创造力。作品把品牌长期的「no es lo mismo（不一样）」主张塞入 AI 焦虑的文化现场，用真人表演和后期机器人制造了足够尖锐的反自动化时尚寓言。",
+        "source": "LBBOnline",
+        "link": "https://lbbonline.com/news/Elon-Musks-Daughter-Vivian-Wilson-Takes-a-Stand-Against-Robots-in-Desigual-Autumn-2026-Campaign",
+        "time": "2026-09-03"
+      },
+      {
+        "tag": "Liquid Death × BARK",
+        "thumb": "",
+        "title": "Liquid Death 给狗造重金属导师，劝主人别再溺爱",
+        "summary": "Liquid Death 与宠物品牌 BARK 联手 Tombras、制作公司 Good Behavior，推出重金属羊头怪「Ram Chop」，反击把狗当婴儿精养的宠物文化。英雄片里，他把狗从绗缝外套等“可爱束缚”中解救出来，鼓励它们偷袜子、闻屁股、回归野性。两个反差感极强的品牌把联名做成可延展角色 IP，而非在包装上互贴 logo。",
+        "source": "Ads of the World",
+        "link": "https://www.adsoftheworld.com/campaigns/meet-ram-chop",
+        "time": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "id": "0911",
+    "date": "2026.09.11",
+    "weekday": "周五",
+    "items": [
+      {
+        "tag": "Duolingo",
+        "thumb": "assets/img/Hyjdy9jHuz.jpg",
+        "title": "Duolingo 进军纽约时装周，把 Hermès 读音印在衣服上",
+        "summary": "Duolingo 联手《Next in Fashion》选手 Megan O'Cain 推出「The Phonetic Collection」，把 Hermès、Jacquemus 等奢侈品牌名的音标拼写印上纽约时装周服装。品牌数据显示，62% 的人自信能读对这些名字，实际只有 15% 读对。campaign 还让用户以学习连胜天数为服装竞拍，把发音尴尬变成产品原生的玩笑。",
+        "source": "Marketing-Interactive",
+        "link": "https://www.marketing-interactive.com/can-t-pronounce-hermes-duolingo-has-something-you-can-wear",
+        "time": "2026-09-10"
+      },
+      {
+        "tag": "Tubi × Mischief",
+        "thumb": "assets/img/mqt4OBGcY1.png",
+        "title": "Tubi 首个全球campaign：任何情绪，免费来看",
+        "summary": "免费流媒体 Tubi 携手 Mischief 推出首个全球品牌campaign「Find Any Feeling For Free」，以九支荒诞短片对应从温柔到惊悚的各种情绪。片中人们为追逐某种感受不惜假死、深夜狂奔，最后都落回同一句「Or You Could Tubi」。campaign 还开通复古电话热线 TubiFone（1-833-605-TUBI），把「免费」从价格利益点转成情绪选择权。",
+        "source": "LBBOnline",
+        "link": "https://lbbonline.com/news/tubi-find-any-feeling-nicole-parlapiano-emotion-fakin-it-baby-bird-unhaunted-tubifone",
+        "time": "2026-09-10"
+      },
+      {
+        "tag": "Cadbury × LUAR",
+        "thumb": "assets/img/4AP4kkLr0h.jpg",
+        "title": "Cadbury 把 XL 巧克力棒做成水晶手拿包，登陆时装周",
+        "summary": "Cadbury 推出美国市场迄今规模最大的campaign「There's Magic in More」，为 XL 巧克力棒造势。品牌联名设计师 LUAR 打造镶水晶手拿包登陆纽约时装周，包袋专为容纳和分享 XL 巧克力棒设计，还内置保温层让巧克力随时保持最佳状态。",
+        "source": "PR Newswire",
+        "link": "https://www.prnewswire.com/news-releases/cadbury-brings-together-style-and-generosity-with-theres-magic-in-more-302875252.html",
+        "time": "2026-09-10"
+      },
+      {
+        "tag": "Whistles × Weirdo",
+        "thumb": "assets/img/6hZBOQ8mAg.jpg",
+        "title": "Whistles 50周年重塑：让50位真实顾客接管campaign",
+        "summary": "英国品牌 Whistles 以「Designed for an Open Mind」完成 50 周年品牌重塑，由 Weirdo 操刀。campaign 在街头投放游击式选角海报，从约 2000 名应聘者中选出 50 位 19-72 岁的真实顾客出镜 AW26 大片，取代职业模特，把「开放心态」的品牌主张落到具体的人身上。",
+        "source": "Creative Review",
+        "link": "https://www.creativereview.co.uk/whistles-identity-brand-platform-50-years",
+        "time": "2026-09-10"
+      },
+      {
+        "tag": "麦当劳 × TBWA\\NEBOKO",
+        "thumb": "assets/img/WACmQ52Pe9.jpg",
+        "title": "荷兰麦当劳只拍产品影子，你也能一眼认出",
+        "summary": "麦当劳荷兰携手 TBWA\\NEBOKO 推出极简户外campaign：薯条、开心乐园餐、麦旋风和麦乐鸡只以影子出现，没有色彩、产品细节和传统产品镜头。当影子就足够让人认出产品，品牌资产的深入人心被一次证明。数英评分 8.7。",
+        "source": "数英网",
+        "link": "https://www.digitaling.com/projects/377215.html",
+        "time": "2026-09-09"
+      },
+      {
+        "tag": "Snickers × BBDO",
+        "thumb": "assets/img/kAnGLfZiPO.png",
+        "title": "Snickers：AI 饿了也不是它自己",
+        "summary": "Snickers 把「饿了就不是你自己」的经典口号延伸到 AI 时代：AI 出现幻觉、胡乱附和，只是因为 AI 饿了。BBDO 操刀推出 Hungr.AI——号称全球第一根专为 AI 打造的数字巧克力棒，用户可从官网复制「投喂」给自己的 AI 助手。作品获 Muse by Clios 评为本周最佳广告。",
+        "source": "Muse by Clios",
+        "link": "https://musebyclios.com/advertising/snickers-says-even-ai-isnt-itself-when-its-hungry",
+        "time": "2026-09-04"
+      },
+      {
+        "tag": "香港旅游局",
+        "thumb": "assets/img/QGUFmiU8Zz.jpg",
+        "title": "香港旅游局新campaign：一座用来感受的城市",
+        "summary": "香港旅游局推出全新全球campaign「Only in Hong Kong」，取代此前的「Hello Hong Kong」，主张「A City Made to See. A City Made to Feel.」。campaign 抛开精修的目的地大片，从天星小轮、麻将桌、街坊社区到隐秘海滩，用日常质感呈现一座多维度的香港。",
+        "source": "GlobeNewswire",
+        "link": "https://finance.yahoo.com/media-advertising/articles/hong-kong-tourism-board-launches-192200725.html",
+        "time": "2026-09-09"
+      },
+      {
+        "tag": "Clash Royale × Supercell",
+        "thumb": "assets/img/IXJyFQRCyc.jpg",
+        "title": "皇室战争十周年：10487个真气球手拧定格动画",
+        "summary": "Clash Royale 十周年之际，Supercell 联手 Uncommon Stockholm 与 DAVID New York 做长期品牌建设，撕掉手游买量广告 playbook。「Copycats Welcome」向山寨游戏的玩家敞开怀抱，「Hero Balloon」影片则手工拧制 10487 个真实气球打造定格动画战场，用实体制作价值对抗廉价 AI 与 CGI。",
+        "source": "Creative Review",
+        "link": "https://www.creativereview.co.uk/clash-royale-comes-of-age",
+        "time": "2026-09-10"
+      },
+      {
+        "tag": "Geico",
+        "thumb": "assets/img/orHcjFRtg0.jpg",
+        "title": "Geico「Hump Day」骆驼13年后回归",
+        "summary": "NBC Sports 在周三 NFL 开赛宣传片中玩梗「Hump Day」，Geico 顺势复活 2013 年由 The Martin Agency 打造的骆驼病毒广告重新投放。一支 13 年前的老广告借新的文化时刻完成低成本、高共鸣的回归，示范了品牌资产长尾复利的打法。",
+        "source": "Ad Age",
+        "link": "https://adage.com/brand-marketing/aa-geico-hump-day-camel-nbc-sports-nfl-kickoff-2026",
+        "time": "2026-09-09"
+      },
+      {
+        "tag": "Levi's",
+        "thumb": "assets/img/3ePR56fWpv.jpg",
+        "title": "Levi's 印度第二章：万千方式，同一个原创",
+        "summary": "Levi's 全球campaign「Behind Every Original」在印度推出第二章「Many Ways, One Original」，全球品牌大使 Alia Bhatt 再度出镜。新章节以混带（mixtape）为灵感的品牌片强调：个性从不由单一版本定义，多种版型与单品的自由组合，才是原创精神的多种表达。",
+        "source": "ET BrandEquity",
+        "link": "https://brandequity.economictimes.indiatimes.com/news/marketing/levis-launches-campaign-many-ways-one-original-ft-alia-bhatt/133706478",
+        "time": "2026-09-09"
+      },
+      {
+        "tag": "Durex",
+        "thumb": "assets/img/0XA3xb1Dp6.png",
+        "title": "Durex 推出西地那非，把ED从「老年病」叙事里拽出来",
+        "summary": "Durex 母公司 Reckitt 在英国推出 50mg 西地那非 ED 治疗药物，把品牌带入比避孕套更医疗化的领域。Reckitt 研究显示，1/5 英国男性至少偶尔经历勃起问题，其中 40% 未做任何治疗；30-39 岁人群中 11% 有症状，压力、表现焦虑、生活方式与心理健康是常见诱因。品牌借此打破「ED 是老年人问题」的刻板印象，让年轻男性更自然地寻求帮助。",
+        "source": "LBBOnline",
+        "link": "https://lbbonline.com/news/The-Hard-Sell-How-Durex-Is-Reframing-Erectile-Dysfunction",
+        "time": "2026-09-09"
+      },
+      {
+        "tag": "Johnsonville",
+        "thumb": "assets/img/fiUkCZuRUG.webp",
+        "title": "Johnsonville让香肠「竞选晚餐」，借政治广告噪音反向抢注意力",
+        "summary": "在美国中期选举广告密集来临前，Johnsonville推出「Sausage for Dinner 2026」，用竞选语言、庭院牌与户外广告为香肠拉票。作品以「每个空气炸锅里都该有一根香肠」等政治口号变体，连接平价晚餐与反饥饿募款。",
+        "source": "Marketing Dive",
+        "link": "https://www.marketingdive.com/news/johnsonville-puts-sausage-on-the-ballot-to-cut-through-election-ads/829950",
+        "time": "2026-09-10"
+      },
+      {
+        "tag": "KFC Australia × Special",
+        "thumb": "assets/img/LC1spb2bZl.jpg",
+        "title": "KFC把「Picklecore」酸黄瓜热潮扩写成整套品牌语境",
+        "summary": "KFC澳大利亚推出Picklecore限时菜单，并由Special将产品热潮延展为完整品牌campaign。除汉堡、薯条与炸酸黄瓜外，创意还抛出可自行调配腌黄瓜汁的Pickle Pepsi，以极端产品设定放大社媒讨论度。",
+        "source": "campaignbrief.com",
+        "link": "https://campaignbrief.com/kfc-taps-into-pickle-obsession-with-new-picklecore-brand-campaign-via-special",
+        "time": "2026-09-11"
+      },
+      {
+        "tag": "AdPower × Global",
+        "thumb": "assets/img/F2M57SwiKB.png",
+        "title": "AdPower给100个品牌写「广告牌情书」，把户外媒体推介做成一对一创意",
+        "summary": "Global旗下AdPower向潜在品牌主寄出用打字机完成的个性化「情书」，以暧昧语气邀请它们尝试广告牌媒介。B2B媒介营销不再只讲覆盖率，而以定制化文案先示范户外广告的创意亲和力。",
+        "source": "LBBOnline",
+        "link": "https://lbbonline.com/news/adpower-swipes-right-on-ambitious-brands-with-personalised-billboard-love-letters",
+        "time": "2026-09-10"
+      }
+    ]
+  },
+  {
+    "id": "0910",
+    "date": "2026.09.10",
+    "weekday": "周四",
+    "items": [
+      {
+        "tag": "IKEA × Droga5",
+        "thumb": "assets/img/sPWlCps6IA.jpg",
+        "title": "IKEA×Droga5推出\"Reverse Shop\"反向广告，连热狗都变成\"DOG HOT\"",
+        "summary": "宜家沙特为推广回购服务，与Droga5 London合作推出\"Reverse Shop\"campaign，整个广告从文案到画面全部反向播放，连标志性热狗都变成\"DOG HOT\"。创意核心是\"你卖，宜家买\"——购物的反向，用极致的视觉反转让回购服务一目了然。",
+        "source": "Creative Salon",
+        "link": "https://creative.salon/articles/work/droga5-ikea-reverse-shop",
+        "time": "2026-09-09"
+      },
+      {
+        "tag": "Boots",
+        "thumb": "assets/img/0jUiKUCIkf.jpg",
+        "title": "Boots发布新品牌平台\"Give it Some Boots\"，庆祝人生\"brutiful\"时刻",
+        "summary": "英国药妆连锁Boots推出全新品牌平台\"Give it Some Boots\"，提出\"brutiful\"（beautiful+brutal）概念，从白发到潮热，展现人生每个阶段的真实时刻。campaign覆盖TV、影院、数字户外、社媒和店内，标志着Boots从品类营销转向以消费者需求为中心的品牌叙事。",
+        "source": "Boots UK",
+        "link": "https://www.boots-uk.com/newsroom/news-item/boots-launches-new-brand-platform-give-it-some-boots-with-high-impact-campaign/",
+        "time": "2026-09-09"
+      },
+      {
+        "tag": "Dunkin' × Spice Girls",
+        "thumb": "assets/img/gWvMZBOIFj.jpg",
+        "title": "Dunkin'联手Spice Girls两位成员，虚构\"第六位成员Pumpkin Spice\"",
+        "summary": "Dunkin'秋季南瓜香料拿铁campaign请来Baby Spice和Ginger Spice重聚，由喜剧演员Rachel Dratch扮演被遗忘的\"第六位成员\"Pumpkin Spice。短片用怀旧流行文化梗讲述Pumpkin Spice离开乐坛专注拿铁事业的故事，配合免费拿铁促销活动，将季节性产品变成文化事件。",
+        "source": "QSR Web",
+        "link": "https://www.qsrweb.com/news/dunkin-reunites-spice-girls-for-new-pumpkin-spice-launch/",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "Autodesk × Giant Spoon",
+        "thumb": "assets/img/S638E56QNL.jpg",
+        "title": "Autodesk发布全球品牌campaign，致敬近3亿\"设计与制造者\"",
+        "summary": "Autodesk推出\"The World Is Yours for the Making\"全球品牌campaign，与创意机构Giant Spoon合作，由导演Salomon Ligthelm执导。campaign致敬全球近3亿设计、制造和运营者，展现他们如何用Autodesk技术塑造我们生活的世界，标志着Autodesk从工具品牌向平台品牌的升级。",
+        "source": "PR Newswire",
+        "link": "https://kessler-prod.reta52d8.eas.morningstar.com/news/pr-newswire/20260909sf43272/autodesk-unveils-brand-campaign-putting-the-people-who-design-and-make-the-digital-and-physical-world-in-the-spotlight",
+        "time": "2026-09-09"
+      },
+      {
+        "tag": "芬必得 线下创意",
+        "thumb": "assets/img/7nEc8atiFQ.jpg",
+        "title": "芬必得把世界名画搬进地铁站，蒙娜丽莎牙痛、沉思者关节炎",
+        "summary": "芬必得在北京国贸和上海人民广场地铁站打造\"金芬必得艺术长廊\"，将《蒙娜丽莎》《戴珍珠耳环的少女》《掷铁饼者》《倒牛奶的女仆》《沉思者》五幅名画改编为\"疼痛版\"。左侧\"崩坏瞬间\"与右侧\"服药还原\"形成强烈反差，用艺术化幽默消解消费者对止痛药广告的抵触。",
+        "source": "数英网",
+        "link": "https://m.digitaling.com/projects/376991.html",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "Samsung × Crispin",
+        "thumb": "assets/img/QVsB2y3lJC.jpg",
+        "title": "Samsung推出\"Be More You\"campaign，在AI时代捍卫人文创造力",
+        "summary": "三星与创意机构Crispin合作推出\"Be More You\"全球campaign，在AI逐渐渗透创意行业的背景下，主张AI不应让人远离真实，而应解放人类时间去做真正属于人的体验——创造、连接和表达。campaign用电影化叙事展现AI作为工具如何放大而非替代人类创造力。",
+        "source": "MediaMarketing",
+        "link": "https://mediamarketing.ma/article/AFPBEDDC/samsung_mise",
+        "time": "2026-09-09"
+      },
+      {
+        "tag": "Lucid Motors × BarkleyOKRP",
+        "thumb": "assets/img/bG80mVt1jV.jpg",
+        "title": "Lucid Motors反套路SUV广告：不测试车，测试家庭",
+        "summary": "Lucid Motors为Gravity电动SUV推出全球campaign\"The Test\"，与独立机构BarkleyOKRP合作，由导演Niclas Larsson执导。一反SUV广告\"测试车辆性能\"的套路，短片将一个疏离的家庭放进未来感Lucid设施中进行\"评估\"，随着在车内相处时间增加，家庭成员关系逐渐变得紧密。",
+        "source": "Ad Age",
+        "link": "https://adage.com/creativity/work/aa-lucid-motors-test-drive-your-family/",
+        "time": "2026-09-03"
+      },
+      {
+        "tag": "Comic Relief × Quality Meats",
+        "thumb": "assets/img/LursQlZ7jR.jpg",
+        "title": "Comic Relief用荒诞讽刺拍儿童贫困公益广告，\"这不是我的问题\"",
+        "summary": "英国慈善机构Comic Relief与美国创意机构Quality Meats合作推出\"Not Our Problem\"全国campaign，用黑色幽默讽刺公众对儿童贫困的\"旁观者效应\"。短片中普通人理直气壮地解释为什么儿童贫困\"不是自己的责任\"，配合户外广告，用uncomfortable humor逼观众直面自己的冷漠。",
+        "source": "Creative Review",
+        "link": "https://www.creativereview.co.uk/comic-relief-satirises-our-indifference-to-childhood-poverty-in-new-campaign/",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "SAL 新加坡法律学院",
+        "thumb": "assets/img/ZyVaQtVRRt.jpg",
+        "title": "新加坡法律学院用幽默拍遗嘱规划广告，\"最后的签名\"",
+        "summary": "新加坡法律学院（SAL）推出\"The Last Sign\"公众教育campaign，用幽默手法tackle遗嘱规划这个令人不适的话题。短片强调提前做好安排的重要性，让亲人在需要时能找到遗嘱。campaign同时推出Wills Repository Service，允许个人通过参与律所安全存储遗嘱数字副本。",
+        "source": "MARKETECH APAC",
+        "link": "https://marketech-apac.com/sal-uses-humour-in-the-last-sign-campaign-to-make-will-planning-impossible-to-ignore/",
+        "time": "2026-09-09"
+      },
+      {
+        "tag": "IKEA Singapore × Volvo",
+        "thumb": "assets/img/4JahLVN9Wi.jpg",
+        "title": "宜家新加坡跨界健身，把收纳家具变成健身器材\"HEJ-FIT挑战\"",
+        "summary": "宜家新加坡推出\"Make space for what you love\"campaign，与Volvo合作打造首个\"HEJ-FIT challenge\"功能性健身比赛，把日常家居产品变成健身器材。活动将于9月19-20日在宜家淡滨尼店举行，将家具收纳的\"整理压力测试\"转化为趣味健身挑战，是品牌用体验营销重新定义\"家居\"概念的创新尝试。",
+        "source": "Marketing-Interactive",
+        "link": "https://www.marketing-interactive.com/ikea-makes-room-for-gains-with-first-fitness-challenge",
+        "time": "2026-09-09"
+      }
+    ]
+  },
+  {
+    "id": "0909",
+    "date": "2026.09.09",
+    "weekday": "周三",
+    "items": [
+      {
+        "tag": "Red Bull × 马德里地铁",
+        "thumb": "assets/img/6zB0i7lTUm.jpg",
+        "title": "Red Bull把F1赛车开上马德里地铁轨道，城市空间极限品牌体验",
+        "summary": "Red Bull在马德里开展了一场疯狂的城市营销：把RB8 F1赛车直接开上马德里地铁轨道，让赛车在地铁隧道中穿行，以MadRing赛道与地铁网络的连接为核心打造品牌体验，形成强烈的视觉冲击和话题性。",
+        "source": "B&amp;T / El Publicista",
+        "link": "https://www.bandt.com.au/red-bulls-f1-car-put-on-the-train-tracks-in-surreal-madrid-stunt/",
+        "time": "2026-09-09"
+      },
+      {
+        "tag": "De'Longhi × Brad Pitt",
+        "thumb": "assets/img/DDKmHDkQsV.jpg",
+        "title": "De'Longhi × Brad Pitt × Spike Jonze：影帝与16只狗狗室友的喜剧广告",
+        "summary": "德龙（De'Longhi）新广告请来Brad Pitt出演，由Spike Jonze执导、LOLA Madrid制作。短片中Pitt被16只狗狗室友不断打断，喜剧感十足，用\"被毛孩子包围的生活\"传递咖啡机融入日常的陪伴感。",
+        "source": "Ad Age",
+        "link": "https://adage.com/creativity/work/aa-delonghi-hot-or-cold-always-perfetto/",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "Guinness LoVely",
+        "thumb": "assets/img/AtIXIIuu5L.jpg",
+        "title": "Guinness把竖琴logo变成\"V\"字母，激活90年老签名",
+        "summary": "Guinness推出新campaign「LoVely」，由AMV BBDO操刀，将品牌标志性的竖琴图形转化为\"LoVely\"一词中的\"V\"字母，以户外广告为主阵地重新演绎品牌最经典资产，是经典品牌资产创意活化的标杆案例。",
+        "source": "Creapills",
+        "link": "https://creapills.com/guinness-lovely-harpe-amv-bbdo-20260908",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "ChatGPT 教师节",
+        "thumb": "assets/img/QtIneUVuSk.jpg",
+        "title": "ChatGPT教师节campaign：提醒老师们\"AI写的作业我一眼就看得出来\"",
+        "summary": "教师节之际，ChatGPT推出一支应景campaign，幽默地提醒老师AI生成的作业一眼就能识别，以老师的视角切入AI话题，用轻松方式消解教育领域对AI的普遍焦虑，是AI品牌\"幽默共情\"式沟通的巧妙示范。",
+        "source": "Creapills",
+        "link": "https://creapills.com/chatgpt-fete-professeurs-devoirs-ia-20260908",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "CIMB Moving You Forward",
+        "thumb": "assets/img/a9sBHYOVDL.jpg",
+        "title": "CIMB银行用\"红色=前进\"重新定义品牌色，东盟五国同步campaign",
+        "summary": "马来西亚CIMB银行推出东盟范围品牌campaign「Moving You Forward」，由Chariot Agency操刀，把\"红色代表停止\"的普遍认知反转定义为\"红色=勇气、野心与前进\"，将品牌标志性红色从视觉资产升维为品牌精神符号。",
+        "source": "MARKETECH APAC",
+        "link": "https://marketech-apac.com/cimb-malaysia-turns-red-into-go-with-new-asean-wide-moving-you-forward-campaign-via-chariot/",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "Maybelline Instant Eraser",
+        "thumb": "assets/img/GKw6UKswlM.jpg",
+        "title": "Maybelline为Instant Eraser遮瑕膏发起全球\"社交优先\"campaign",
+        "summary": "美宝莲为经典产品Instant Eraser遮瑕膏推出全球社交优先（social-first）campaign，用\"日常生活的真实瞬间\"重新演绎这款品类定义级产品，把遮瑕膏从\"完美妆容工具\"重塑为日常生活的真实陪伴。",
+        "source": "Marketing Communication News",
+        "link": "https://marcommnews.com/maybelline-launches-global-social-first-campaign-for-instant-eraser/",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "金瞳奖 · 赵丽颖《小城大事》",
+        "thumb": "assets/img/OARdCMGyd9.jpg",
+        "title": "2026金瞳奖落幕：赵丽颖《小城大事》三奖、成毅《赴山海》双奖出圈",
+        "summary": "\"国内广告行业风向标\"金瞳奖落幕，剧集营销成最大赢家：赵丽颖《小城大事》拿下最具商业价值、最佳传播效果、剧集类三项铜奖，成毅《赴山海》获最佳传播效果银奖和最具商业价值铜奖，折射内容营销与电商深度绑定趋势。",
+        "source": "今日头条",
+        "link": "http://m.toutiao.com/group/7683292169926476332/",
+        "time": "2026-09-09"
+      },
+      {
+        "tag": "Gucci × Kate Moss",
+        "thumb": "assets/img/uUJKLFzyCl.png",
+        "title": "Gucci春季campaign由Kate Moss出演：\"And We Shall Dance Again\"",
+        "summary": "Gucci发布2026春季系列campaign，由超模Kate Moss出演，主题「And We Shall Dance Again」，延续近期复古浪漫美学，用舞蹈意象传递春季系列的轻盈与活力，在创意总监交接期用标志性面孔重建品牌形象。",
+        "source": "Brand News",
+        "link": "https://theimpression.com/gucci-the-primavera-2026-ad-campaign-review/",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "Madrid Beats",
+        "thumb": "assets/img/YcP75BoaqI.jpg",
+        "title": "马德里推出\"Madrid Beats\"高价值旅游campaign，Havas操刀覆盖13国30城",
+        "summary": "马德里推出全新旅游campaign「Madrid Beats」，由Havas打造，旨在吸引高价值游客，覆盖13个国家30座城市，预计累计触达超2.87亿次曝光，显示城市旅游营销正从\"拼景点\"转向\"拼品牌资产\"。",
+        "source": "Brand News",
+        "link": "https://www.brandinginasia.com/madrid-beats-campaign-launches-across-13-countries/",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "Dyson 首款牙刷",
+        "thumb": "assets/img/OBh1NtsrZa.jpg",
+        "title": "戴森终于对牙刷下手：口腔护理界的\"奢侈品\"来了",
+        "summary": "戴森（Dyson）推出全新牙刷产品，延续\"重新定义品类\"的产品营销逻辑，把工业设计与工程创新延伸至口腔护理赛道。这是家电品牌向个护领域横向扩张的重要信号。",
+        "source": "SocialBeta",
+        "link": "https://www.dezeen.com/2026/09/01/dyson-camerajet-first-toothbrush-floss/",
+        "time": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "id": "0908",
+    "date": "2026.09.08",
+    "weekday": "周二",
+    "items": [
+      {
+        "tag": "Adidas 单只鞋",
+        "thumb": "assets/img/pJXQevVRmL.jpg",
+        "title": "阿迪达斯\"单只鞋\"广告选用前以军士兵引全球抵制，品牌致歉",
+        "summary": "阿迪达斯在以色列推出面向截肢运动员的\"单只鞋\"（Single Shoe）销售服务，因在宣传中选用2021年在加沙受伤的前以色列士兵沙莱夫·比顿，引发亲巴勒斯坦活动人士强烈批评和全球抵制呼声。阿迪达斯于9月7日发表声明致歉，强调该campaign仅用于以色列本地，并非全球营销活动的一部分。",
+        "source": "环球时报 / The New Arab",
+        "link": "https://hqtime.huanqiu.com/share/article/4T7Q7ontokR",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "Samsung Z Fold 8",
+        "thumb": "assets/img/6iFHRkGhWB.jpg",
+        "title": "三星开启折叠屏全球广告攻势，Z Fold 8亮相6大国际地标",
+        "summary": "三星电子以\"Welcome to Foldables\"为主题推进全球数字户外广告活动，重点展示Galaxy Z Fold 8系列，9月2日率先在首尔光化门启动，随后在东京涩谷等全球6大地标同步亮相，是折叠屏品类迄今规模最大的全球户外campaign。",
+        "source": "CNMO科技 / 今日头条",
+        "link": "http://m.toutiao.com/group/7682969557400601122/",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "GUCCI × TOD'S × 肖战",
+        "thumb": "assets/img/FR9h24V4K4.jpg",
+        "title": "GUCCI和TOD'S同天官宣肖战全球广告，两大意大利奢牌为同一人同日发布",
+        "summary": "GUCCI与TOD'S两大意大利顶级奢侈品牌，把2026秋冬全球广告发布选在了同一天，都为肖战。GUCCI方面这是创意总监Demna上任后第一季时装秀广告，两大奢牌同日为同一中国代言人发布全球广告，折射中国明星在全球奢侈品营销中日益核心的地位。",
+        "source": "东街娱乐 / 今日头条",
+        "link": "http://m.toutiao.com/group/7682931178625614375/",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "Jo Malone 宠物沐浴露",
+        "thumb": "assets/img/VINGOCgd32.png",
+        "title": "祖·玛珑×WildWash推出宠物沐浴露，Tom Hardy出镜为法斗Blue洗澡",
+        "summary": "Jo Malone London首次跨界宠物护理领域，与英国天然宠物护理品牌WildWash合作推出柑橘与雪松宠物沐浴露。品牌大使Tom Hardy出镜广告大片，亲自为他的法国斗牛犬Blue洗澡，是高端香氛品牌跨界宠物经济的标杆案例。",
+        "source": "SocialBeta / 凤凰网时尚",
+        "link": "https://socialbeta.com/campaign/28447",
+        "time": "2026-09-07"
+      },
+      {
+        "tag": "AXA Improbable Risks",
+        "thumb": "assets/img/m66XZPBF02.jpg",
+        "title": "AXA推出多国健康campaign\"Improbable Risks\"，Publicis Conseil操刀",
+        "summary": "安盛（AXA）携手Publicis Conseil推出多国健康campaign「Improbable Risks」，聚焦人们担心的\"小概率事件\"，提醒人们关注真正重要的健康问题，是保险品牌从\"恐惧营销\"转向\"生活关怀\"叙事的又一次尝试。",
+        "source": "Publicis Groupe France",
+        "link": "https://france.publicisgroupe.com/axas-new-health-campaign-improbable-risks-reminds-us-to-take-care-of-what-truly-matters/?lang=fr",
+        "time": "2026-09-07"
+      },
+      {
+        "tag": "Samsung Mírame",
+        "thumb": "assets/img/UVTJJliA1v.jpg",
+        "title": "三星Galaxy推出社交恐怖系列\"Mírame\"，把手机产品融入剧情",
+        "summary": "三星在西班牙等市场的社交平台推出恐怖系列短剧「Mírame」（看着我），全部用Galaxy手机拍摄，并把产品功能自然融入恐怖剧情中，是手机品牌从\"参数展示\"转向\"内容植入\"的社交营销创新。",
+        "source": "Dircomfidencial / El Publicista",
+        "link": "https://news.samsung.com/es/samsung-lleva-el-terror-a-sus-redes-con-mirame-una-serie-rodada-con-galaxy-que-convierte-el-producto-en-parte-de-la-trama",
+        "time": "2026-09-07"
+      },
+      {
+        "tag": "Nucleus Genomics",
+        "thumb": "assets/img/C7Zy2FQECo.jpg",
+        "title": "Nucleus Genomics\"Have Your Best Baby\"争议广告回归，十多位IVF医生出镜5城户外",
+        "summary": "基因检测公司Nucleus Genomics的争议性广告「Have Your Best Baby」回归，邀请十多位IVF医生出现在五个城市的户外广告中。该广告因涉及胚胎筛选和\"设计婴儿\"的伦理争议，去年曾引发生物伦理界激烈辩论，今年扩大多城并加入医生背书。",
+        "source": "Ad Age",
+        "link": "https://adage.com/creativity/work/aa-nucleus-genomics-have-your-best-baby-ivf-doctors/",
+        "time": "2026-09-07"
+      },
+      {
+        "tag": "Saatchi & Saatchi India",
+        "thumb": "assets/img/xBJpUnytYa.jpg",
+        "title": "Mayuresh Dubhashi回归阳狮集团，出任Saatchi &amp; Saatchi印度首席创意官",
+        "summary": "阳狮集团宣布Mayuresh Dubhashi回归，出任Saatchi &amp; Saatchi印度首席创意官（CCO）。Dubhashi此前在FCB Neo India担任CCO，这一人事变动是阳狮强化印度市场创意领导团队的重要布局。",
+        "source": "Campaign India",
+        "link": "https://www.campaignindia.in/article/mayuresh-dubhashi-returns-to-publicis-groupe-as-cco-for-saatchi-saatchi-india/4v3aec3w3j0sj5w0mx654h9emx",
+        "time": "2026-09-07"
+      },
+      {
+        "tag": "ALO × JISOO",
+        "thumb": "assets/img/nKfTbNDNkY.webp",
+        "title": "ALO×金智秀JISOO发布秋季大片，运动品牌持续时尚化升级",
+        "summary": "运动生活方式品牌ALO官宣全球品牌大使金智秀（JISOO）演绎2026秋季系列大片，以简约克制造型捕捉其专注从容状态，诠释Wellness理念。从lululemon到ALO，运动品牌持续通过时尚大片撕掉\"运动服\"标签。",
+        "source": "华丽志",
+        "link": "https://hypebae.com/2026/8/alo-jisoo-fall-campaign-pink-marshmallow-pilates-activewear-info-where-to-buy",
+        "time": "2026-09-08"
+      },
+      {
+        "tag": "Channel 4 Black in Business",
+        "thumb": "assets/img/yVagMHJ0qO.jpg",
+        "title": "Channel 4×Lloyds颁发Black in Business奖项，四位黑人创业者各获20万英镑广告时段",
+        "summary": "英国Channel 4与劳埃德银行（Lloyds）联合宣布第三届Black in Business计划的四位获奖者，每位将获得价值20万英镑的广告时段及商业支持包，是媒体平台践行社会责任、推动商业多样性的代表性项目。",
+        "source": "Ethical Marketing News",
+        "link": "https://ethicalmarketingnews.com/channel-4-and-lloyds-award-four-black-in-business-winners-200000-each-in-advertising-airtime",
+        "time": "2026-09-07"
+      }
+    ]
+  }
 ];
 
 function esc(s){ var d=document.createElement('div'); d.textContent=s||''; return d.innerHTML; }
