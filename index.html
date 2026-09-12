@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每周优秀创意广告案例合集 · CREATIVE AD CASES</title>
+<title>Daily全球创意资讯 × Daily优秀创意案例 · CREATIVE AD CASES</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Serif+SC:wght@700;900&display=swap');
   
@@ -876,13 +876,13 @@
     <span class="line-yellow">AD CASES</span><br>
     <span class="line-mint">合集</span>
   </h1>
-  <div class="kicker">WEEKLY CREATIVE AD CASES · 每周创意广告案例</div>
+  <div class="kicker">DAILY GLOBAL CREATIVE × DAILY CREATIVE CASES · Daily全球创意资讯 × Daily优秀创意案例</div>
 </header>
 
 <!-- ===== 板块切换导航 ===== -->
 <nav class="section-tabs">
-  <button class="section-tab daily active" onclick="showSection('daily')">DAILY · 每日创意资讯</button>
-  <button class="section-tab weekly" onclick="showSection('weekly')">WEEKLY · 每周优秀案例</button>
+  <button class="section-tab daily active" onclick="showSection('daily')">DAILY · 全球创意资讯</button>
+  <button class="section-tab weekly" onclick="showSection('weekly')">DAILY · 优秀创意案例</button>
 </nav>
 
 <!-- ===== 每日创意资讯板块 ===== -->
@@ -1653,7 +1653,7 @@
 
 <!-- ===== 页脚 ===== -->
 <footer class="footer">
-  <div class="brand">CREATIVE AD · 每日创意资讯 × 每周优秀案例</div>
+  <div class="brand">CREATIVE AD · Daily全球创意资讯 × Daily优秀创意案例</div>
   <p style="margin-top: 14px; font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', serif; font-weight: 100; letter-spacing: 0.55em; font-size: 10px; color: #F0E6C8; text-indent: 0.55em;">DESIGN BY SILVIA.HE</p>
 </footer>
 
@@ -2293,7 +2293,7 @@ function renderDaily(){
         '<a class="news-link" href="'+esc(it.link)+'" target="_blank">查看原文 ↗</a>' +
         '<span class="news-time">'+esc(it.time)+'</span></div></div>';
     }).join('');
-    panel.innerHTML = '<div class="daily-head"><h2>每日创意资讯 · '+day.date+'</h2><p>全球广告创意动态精选 '+day.items.length+' 条，按重要性从高到低排序</p></div><div class="news-list">'+cards+'</div>';
+    panel.innerHTML = '<div class="daily-head"><h2>全球创意资讯 · '+day.date+'</h2><p>全球广告创意动态精选 '+day.items.length+' 条，按重要性从高到低排序</p></div><div class="news-list">'+cards+'</div>';
     wrap.appendChild(panel);
   });
 }
