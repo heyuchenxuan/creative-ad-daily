@@ -95,6 +95,7 @@
   .masthead h1 .line-mint { 
     color: #fff;
     font-size: 42px;
+    letter-spacing: 0.12em;
   }
   .masthead .kicker {
     font-size: 11px;
@@ -859,7 +860,10 @@
   @media (max-width: 768px) {
     .masthead h1 { font-size: 36px; }
     .masthead h1 .line-yellow { font-size: 30px; }
-    .masthead h1 .line-mint { font-size: 28px; }
+    .masthead h1 .line-mint { font-size: 28px; letter-spacing: 0.1em; }
+    .section-tabs { padding: 10px 12px; gap: 8px; flex-wrap: nowrap; }
+    .section-tab { flex: 1 1 0; min-width: 0; padding: 8px 6px; font-size: 12px; letter-spacing: 0; white-space: nowrap; border-width: 2px; }
+    .section-tab.active { box-shadow: 3px 3px 0 var(--yellow); }
     .case-num { font-size: 56px; }
     .case-title-block h2 { font-size: 28px; }
     .analysis-grid { grid-template-columns: 1fr; }
@@ -879,13 +883,13 @@
     <span class="line-yellow">CASE INSPIRATION</span><br>
     <span class="line-mint">灵感脑洞挖掘机</span>
   </h1>
-  <div class="kicker">DAILY GLOBAL CREATIVE × DAILY CREATIVE CASES · Daily全球创意资讯 × Daily优秀创意案例</div>
+  <div class="kicker">DAILY GLOBAL CREATIVE × DAILY CREATIVE CASES · 全球创意资讯 × 优秀创意案例</div>
 </header>
 
 <!-- ===== 板块切换导航 ===== -->
 <nav class="section-tabs">
-  <button class="section-tab daily active" onclick="showSection('daily')">DAILY · 全球创意资讯</button>
-  <button class="section-tab weekly" onclick="showSection('weekly')">DAILY · 优秀创意案例</button>
+  <button class="section-tab daily active" onclick="showSection('daily')">全球创意资讯</button>
+  <button class="section-tab weekly" onclick="showSection('weekly')">优秀创意案例</button>
 </nav>
 
 <!-- ===== 每日创意资讯板块 ===== -->
