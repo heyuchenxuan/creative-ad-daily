@@ -61,6 +61,11 @@
   }
   
   /* ===== 顶部刊头 ===== */
+  @font-face {
+    font-family: "Xiangcui Dazijiti";
+    src: url("assets/fonts/Xiangcui-Dazijiti-W40.ttf") format("truetype");
+    font-display: swap;
+  }
   .masthead {
     position: relative;
     background-image: url('assets/img/MdAjSCOJsg.png');
@@ -76,26 +81,32 @@
     justify-content: flex-end;
   }
   .masthead h1 {
-    font-family: "Playfair Display", "Noto Serif SC", serif;
-    font-size: 56px;
-    font-weight: 900;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
     position: relative;
     z-index: 2;
+    color: #fff;
     text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.3);
   }
-  .masthead h1 .line-pink { 
+  .masthead h1 .line-pink {
+    font-family: "Xiangcui Dazijiti", "Noto Serif SC", serif;
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: 0.06em;
     color: #fff;
   }
-  .masthead h1 .line-yellow { 
+  .masthead h1 .line-yellow {
+    display: block;
+    margin-top: 12px;
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 0.96;
+    letter-spacing: 0.04em;
     color: #fff;
-    font-size: 46px;
   }
-  .masthead h1 .line-mint { 
-    color: #fff;
-    font-size: 42px;
-    letter-spacing: 0.12em;
+  .masthead h1 .line-mint {
+    display: none;
   }
   .masthead .kicker {
     font-size: 11px;
@@ -858,9 +869,10 @@
 
   /* ===== 响应式 ===== */
   @media (max-width: 768px) {
-    .masthead h1 { font-size: 36px; }
-    .masthead h1 .line-yellow { font-size: 30px; }
-    .masthead h1 .line-mint { font-size: 28px; letter-spacing: 0.1em; }
+    .masthead h1 { font-size: inherit; }
+    .masthead h1 .line-pink { font-size: 42px; letter-spacing: 0.04em; }
+    .masthead h1 .line-yellow { font-size: 21px; margin-top: 9px; letter-spacing: 0.03em; }
+    .masthead h1 .line-mint { display: none; }
     .section-tabs { padding: 10px 12px; gap: 8px; flex-wrap: nowrap; }
     .section-tab { flex: 1 1 0; min-width: 0; padding: 8px 6px; font-size: 12px; letter-spacing: 0; white-space: nowrap; border-width: 2px; }
     .section-tab.active { box-shadow: 3px 3px 0 var(--yellow); }
@@ -879,9 +891,9 @@
 <!-- ===== 顶部刊头 ===== -->
 <header class="masthead">
   <h1>
-    <span class="line-pink">CREATIVE AD</span><br>
-    <span class="line-yellow">CASE INSPIRATION</span><br>
-    <span class="line-mint">创意雷达 Creative Radar</span>
+    <span class="line-pink">创意雷达 Creative Radar</span>
+    <span class="line-yellow">CREATIVE AD<br>CASE INSPIRATION</span>
+    <span class="line-mint"></span>
   </h1>
   <div class="kicker">DAILY GLOBAL CREATIVE × DAILY CREATIVE CASES · 全球创意资讯 × 优秀创意案例</div>
 </header>
