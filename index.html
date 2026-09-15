@@ -1722,7 +1722,7 @@
   // 跨期案例跳转：issue=期数, num=案例序号（先切到对应期面板再滚动）
   function scrollToIssueCase(issue, num) {
     showIssue(issue);
-    var id = (issue === 1) ? 'issue1-case-' + num : ((issue === 3 || issue === 4) ? 'issue' + issue + '-case-' + num : 'case-' + num);
+    var id = (issue === 1 || issue === 3 || issue === 4 || issue === 5) ? 'issue' + issue + '-case-' + num : 'case-' + num);
     var el = document.getElementById(id);
     if (el) {
       setTimeout(function() {
@@ -1822,7 +1822,7 @@ const DAILY_DATA = [
     },
     {
       "tag": "Sonos",
-      "thumb": "",
+      "thumb": "assets/img/w4RtZ9aPqL.jpg",
       "title": "Sonos 用“Love the Sound. Feel the System”重述全屋声音的情绪价值",
       "summary": "Sonos 于9月14日发布全球品牌campaign“Love the Sound. Feel the System”，首批在美国、墨西哥上线，并在纽约进行重点户外投放。它没有把音箱当作单品卖点，而把整套系统放进厨房的快乐、卧室的亲密、客厅的震撼等居家情绪场景；手绘“dance card”式系统配置图、拼贴与手作笔触也成为整套视觉语言。对经历过产品与App争议的Sonos而言，这是一次把产品系统重新翻译为生活感受的品牌修复动作。",
       "source": "Sonos Newsroom",
@@ -1831,7 +1831,7 @@ const DAILY_DATA = [
     },
     {
       "tag": "KFC Australia",
-      "thumb": "",
+      "thumb": "assets/img/J8mK2sXvQe.webp",
       "title": "KFC 把限时酸黄瓜菜单做成虚构潮流“Picklecore”",
       "summary": "KFC 澳大利亚与 Special 为限时酸黄瓜菜单推出“Picklecore”，用“It’s not a garnish, it’s a lifestyle”把配菜包装成一种高时尚亚文化。15秒影片、户外预热、社媒与音频都沿用同一套绿色、科技感和荒诞时尚语法，酸黄瓜裤、口红和手表等虚构单品让消费者先加入玩笑，再回到汉堡、Frickles、薯条与腌黄瓜盐水 Pepsi Max。它是把短促新品窗口做成可参与文化事件的典型。",
       "source": "Mission Media / Special",
@@ -1840,7 +1840,7 @@ const DAILY_DATA = [
     },
     {
       "tag": "Burger King",
-      "thumb": "",
+      "thumb": "assets/img/b7Nq4LdVwC.png",
       "title": "汉堡王把鸡块做成“Le Nugguette”微型包，卡位时装月",
       "summary": "为新版鸡块与酱料上市，Burger King 联合 Mojo Supermarket 推出鸡块造型微型包“Le Nugguette”。产品以每日100只、共500只的限量线上 drop 发售：售价3.99美元，附四款酱料造型挂饰及四块鸡块兑换码。它把快餐新品转成时装月期间的可穿戴收藏品，用稀缺机制与社交话题替代传统新品广告的单向叫卖。",
       "source": "Rolling Out",
@@ -1849,7 +1849,7 @@ const DAILY_DATA = [
     },
     {
       "tag": "s.Oliver",
-      "thumb": "",
+      "thumb": "assets/img/S3yH8pKzRm.jpg",
       "title": "s.Oliver 让 Heidi Klum 与年轻时的自己同框，把AI服务于品牌传承",
       "summary": "德国时装品牌 s.Oliver 携手 Jung von Matt BEAUTY COLLECTIVE 推出国际campaign“CASUAL SINCE FOREVER”。影片让现在的 Heidi Klum 与年轻版本的自己相遇；AI并非炫技主体，而是将 Rankin 拍摄的静态影像延展成跨时代对话的技术手段。campaign 同步推出 Vintage Collection，把90年代运动风与当代服装连接起来，将“经典不等于怀旧”落到可购买、可传播的品牌叙事。",
       "source": "s.Oliver / adobo Magazine",
@@ -1858,7 +1858,7 @@ const DAILY_DATA = [
     },
     {
       "tag": "IHOP",
-      "thumb": "",
+      "thumb": "assets/img/I6fQ2cWnTe.webp",
       "title": "IHOP 把粉丝最想念的填充法式吐司拍成“平价奢华”",
       "summary": "IHOP 于9月14日在美国全国范围重新推出停卖六年的 Stuffed French Toast——品牌称这是社媒上呼声最高的回归单品。campaign“Fancy a French Toast?”用洛可可式华服与夸张仪式感，将早餐拍成不昂贵也能拥有的小奢侈；K-pop组合 KATSEYE 的“PINKY UP”进一步为影片注入当代流行文化。创意直接回应长期粉丝评论，把产品回归做成一次被消费者共同促成的庆祝。",
       "source": "Business Wire",
@@ -1867,7 +1867,7 @@ const DAILY_DATA = [
     },
     {
       "tag": "Boots",
-      "thumb": "",
+      "thumb": "assets/img/B9kL4mXsQa.jpg",
       "title": "Boots 用“brutiful”承接人生好坏时刻，启动全新品牌平台",
       "summary": "英国健康美容零售商 Boots 发布“Give it Some Boots”品牌平台，把 beautiful 与 brutal 合成“brutiful”，直面白发、潮热、疾病等人生中既美好又艰难的真实片段。WPP 整合团队为其建立新的品牌表达，覆盖电视、影院、数字户外、社媒、门店和线上；线下还让卡拉OK亭巡回英国，邀请公众唱出自己的故事。它把药房、健康、美妆与专业建议从品类清单收束为“在真实生活里给人底气”的单一承诺。",
       "source": "Boots Newsroom",
