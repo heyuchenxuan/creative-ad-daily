@@ -1754,7 +1754,9 @@
   // 跨期案例跳转：issue=期数, num=案例序号（先切到对应期面板再滚动）
   function scrollToIssueCase(issue, num) {
     showIssue(issue);
-    var id = (issue === 1 || issue === 3 || issue === 4 || issue === 5) ? 'issue' + issue + '-case-' + num : 'case-' + num);
+    var id = 'issue' + issue + '-case-' + num;
+    // 兼容早期未使用期数前缀的旧面板。
+    if (!document.getElementById(id)) id = 'case-' + num;
     var el = document.getElementById(id);
     if (el) {
       setTimeout(function() {
