@@ -145,6 +145,8 @@
     color: var(--ink);
     margin-right: 8px;
   }
+  .issue-nav .archive-controls,
+  .issue-nav .archive-date-tabs { flex: 1 1 auto; }
   .issue-tab {
     padding: 8px 20px;
     background: var(--white);
@@ -901,7 +903,9 @@
     .section-tab { flex: 1 1 0; min-width: 0; padding: 8px 6px; font-size: 12px; letter-spacing: 0; white-space: nowrap; border-width: 2px; }
     .section-tab.active { box-shadow: 3px 3px 0 var(--yellow); }
     .daily-date-nav { padding: 14px 16px; align-items: flex-start; }
+    .issue-nav { padding: 14px 16px; align-items: flex-start; }
     .daily-date-nav .label { width: 100%; margin-right: 0; }
+    .issue-nav .label { width: 100%; margin-right: 0; }
     .archive-controls, .archive-date-tabs { width: 100%; }
     .archive-select { flex: 1 1 30%; min-width: 0; padding-left: 10px; font-size: 12px; }
     .case-num { font-size: 56px; }
@@ -952,20 +956,12 @@
 <!-- ===== 期数导航 ===== -->
 <nav class="issue-nav">
   <span class="label">ARCHIVE · 期数归档（从新到旧）</span>
-  <button class="issue-tab active" onclick="showIssue(13)">第013期 · 2026.09.23</button>
-  <button class="issue-tab" onclick="showIssue(14)">第014期 · 2026.09.24</button>
-  <button class="issue-tab" onclick="showIssue(12)">第012期 · 2026.09.22</button>
-  <button class="issue-tab" onclick="showIssue(11)">第011期 · 2026.09.21</button>
-  <button class="issue-tab" onclick="showIssue(10)">第010期 · 2026.09.20</button>
-  <button class="issue-tab" onclick="showIssue(9)">第009期 · 2026.09.19</button>
-  <button class="issue-tab" onclick="showIssue(8)">第008期 · 2026.09.18</button>
-  <button class="issue-tab" onclick="showIssue(7)">第007期 · 2026.09.16</button>
-  <button class="issue-tab" onclick="showIssue(6)">第006期 · 2026.09.15</button>
-  <button class="issue-tab" onclick="showIssue(5)">第005期 · 2026.09.14</button>
-  <button class="issue-tab" onclick="showIssue(4)">第004期 · 2026.09.11</button>
-  <button class="issue-tab" onclick="showIssue(3)">第003期 · 2026.09.10</button>
-  <button class="issue-tab" onclick="showIssue(2)">第002期 · 2026.09.04—09.10</button>
-  <button class="issue-tab" onclick="showIssue(1)">第001期 · 2026.08.27—09.03</button>
+  <div class="archive-controls" aria-label="按年、月、周筛选优秀创意案例期数">
+    <select class="archive-select" id="issue-year" aria-label="选择优秀案例年份"></select>
+    <select class="archive-select" id="issue-month" aria-label="选择优秀案例月份"></select>
+    <select class="archive-select" id="issue-week" aria-label="选择优秀案例周次"></select>
+  </div>
+  <div class="archive-date-tabs" id="issue-date-tabs" aria-label="所选周内优秀案例期数"></div>
 </nav>
 
 <div class="container">
@@ -1905,6 +1901,60 @@
       }, 60);
     }
   }
+  // 优秀案例期数归档：年 → 月 → 周 → 当周期数
+  var ISSUE_ARCHIVE = [
+    { num: 14, date: '2026.09.24' }, { num: 13, date: '2026.09.23' },
+    { num: 12, date: '2026.09.22' }, { num: 11, date: '2026.09.21' },
+    { num: 10, date: '2026.09.20' }, { num: 9, date: '2026.09.19' },
+    { num: 8, date: '2026.09.18' }, { num: 7, date: '2026.09.16' },
+    { num: 6, date: '2026.09.15' }, { num: 5, date: '2026.09.14' },
+    { num: 4, date: '2026.09.11' }, { num: 3, date: '2026.09.10' },
+    { num: 2, date: '2026.09.04' }, { num: 1, date: '2026.08.27' }
+  ];
+  function renderIssueDates() {
+    var year = document.getElementById('issue-year').value;
+    var month = document.getElementById('issue-month').value;
+    var week = document.getElementById('issue-week').value;
+    var tabs = document.getElementById('issue-date-tabs');
+    tabs.innerHTML = '';
+    ISSUE_ARCHIVE.filter(function(issue) {
+      return issue.date.slice(0,4) === year && issue.date.slice(5,7) === month && getWeekKey(issue.date) === week;
+    }).forEach(function(issue) {
+      var btn = document.createElement('button');
+      btn.className = 'issue-tab';
+      btn.textContent = '第' + String(issue.num).padStart(3, '0') + '期 · ' + issue.date;
+      btn.setAttribute('onclick', 'showIssue(' + issue.num + ')');
+      tabs.appendChild(btn);
+    });
+    var active = document.querySelector('.issue-panel.active');
+    var activeNum = active ? active.id.replace('issue-panel-', '') : '';
+    var activeTab = tabs.querySelector('[onclick="showIssue(' + activeNum + ')"]');
+    if (activeTab) activeTab.classList.add('active');
+    else if (tabs.firstElementChild) tabs.firstElementChild.click();
+  }
+  function renderIssueArchiveControls() {
+    var yearSelect = document.getElementById('issue-year');
+    var monthSelect = document.getElementById('issue-month');
+    var weekSelect = document.getElementById('issue-week');
+    var years = Array.from(new Set(ISSUE_ARCHIVE.map(function(i) { return i.date.slice(0,4); }))).sort().reverse();
+    years.forEach(function(year) { option(yearSelect, year, year + ' 年'); });
+    function updateMonths() {
+      var months = Array.from(new Set(ISSUE_ARCHIVE.filter(function(i) { return i.date.slice(0,4) === yearSelect.value; }).map(function(i) { return i.date.slice(5,7); }))).sort().reverse();
+      monthSelect.innerHTML = '';
+      months.forEach(function(month) { option(monthSelect, month, Number(month) + ' 月'); });
+      updateWeeks();
+    }
+    function updateWeeks() {
+      var weeks = Array.from(new Set(ISSUE_ARCHIVE.filter(function(i) { return i.date.slice(0,4) === yearSelect.value && i.date.slice(5,7) === monthSelect.value; }).map(function(i) { return getWeekKey(i.date); }))).sort().reverse();
+      weekSelect.innerHTML = '';
+      weeks.forEach(function(week) { option(weekSelect, week, '第 ' + Number(week.slice(-2)) + ' 周'); });
+      renderIssueDates();
+    }
+    yearSelect.addEventListener('change', updateMonths);
+    monthSelect.addEventListener('change', updateWeeks);
+    weekSelect.addEventListener('change', renderIssueDates);
+    updateMonths();
+  }
   function scrollToIssue(num) {
     showIssue(num);
   }
@@ -1948,6 +1998,112 @@
 // NEW_DAY_INSERT_POINT
 // ============================================================
 const DAILY_DATA = [
+{
+  "id": "0925",
+  "date": "2026.09.25",
+  "weekday": "周五",
+  "items": [
+    {
+      "tag": "M&M’s × BBDO Chicago",
+      "title": "M&M’s把糖果代言人塞进三种电视类型",
+      "summary": "“Screentime”让红黄巧克力豆进入犯罪惊悚、肥皂剧和真人秀等熟悉类型，用角色喜剧把品牌数十年的电视资产重新变成剧情。",
+      "source": "Campaign US",
+      "link": "https://www.campaignlive.com/article/m-ms-casts-its-spokescandies-tvs-familiar-genres/1970848",
+      "time": "2026-09-24",
+      "thumb": "assets/img/0925-01.jpg"
+    },
+    {
+      "tag": "McDonald’s × Leo UK",
+      "title": "麦当劳再劫全球菜单：让粉丝决定“偷”什么",
+      "summary": "“World Menu Heist”续作把社交聆听变成剧情机制：从八个国家挑出九款粉丝最想要的限定菜单，拍成一场环球菜单大盗行动。",
+      "source": "Famous Campaigns",
+      "link": "https://www.famouscampaigns.com/2026/09/mcdonalds-lets-fans-pick-the-targets-for-biggest-menu-heist-yet",
+      "time": "2026-09-24",
+      "thumb": "assets/img/0925-02.jpg"
+    },
+    {
+      "tag": "Orange × Publicis Conseil",
+      "title": "Orange把“连接更远”拍到月球上",
+      "summary": "宇航员在月面起舞，把网络覆盖与探索精神转化为超现实视觉隐喻；连接不是技术参数，而是让人随时进入自己的世界。",
+      "source": "Mediashotz",
+      "link": "https://mediashotz.co.uk/orange-shoots-for-the-moon-in-new-publicis-campaign",
+      "time": "2026-09-22",
+      "thumb": "assets/img/0925-03.jpg"
+    },
+    {
+      "tag": "Salomon × BBDO Paris",
+      "title": "Salomon用“Shaping New Futures”把创新变成文化引擎",
+      "summary": "全球品牌平台不再只讲装备性能，而是把创新写成塑造运动、风格与现代山地文化的持续动作，并融合真人、AI与后期构建想象世界。",
+      "source": "LBBOnline",
+      "link": "https://lbbonline.com/news/SALMON-Shaping-New-Futures-BBDO-Paris",
+      "time": "2026-09-24",
+      "thumb": "assets/img/0925-04.jpg"
+    },
+    {
+      "tag": "Too Good To Go × Grandi Stazioni Retail",
+      "title": "Too Good To Go把反浪费带进意大利车站",
+      "summary": "在14座意大利大型车站铺开OOH，把“拯救即将被浪费的食物”带到通勤者每天经过的公共空间，并连接到平台行动。",
+      "source": "Media Key",
+      "link": "https://mediakey.it/news/too-good-to-go-e-grandi-stazioni-retail-insieme-contro-lo-spreco-alimentare-nelle-stazioni-italiane",
+      "time": "2026-09-24",
+      "thumb": "assets/img/0925-05.jpg"
+    },
+    {
+      "tag": "UNIITE × Talon × Innocean × David&Goliath",
+      "title": "UNIITE用百万美元OOH把9/11纪念变成“为善行动”",
+      "summary": "公益纪念campaign获得超过100万美元捐赠户外媒体，以数字户外、时报广场默哀与社区行动把记忆转化为当下可参与的善意。",
+      "source": "Ads of the World",
+      "link": "https://www.adsoftheworld.com/campaigns/9-11-day",
+      "time": "2026-09-24",
+      "thumb": "assets/img/0925-06.jpg"
+    },
+    {
+      "tag": "KitKat",
+      "title": "KitKat把“休息”塞进通勤、运动和Netflix暂停键",
+      "summary": "新的“take a break”OOH与流媒体执行，把KitKat形状放进日常场景之间的短暂停顿，甚至进入Netflix暂停时刻，让品牌资产成为媒介入口。",
+      "source": "Famous Campaigns",
+      "link": "https://www.famouscampaigns.com/2026/03/kitkat-turns-the-everyday-dash-into-a-reminder-to-take-a-break",
+      "time": "2026-09-24",
+      "thumb": "assets/img/0925-07.jpg"
+    },
+    {
+      "tag": "Snapchat for Business × Loud! OOH",
+      "title": "Snapchat用四辆移动广告牌追着伦敦代理商投放",
+      "summary": "“Spend Smarter for Business”故意离开数字feed，四辆移动数字广告牌围绕伦敦主要代理公司移动，把B2B广告直接送到预算决策者门口。",
+      "source": "Atlas OOH",
+      "link": "https://atlas-ooh.com/blog/snapchat-spend-smarter-london-mobile-billboards",
+      "time": "2026-09-18",
+      "thumb": "assets/img/0925-08.jpg"
+    },
+    {
+      "tag": "Godrej Ninja",
+      "title": "Godrej Ninja让“超级狗狗”替宠物肠胃健康出场",
+      "summary": "TVC用超级英雄式宠物叙事，把益生菌与狗狗活力、家庭陪伴连接，避免只讲成分而是先讲宠物主人真正想要的快乐日常。",
+      "source": "Campaign India",
+      "link": "https://www.campaignindia.in/article/godrej-ninja-launches-super-dog-tvc-for-gut-health/4x8gh9a93b1a1renxdrzprdbwq",
+      "time": "2026-09-23",
+      "thumb": "assets/img/0925-09.jpg"
+    },
+    {
+      "tag": "Hamdard Safi × WPP Media",
+      "title": "Safi把传统草本护肤翻译成Z世代meme语境",
+      "summary": "Safi组合OOH、创作者、meme与数字传播，把“肌肤问题源于身体内部”的传统产品逻辑改写成年轻人愿意参与的文化对话。",
+      "source": "Adgully",
+      "link": "https://www.adgully.com/post/20434/hamdard-partners-with-wpp-media-for-safi-gen-z-campaign",
+      "time": "2026-09-23",
+      "thumb": "assets/img/0925-10.jpg"
+    },
+    {
+      "tag": "oOh!media Neon",
+      "title": "Neon与Lightbox合并，用霓虹灯把品牌整合做成城市事件",
+      "summary": "Neon在新西兰多个Panorama站点搭建LED霓虹装置和彩色长椅包装，让一次媒体品牌合并拥有可见、可拍、可分享的户外资产。",
+      "source": "The Times Australia",
+      "link": "https://thetimes.com.au/news/technology/5262-ooh-media-puts-neon-up-in-lights",
+      "time": "2026-09-23",
+      "thumb": "assets/img/0925-11.jpg"
+    }
+  ]
+},
 {
   "id": "0924",
   "date": "2026.09.24",
@@ -3853,6 +4009,7 @@ function renderDaily(){
 }
 renderDaily();
 renderArchiveControls();
+renderIssueArchiveControls();
 </script>
 
 </body>
