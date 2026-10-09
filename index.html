@@ -205,6 +205,45 @@
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 16px;
   }
+  /* 新版期数目录使用链接，保持与早期 .toc-card 一致的按钮式呈现。 */
+  .toc-grid > a {
+    display: block;
+    background: var(--white);
+    color: var(--ink);
+    text-decoration: none;
+    border: 3px solid var(--ink);
+    border-radius: 16px;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.45;
+    cursor: pointer;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .toc-grid > a::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 6px;
+    background: var(--pink);
+  }
+  .toc-grid > a:nth-child(2)::before { background: var(--orange); }
+  .toc-grid > a:nth-child(3)::before { background: var(--yellow); }
+  .toc-grid > a:nth-child(4)::before { background: var(--mint); }
+  .toc-grid > a:nth-child(5)::before { background: var(--blue); }
+  .toc-grid > a:nth-child(6)::before { background: var(--purple); }
+  .toc-grid > a:nth-child(7)::before { background: var(--coral); }
+  .toc-grid > a:hover {
+    color: var(--ink);
+    transform: translateY(-4px) rotate(-1deg);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .toc-grid > a:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 3px;
+  }
   .toc-card {
     background: var(--white);
     border: 3px solid var(--ink);
@@ -315,6 +354,20 @@
   .meta-tag.type { background: var(--pink); color: white; }
   .meta-tag.date { background: var(--blue); color: white; }
   .meta-tag.score { background: var(--purple); color: white; }
+  .case-desc {
+    margin: 0 0 24px;
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .case-desc p {
+    margin: 0;
+  }
+  .case-desc p + p {
+    margin-top: 18px;
+  }
+  .case-desc .case-takeaway {
+    margin-top: 18px;
+  }
   
   /* ===== 图片画廊（完整不裁剪）===== */
   .gallery {
@@ -988,7 +1041,7 @@
 <div class="issue-panel active" id="issue-panel-25">
 <section class="toc-section" id="issue-25" style="scroll-margin-top: 90px;"><h2 class="toc-title">第025期收录 · 国内优秀创意案例 · 2026.10.08</h2><div class="toc-grid"><a href="#issue25-case-1">01 茉莉奶白 × 观园吉「东方观园」</a><a href="#issue25-case-2">02 拍立得 × 小玉全球首店</a><a href="#issue25-case-3">03 书亦烧仙草 × 大耳朵图图「一起快乐秋游」</a></div></section>
 <section class="case-section" id="issue25-case-1"><div class="case-header"><div class="case-num">01</div><div class="case-title-block"><h2>茉莉奶白 × 观园吉再造「东方观园」：把园林从视觉风格变成可感知的生活方式</h2><div class="subtitle">国内优秀创意案例 · 2026-10-05</div></div></div><div class="case-meta"><span class="meta-tag brand">品牌：茉莉奶白 × 观园吉</span><span class="meta-tag agency">创意代理：未披露</span><span class="meta-tag type">类型：产品创新 / 联名体验 / 公益营销</span><span class="meta-tag date">发布：2026-10-05</span><span class="meta-tag score">来源：SocialBeta</span></div><div class="case-desc"><p><b>INSIGHT：</b>新中式不应只停留在杯身插画；东方园林的核心魅力还可以通过空间、器物、香气和公共文化行动被重新体验。</p><p><b>EXECUTION：</b>双方以园林花窗为灵感推出柿子果蔬奶、屏风香卡、柿子小卡和可自由组合成景的花窗扩香石礼盒；同时向中国文物保护基金会捐赠100万元，用于东方观园文物保护，让联名从视觉借用延伸到嗅觉、触觉和真实公益投入。</p></div><div class="gallery"><div class="gallery-item featured" onclick="openLightbox('assets/img/1008-jasmine.jpg')"><img src="assets/img/1008-jasmine.jpg" alt="茉莉奶白观园吉东方观园联名"><div class="zoom-icon">+</div></div></div><a class="case-source" href="https://socialbeta.com/campaign/28649" target="_blank">查看 SocialBeta 单篇项目页 →</a></section>
-<section class="case-section" id="issue25-case-2"><div class="case-header"><div class="case-num">02</div><div class="case-title-block"><h2>拍立得 × 小玉：把全球首店开进上海老洋房</h2><div class="subtitle">国内优秀创意案例 · 2026-10-05</div></div></div><div class="case-meta"><span class="meta-tag brand">品牌：Parlid 拍立得 × 小玉 yuy</span><span class="meta-tag agency">创意代理：未披露</span><span class="meta-tag type">类型：品牌门店 / IP联名 / 即时影像体验</span><span class="meta-tag date">发布：2026-10-05</span><span class="meta-tag score">来源：SocialBeta</span></div><div class="case-desc"><p><b>INSIGHT：</b>联名不必止于双方形象叠加；当IP的情绪主张与产品的真实使用动作对应，空间就能成为品牌价值的体验媒介。</p><p><b>EXECUTION：</b>拍立得全球首店落址上海衡复风貌区老洋房，保留海派复古空间并设置梧桐街区打卡区、即时影像创作区和全系产品陈列；与小玉 yuy 联名以“抱着拍立得”为核心画面，把“接纳真实自我”与“按下快门留住此刻”连接起来，并以创作者签售等活动持续激活门店。</p></div><div class="gallery"><div class="gallery-item featured" onclick="openLightbox('assets/img/1008-parlid.jpg')"><img src="assets/img/1008-parlid.jpg" alt="拍立得小玉上海老洋房全球首店"><div class="zoom-icon">+</div></div></div><a class="case-source" href="https://socialbeta.com/campaign/28650" target="_blank">查看 SocialBeta 单篇项目页 →</a></section>
+<section class="case-section" id="issue25-case-2"><div class="case-header"><div class="case-num">02</div><div class="case-title-block"><h2>拍立得 × 小玉：把全球首店开进上海老洋房</h2><div class="subtitle">国内优秀创意案例 · 2026-10-05</div></div></div><div class="case-meta"><span class="meta-tag brand">品牌：Parlid 拍立得 × 小玉 yuy</span><span class="meta-tag agency">创意代理：未披露</span><span class="meta-tag type">类型：品牌门店 / IP联名 / 即时影像体验</span><span class="meta-tag date">发布：2026-10-05</span><span class="meta-tag score">来源：SocialBeta</span></div><div class="case-desc"><p><b>INSIGHT：</b> 联名不必止于形象叠加；当 IP 情绪主张与产品真实使用动作对应，空间就能成为品牌价值的体验媒介。</p><p><b>EXECUTION：</b>全球首店落址上海衡复风貌区老洋房，设置梧桐街区打卡区、即时影像创作区和全系产品陈列；以 “抱着拍立得” 为核心画面，把 “接纳真实自我” 与 “按下快门留住此刻” 连接起来，并以创作者签售等活动激活门店。</p><p class="case-takeaway"><b>值得收录：</b>以历史建筑、IP 情绪和即时成像动作共同完成了可进入、可参与的品牌首店叙事。</p></div><div class="gallery"><div class="gallery-item featured" onclick="openLightbox('assets/img/1008-parlid.jpg')"><img src="assets/img/1008-parlid.jpg" alt="拍立得小玉上海老洋房全球首店"><div class="zoom-icon">+</div></div></div><a class="case-source" href="https://socialbeta.com/campaign/28650" target="_blank">查看 SocialBeta 单篇项目页 →</a></section>
 <section class="case-section" id="issue25-case-3"><div class="case-header"><div class="case-num">03</div><div class="case-title-block"><h2>书亦烧仙草 × 大耳朵图图「一起快乐秋游」：让童年IP进入真实消费场景</h2><div class="subtitle">国内优秀创意案例 · 2026-10-07</div></div></div><div class="case-meta"><span class="meta-tag brand">品牌：书亦烧仙草 × 大耳朵图图</span><span class="meta-tag agency">创意代理：未披露</span><span class="meta-tag type">类型：IP联名 / 秋日限定 / 主题店体验</span><span class="meta-tag date">发布：2026-10-07</span><span class="meta-tag score">来源：SocialBeta</span></div><div class="case-desc"><p><b>INSIGHT：</b>对00后而言，IP联名的价值已从收集周边转向“和童年一起玩”的体验；品牌需要把怀旧情绪落到产品、门店和可参与的行动。</p><p><b>EXECUTION：</b>书亦推出抹茶布蕾蛋糕珍珠、芭乐抹茶、红豆糯糯珠抹茶三款秋日限定，以“半杯都是料”延续产品心智；全国主题店打卡和联名周边把“和图图一起秋游”变成线下消费体验，将长大后的快乐重新写入门店场景。</p></div><div class="gallery"><div class="gallery-item featured" onclick="openLightbox('assets/img/1008-shuyi.jpg')"><img src="assets/img/1008-shuyi.jpg" alt="书亦烧仙草大耳朵图图一起快乐秋游"><div class="zoom-icon">+</div></div></div><a class="case-source" href="https://socialbeta.com/campaign/28652" target="_blank">查看 SocialBeta 单篇项目页 →</a></section>
 </div>
 <!-- ===== 第024期 · 2026.10.07 ===== -->
@@ -2127,6 +2180,121 @@
 // NEW_DAY_INSERT_POINT
 // ============================================================
 const DAILY_DATA = [
+  {
+  "id": "1009",
+  "date": "2026.10.09",
+  "weekday": "周五",
+  "items": [
+    {
+      "tag": "McDonald’s Italy × Leo",
+      "title": "Tutto per il dip",
+      "summary": "McDonald’s Italy把McCrunchy Chicken Strips的新鲜感集中在“蘸酱”这一快餐仪式上，用幽默把新品和dipping动作绑定。",
+      "source": "Spot and Web",
+      "link": "https://www.youtube.com/watch?v=poAajv2CIx4",
+      "time": "2026-10-08",
+      "thumb": "assets/img/1009-01.jpg"
+    },
+    {
+      "tag": "Subway EMEA × Saatchi & Saatchi",
+      "title": "Get Your Own Way",
+      "summary": "Subway把顾客对食材的超具体要求变成品牌承诺：在一个替你做决定的世界里，三明治仍然可以完全按自己的方式定制。",
+      "source": "MarketingReport",
+      "link": "https://marketingreport.one/creation/subway-turns-choice-into-a-brand-promise.html",
+      "time": "2026-10-08",
+      "thumb": "assets/img/1009-02.jpg"
+    },
+    {
+      "tag": "Fulham FC × Music × F37",
+      "title": "A new identity inspired by Craven Cottage",
+      "summary": "以泰晤士河畔的Craven Cottage为灵感，Fulham FC用定制字体和设计系统强化“伦敦最初的足球俱乐部”历史资产。",
+      "source": "Creative Review",
+      "link": "https://www.creativereview.co.uk/fulham-fc-new-identity-music-f37",
+      "time": "2026-10-08",
+      "thumb": "assets/img/1009-03.jpg"
+    },
+    {
+      "tag": "JSW Dulux × 1st October Films",
+      "title": "Velvet Touch Eterna",
+      "summary": "双片campaign把Velvet Touch Eterna置于高端室内设计语境，通过墙面质感、光线和空间细节重新定义奢华涂料。",
+      "source": "Adgully",
+      "link": "https://www.adgully.com/post/21838/jsw-dulux-elevates-interior-aesthetics-with-new-velvet-touch-eterna-campaign-redefines-luxury-paint-category",
+      "time": "2026-10-08",
+      "thumb": "assets/img/1009-04.jpg"
+    },
+    {
+      "tag": "Association Valentin Haüy × Josiane",
+      "title": "Nuit de Galères",
+      "summary": "在完全黑暗的房子里使用红外摄像头拍摄，让观众以“看得见”的方式体验视障者夜间生活的混乱与障碍。",
+      "source": "CB News",
+      "link": "https://www.cbnews.fr/marques/valentin-hauy-josiane-plongent-noir-sensibiliser-au-handicap-visuel",
+      "time": "2026-10-08",
+      "thumb": "assets/img/1009-05.jpg"
+    },
+    {
+      "tag": "NEWME",
+      "title": "NEWMEeveryday",
+      "summary": "首个AI主导数字品牌campaign以The Chameleon Effect为核心，让同一位年轻女性在一天中不断切换造型，表达Gen Z没有固定“日常穿搭”。",
+      "source": "Adgully",
+      "link": "https://www.adgully.com/post/21924/newme-launches-first-ai-led-digital-brand-campaign-newmeeveryday",
+      "time": "2026-10-08",
+      "thumb": "assets/img/1009-06.jpg"
+    },
+    {
+      "tag": "Edison Energia × Suntimes",
+      "title": "C’è chi parla e chi Risolve",
+      "summary": "能源品牌把“有人说，有人解决”落到家庭服务与技术支持，用整合传播强调真正解决问题的能力。",
+      "source": "Engage",
+      "link": "https://www.engage.it/brand-e-aziende/edison-energia-sceglie-suntimes-per-la-nuova-campagna-con-nicola-savino.aspx",
+      "time": "2026-10-08",
+      "thumb": "assets/img/1009-07.jpg"
+    },
+    {
+      "tag": "Linella",
+      "title": "Scanăm amintiri",
+      "summary": "摩尔多瓦超市25周年从收银台扫描动作出发，把“扫描商品”转译成扫描25年共同生活的记忆。",
+      "source": "TV8.md",
+      "link": "https://tv8.md/2026/10/08/linella-la-25-de-ani-scanam-amintiri/290000",
+      "time": "2026-10-08",
+      "thumb": "assets/img/1009-08.jpg"
+    },
+    {
+      "tag": "Generalitat Valenciana × Casanova",
+      "title": "Un legado infinito",
+      "summary": "瓦伦西亚自治区以Jaume I逝世750周年为文化节点，用代际传承和现代视觉重新表达“无限遗产”。",
+      "source": "El Español",
+      "link": "https://www.elespanol.com/valencia/comunitat/20261001/generalitat-valenciana-reivindica-legado-infinito-jaume-campana-doctubre/1003744405195_0.html",
+      "time": "2026-10-08",
+      "thumb": "assets/img/1009-09.jpg"
+    },
+    {
+      "tag": "Velvet Rx",
+      "title": "A better way to lose weight",
+      "summary": "GLP-1远程医疗品牌以首个品牌campaign进入肥胖症用药传播，用品牌片解释线上问诊、药物获取和持续支持。",
+      "source": "Velvet Rx",
+      "link": "https://www.velvetrx.com",
+      "time": "2026-10-08",
+      "thumb": "assets/img/1009-10.jpg"
+    },
+    {
+      "tag": "HAPAS × The Friday",
+      "title": "The Friday: how far men will go for love",
+      "summary": "越南妇女节campaign把“站在她的角度想”字面化：男士换装成女性试背手袋，用幽默反转送礼洞察。",
+      "source": "MARKETECH APAC",
+      "link": "https://marketech-apac.com/hapas-the-friday-show-how-far-men-will-go-for-love-in-new-vietnam-womens-day-campaign",
+      "time": "2026-10-08",
+      "thumb": "assets/img/1009-11.jpg"
+    },
+    {
+      "tag": "Smith & Jones × The Womb × Rasika Dugal",
+      "title": "Pasta Masala：互联网熟悉的一切",
+      "summary": "Tata旗下食品品牌以Rasika Dugal出演，把学校午餐盒、日常食物和网络熟悉感连接成Pasta Masala的生活化表达。",
+      "source": "MediaNews4U",
+      "link": "https://www.linkedin.com/posts/medianews4u-com_smithandjones-pastamasala-tataconsumerproducts-activity-7501888433901056002-paja",
+      "time": "2026-10-08",
+      "thumb": "assets/img/1009-12.jpg"
+    }
+  ]
+},
   {"id": "1008", "date": "2026.10.08", "weekday": "周四", "items": [{"tag": "CommBank × M+C Saatchi × Collider", "title": "CommSec relaunches with Seagulls", "summary": "CommSec以海鸥为主角重启品牌身份与传播策略，把投资产品的“看得更远”转译成一支轻松、具澳洲文化语感的品牌film。", "source": "Campaign Brief", "link": "https://campaignbrief.com/commsec-relaunches-with-seagulls-in-swan-song-campaign-for-commbank-via-mcsaatchi-directed-by-colliders-dylan-duclos", "time": "2026-10-07", "thumb": "assets/img/1008-01.jpg"}, {"tag": "Tourism New Zealand × Yarn", "title": "Don't be a Stranger", "summary": "Tourism New Zealand用“不要成为陌生人”的幽默邀请海外亲友来访，把目的地传播从风景展示转向人与人之间的真实关系。", "source": "Campaign Brief", "link": "https://campaignbrief.com/tourism-nz-encourages-overseas-friends-family-to-visit-in-dont-be-a-stranger-campaign-via-yarn", "time": "2026-10-07", "thumb": "assets/img/1008-02.jpg"}, {"tag": "Breville × Common Ventures", "title": "The Kitchen Sync", "summary": "Breville把厨房备餐剪成一支与节拍同步的舞蹈式影片，让Kitchen Wizz 12与Paradice 12的快速、连贯操作变成可感知的音乐体验。", "source": "LBBOnline", "link": "https://lbbonline.com/news/dinner-chaos-becomes-flawless-dance-in-brevilles-latest", "time": "2026-10-07", "thumb": "assets/img/1008-03.jpg"}, {"tag": "TAFE Queensland × Cristian & Marianne", "title": "Make Your Great Happen", "summary": "TAFE Queensland以品牌平台讲述职业教育如何让普通人的潜能变成真实成果，把“伟大”从抽象口号落到学生的选择和行动。", "source": "Campaign Brief", "link": "https://campaignbrief.com/tafe-queensland-launches-make-your-great-happen-brand-platform-via-cristian-marianne", "time": "2026-10-07", "thumb": "assets/img/1008-04.jpg"}, {"tag": "Vodafone × Howatson+Company", "title": "A Very Possibly True Story", "summary": "Vodafone用一段从接单、歌手到蛇的荒诞夜故事展示iPhone 18 Pro的相机、5G与续航能力。", "source": "MARKETECH APAC", "link": "https://marketech-apac.com/vodafone-tells-a-very-possibly-true-story-for-iphone-18-pro-launch-via-howatsoncompany", "time": "2026-10-07", "thumb": "assets/img/1008-05.jpg"}, {"tag": "Cognitiv × Manual Labor Studio × billups", "title": "Meet Edna", "summary": "Cognitiv把难以被传统画像看见的消费者拟人化为Edna等AI生成角色，并以纽约广告周户外传播解释隐藏的增长人群如何成为品牌机会。", "source": "Cognitiv / Yahoo Finance", "link": "https://finance.yahoo.com/news/cognitiv-invites-marketers-meet-edna-110000941.html", "time": "2026-10-07", "thumb": "assets/img/1008-06.jpg"}, {"tag": "Breville × Common Ventures", "title": "Dinner Chaos Becomes Flawless Dance", "summary": "Breville将混乱的家庭备餐转化为一场精准编排的厨房舞蹈，产品动作、节奏与音乐共同证明工具如何让复杂准备变得顺畅。", "source": "LBBOnline", "link": "https://lbbonline.com/news/dinner-chaos-becomes-flawless-dance-in-brevilles-latest", "time": "2026-10-07", "thumb": "assets/img/1008-07.jpg"}, {"tag": "Cuddly × VML Australia", "title": "Cuddly 7 Day Sweat Experiment", "summary": "Cuddly让喜剧演员接受七天流汗实验，用真实身体挑战证明卫生用品的使用体验，避免传统功能演示套路。", "source": "LBBOnline", "link": "https://lbbonline.com/news/cuddly-and-vml-australia-challenge-comedian-to-7-day-sweat-experiment", "time": "2026-10-07", "thumb": "assets/img/1008-08.jpg"}, {"tag": "Bin Bag Biz × Innocean Australia", "title": "The Maggot House", "summary": "垃圾袋品牌让一只蛆提出带网球场的房屋需求，把垃圾、食物残渣与宠物般荒诞角色结合，制造令人难忘的环保喜剧。", "source": "LBBOnline", "link": "https://lbbonline.com/news/maggot-asks-for-home-with-tennis-court-in-innocean-australia-work-for-bin-bag-biz", "time": "2026-10-07", "thumb": "assets/img/1008-09.jpg"}, {"tag": "ANZ × TBWA New Zealand", "title": "The Secret Sauce", "summary": "ANZ为商业客户寻找秘密酱料，把真实商业情报和本地化洞察转化为创意装置与专业建议，面向新西兰各地区企业。", "source": "Campaign Brief NZ", "link": "https://campaignbrief.com/anz-helps-business-customers-find-the-secret-sauce-in-new-campaign-via-tbwanew-zealand", "time": "2026-10-07", "thumb": "assets/img/1008-10.jpg"}]},
   {"id":"1007","date":"2026.10.07","weekday":"周三","items":[{"tag":"Absolut Vodka × KAWS × W+K London","title":"KAWS Artist Edition：把艺术家的视觉语言装进经典瓶身。","summary":"Absolut以KAWS标志性的XX与CHUM视觉重新设计经典瓶身，并配套艺术家画作；限量版从10月1日起在30多个市场发售。","source":"Pernod Ricard","link":"https://www.pernod-ricard.com/en/locations/uk/media/absolut-vodka-embarks-new-creative-era-kaws-artist-edition-bottle-and-painting","time":"2026-10-06","thumb":"assets/img/1007-01.jpg"},{"tag":"P&N Bank × Chapter Perth × Good Oil","title":"The Ballad of a Big Bank Boss：用一支歌找回银行与客户的关系。","summary":"P&N Bank与独立机构Chapter推出新品牌平台，以音乐片讲述“大银行老板”失去客户关系的荒诞故事，重新强调互助银行的人情味。","source":"LBB","link":"https://lbbonline.com/news/p-n-bank-good-oil-chapter-banking-with-heart","time":"2026-10-06","thumb":"assets/img/1007-02.jpg"},{"tag":"Visit Sweden","title":"The Introvert Travel Agency：为不爱寒暄的人设计一场瑞典旅行。","summary":"瑞典旅游局把个人空间、低社交压力与慢旅行变成产品体验，在柏林、巴黎和伦敦开设无需small talk的快闪旅行社。","source":"Visit Sweden","link":"https://visitsweden.com/the-introvert-travel-agency","time":"2026-10-06","thumb":"assets/img/1007-03.jpg"},{"tag":"WeatherTech × Cramer-Krasselt","title":"Friendly Intervention：让意想不到的角色劝你保护车与路上的生命。","summary":"WeatherTech以意外角色阵容分享保护车辆、司机乘客与野生动物的方式，延展汽车用品品牌的安全叙事。","source":"Best Ads on TV","link":"https://www.youtube.com/watch?v=WfnqAmKIueM","time":"2026-10-06","thumb":"assets/img/1007-04.jpg"},{"tag":"Nikon India × creators","title":"The Creator's Cut：让日常片段进入电影叙事。","summary":"Nikon India以360度campaign连接视频优先的内容创作者、电影人和视觉讲述者，展示Nikon Z CINEMA如何把日常时刻拍成故事。","source":"IT Voice","link":"https://www.itvoice.in/nikon-india-sharpens-focus-on-video-first-creators-with-new-brand-campaign-the-creators-cut","time":"2026-10-06","thumb":"assets/img/1007-05.jpg"},{"tag":"Godawan × 22feet × McCann India × Studio Eeksaurus","title":"The Godawan：用手工定格动画讲一只大鸨的生存故事。","summary":"Godawan在世界野生动物周推出手工定格动画，超过百位艺术家以受印度手工艺启发的陶瓷逐帧讲述Great Indian Bustard保护。","source":"MARKETECH APAC","link":"https://marketech-apac.com/godawan-spotlights-great-indian-bustard-conservation-in-new-stop-motion-film-with-22feet-mccann-india","time":"2026-10-06","thumb":"assets/img/1007-06.jpg"},{"tag":"SKINN by Titan × Ayushmann Khurrana × Sobhita Dhulipala","title":"Make Every Moment Special：把喷香水变成日常仪式。","summary":"SKINN宣布双品牌大使，以“让每个时刻都特别”把香水从特殊场合带回日常生活。","source":"Campaign India","link":"https://www.impactonnet.com/more-from-impact/skinn-names-ayushmann-khurrana-and-sobhita-dhulipala-as-brand-ambassadors-16809.html","time":"2026-10-06","thumb":"assets/img/1007-07.jpg"},{"tag":"Uber × Talented × Bang Bang Films","title":"Ooooober：把一声惊叹变成首次乘车免费。","summary":"Uber把“Ooooo”变成“Ooooober”，以声音创意推动符合条件新用户的First Ride Free优惠。","source":"Impact","link":"https://www.impactonnet.com/more-from-impact/uber-turns-a-simple-ooooo-into-ooooober-for-its-first-ride-free-push-16912.html","time":"2026-10-06","thumb":"assets/img/1007-08.jpg"},{"tag":"Panda Express × The Many × Super League","title":"Always-on gaming：把Roblox和Fortnite从一次活动变成长期目的地。","summary":"Panda Express将游戏试投放升级为跨Roblox与Fortnite的always-on平台，以持续更新的虚拟场景触达18—34岁受众。","source":"Marketing Dive","link":"https://www.marketingdive.com/news/why-panda-express-is-embracing-an-always-on-gaming-strategy/832051","time":"2026-10-06","thumb":"assets/img/1007-09.jpg"},{"tag":"Golia Frutta C × Selection Communication & Design","title":"巨型橙子：把水果诱惑拍成超现实三角关系。","summary":"意大利糖果Golia Frutta C用一个在爱人和巨型橙子之间左右为难的男人，夸张表现水果风味的诱惑。","source":"Spot and Web","link":"https://www.spotandweb.it/news/833110/golia-frutta-c-selection-communication-design-campagna.html","time":"2026-10-06","thumb":"assets/img/1007-10.jpg"},{"tag":"Sector Alarm × SBAM × JAKALA","title":"Con noi, stai sereno：回到意大利全国电视的安心宣言。","summary":"Sector Alarm在意大利推出传播第二章节，以“有我们，你安心”把家庭安防服务转译成日常生活中的安全感。","source":"Spot and Web","link":"https://youmark.it/sector-alarm-torna-in-tv-con-un-tecnico-sempre-pronto-a-sventare-ogni-intrusione","time":"2026-10-06","thumb":"assets/img/1007-11.jpg"},{"tag":"Vodafone × Howatson+Company","title":"A Very Possibly True Story：一夜越讲越离谱，但iPhone 18是真的。","summary":"Vodafone用一段从接单、歌手到蛇的荒诞夜故事展示iPhone 18 Pro的相机、5G与续航能力。","source":"MARKETECH APAC","link":"https://marketech-apac.com/vodafone-tells-a-very-possibly-true-story-for-iphone-18-pro-launch-via-howatsoncompany","time":"2026-10-06","thumb":"assets/img/1007-12.jpg"}]},
   {"id":"1006","date":"2026.10.06","weekday":"周二","items":[
