@@ -1,52 +1,74 @@
-DATE: 2026-10-04
-创意雷达更新
-站点链接：https://heyuchenxuan.github.io/creative-ad-daily/
-日期：2026-10-04
+DATE: 2026-10-12
 
-1. PAK'nSAVE × McCann NZ｜Makeaways：快餐店对面的食谱OOH。
-新西兰折扣超市把广告投放在快餐店正对面，鼓励消费者跳过外卖、回家用更便宜的食材自己做；以地理位置幽默把“外卖贵”变成行动号召。
-来源：LBBOnline｜https://lbbonline.com/news/pak-n-save-mccann-new-zealand-makeaway
+创意雷达｜每日广告创意全球动态（10条；北京时间2026-10-12整理）
 
-2. PhonePe × Ogilvy Mumbai｜494词/分钟念7亿用户名。
-PhonePe十周年品牌film邀请印度语速纪录保持者Shahu Supreme尝试念出7亿注册用户的名字，即使以最快速度也要几十年，用极端创意设备呈现平台规模。
-来源：Media Infoline｜https://www.mediainfoline.com/advertising/phonepe-10-years-campaign-700-million-users
+站点：https://heyuchenxuan.github.io/creative-ad-daily/
 
-3. Waitrose × Wonderhood Studios｜巨型购物袋装置把降价变成街头艺术。
-巨型Waitrose购物袋爆裂出香蕉、生菜、意面等日常商品，把降价投资转译成高冲击力特殊装置，表达降价不丢品质。
-来源：Creative Salon｜https://creative.salon/articles/work/wonderhood-waitrose-lower-prices
+口径：豆包12条候选中，2条多伦多广告牌为同一项目，合并；另2条有可靠早于本期的旧作证据，未当作10月新案收录。其余9个独立候选收录，并补搜Google India项目。项目原始发布日详见每项；本期为补录精选，不表示全数在过去24小时首次发布。
 
-4. mCaffeine｜By the Blues：FIR喜剧调查。
-邀请F.I.R.演员Gopi与创作者Dharna出演，把身体乳的果阿风情香氛拍成喜剧调查片，幽默解构传统护肤广告套路。
-来源：MediaNews4U｜https://www.medianews4u.com/mcaffeine-brings-back-fir-favourites-gopi-and-dharna-for-by-the-blues-campaign
+01. Merino Deep Dive：钻入羊毛纤维的 AI 影像｜Zentera × Odd Global
+项目报道日期：2026-10-12｜来源：Campaign Brief
+创意看点：新西兰羊毛品牌把镜头推进美丽诺纤维内部，以 AI 生成影片把原料微观结构转译成可感知的品牌故事；10月12日行业媒体刊出。
+单篇来源：https://campaignbrief.com/zentera-goes-inside-the-merino-fibre-in-ai-produced-film-merino-deep-dive-via-odd-global
+自托管缩略图：assets/img/1012-01.jpg
 
-5. Stayfree｜#BetaStayfreeLeAana：让男孩成为月经对话盟友。
-女儿节数字film把男孩纳入月经健康对话，强调打破家庭沉默、培养没有羞耻感的支持性消费者。
-来源：Adgully｜https://www.adgully.com/stayfree-betastayfreeleana-campaign-2026
+02. Jackie-zhan：成龙进入哈萨克斯坦日常｜Kaspi.kz × GForce Grey
+项目报道日期：2026-10-08｜来源：Campaign Brief Asia
+创意看点：让成龙饰演当地出租车司机 Jackie-zhan，用功夫喜剧与本土化角色帮助金融科技服务融入生活；报道刊于10月8日。
+单篇来源：https://campaignbriefasia.com/2026/10/08/kaspi-kz-turns-jackie-chan-into-jackie-zhan-in-new-gforce-grey-campaign
+自托管缩略图：assets/img/1012-02.jpg
 
-6. Fast&Up｜Fuel Forward：为印度亚运会运动员补给。
-运动营养品牌支持六名印度运动员，把电解质产品与国家体育荣誉绑定，用运动员故事建立活跃营养品类的专业定位。
-来源：ETBrandEquity｜https://brandequity.economictimes.indiatimes.com/amp/news/research/advertising/fastup-backs-six-indian-athletes-at-asian-games-with-fuel-forward-campaign/134537269
+03. Exposed：没有摄像头的智能眼镜，拍了一部监控恐怖剧｜Even Realities × VIRTUE
+项目报道日期：2026-10-08｜来源：Even Realities / LBB
+创意看点：Ishana Night Shyamalan执导恐怖微剧，以被偷拍的恐惧反问眼镜摄像头与他人同意问题；品牌借类型片凸显自家眼镜无摄像头的产品选择。
+单篇来源：https://www.evenrealities.com/exposed
+自托管缩略图：assets/img/1012-03.jpg
 
-7. Ghadi Detergent × Madhuri Dixit｜Vishwas Ki Pariksha：信任的考验。
-以多层测试和宝莱坞明星Madhuri Dixit展示升级洗涤产品，把“信任”转化为可被镜头验证的产品戏剧。
-来源：Ad Tribe｜https://adtribe.world/ghadi-vishwas-ki-pariksha-madhuri-dixit
+04. Because, Men Will Be Men：电梯短片回归｜Imperial Blue × 82.5 Grey
+项目报道日期：2026-10-09｜来源：Storyboard18
+创意看点：印度包装饮用水代用品牌重启经典幽默平台；新片以电梯场景观察日常行为，由Roopali Singhal执导。此为旧平台新作品，非平台首次推出。
+单篇来源：https://www.storyboard18.com/brand-marketing/imperial-blue-revives-because-men-will-be-men-ad-campaign-112330.htm
+自托管缩略图：assets/img/1012-04.webp
 
-8. Parachute Advansed｜Jasmine：茉莉花椰子护发油节日campaign。
-以年轻女性追求深层滋养与健康光泽的日常场景，强化茉莉花椰子油从内而外养护发丝的品牌主张。
-来源：Adgully｜https://www.adgully.com/parachute-advansed-jasmine-campaign-2026
+05. 把剩余食物做成让人愿意买的品牌｜Oh! for OzHarvest × Weave
+项目报道日期：2026-10-06｜来源：Roastbrief
+创意看点：为食物救援组织开发 Oh! 食品包装品牌，把剩余食材从公益负担转为货架商品；获2026澳大利亚 Good Design Awards 传播设计印刷与包装类奖，属获奖回顾而非今日首发。
+单篇来源：https://roastbrief.us/oh-for-ozharvest-wins-at-the-2026-australian-good-design-awards/
+自托管缩略图：assets/img/1012-05.jpg
 
-9. Zydus｜Easiest Exam Season 3：乳腺癌自检。
-把三分钟乳房自我检查比作“最简单的考试”，降低早期筛查的心理门槛，推动女性建立月度自检习惯。
-来源：MediaNews4U｜https://www.medianews4u.com/zydus-launches-season-3-of-easiest-exam-campaign-for-breast-cancer-awareness-month
+06. Salvajada：把超大份炸鸡写成‘疯狂之举’｜KFC España × PS21
+项目报道日期：2026-09-30｜来源：Merca2.0
+创意看点：西班牙肯德基用 Salvajada 一词为最多70块炸鸡的促销定调，以夸张语感匹配夸张份量；项目为9月末发布的当地促销，不是10月12日新发布。
+单篇来源：https://www.merca20.com/campana-publicitaria-kfc-salvajada-ps21/
+自托管缩略图：assets/img/1012-06.jpg
 
-10. Sekonda × VCCP Blue｜Any. Second. Now.：每秒都停在好戏之前。
-用一组在关键时刻戛然而止的10秒短片，把等待、悬念和期待变成Gen Z可分享的时间体验，延展手表的情绪价值。
-来源：VCCP｜https://www.vccp.com/uk/work/sekonda/sekonda-launches-any-second-now
+07. Let's grab a pint：多伦多广告牌接龙｜Stella Artois × Häagen-Dazs
+项目报道日期：2026-09-03｜来源：LBB / Strategy
+创意看点：Häagen-Dazs投出‘喝一品脱？’后，Stella在相邻户外牌回应，冰淇淋品牌又以移动屏追加‘你喜欢用勺子吗？’；两条豆包候选合并为同一场9月本地互动，并非同一张联合广告。
+单篇来源：https://www.lbbonline.com/news/Haagen-Dazs-Stella-Artois-Toronto-Billboard-Battle-Courage-Spooning
+自托管缩略图：assets/img/1012-07.webp
 
-11. Liberty Mutual｜Happy Birthday：LiMu Emu & Doug。
-延续LiMu Emu与Doug角色IP，用生日与保险意外制造荒诞喜剧，持续把产品利益点变成娱乐内容。
-来源：Liberty Mutual｜https://www.youtube.com/watch?v=f8gWd1FJnnY
+08. The Last Swim：让水面变成尸袋｜Quebec Lifesaving Society × LG2
+项目报道日期：2026-09-09｜来源：LBB
+创意看点：真实人像躺入尸袋的照片与水面纹理合成，以震撼视觉提醒秋后水上活动仍应穿救生衣；原案9月报道，本期补录，并非10月新作。
+单篇来源：https://lbbonline.com/news/Quebec-Lifesaving-Society-The-Last-Swim
+自托管缩略图：assets/img/1012-08.png
 
-12. AT&T Business｜Cyber Dog：把网络安全变成守护者。
-以赛博狗狗拟人化企业网络安全防护，把复杂的B2B技术服务转成小企业主易懂的守护者故事。
-来源：AT&T Business｜https://www.business.att.com/portfolios/cybersecurity.html
+09. The Start of Something Good：给保险写一首歌｜AAA Club Alliance × Fred & Farid New York
+项目报道日期：2026-10-07｜来源：shots
+创意看点：以音乐串联受保障的人生重要时刻，把保险从风险话术改写为生活继续向前的承诺；注意主体为AAA Club Alliance，不混同CSAA旧案。
+单篇来源：https://shots.net/news/view/aaa-club-alliance-is-the-start-of-something-good
+自托管缩略图：assets/img/1012-09.jpg
+
+10. Samjhe. Samjhaaye. Raah dikhaye.：AI搜索回答问题背后的问题｜Google India × McCann India
+项目报道日期：2026-10-08｜来源：Campaign Brief Asia
+创意看点：以印度日常多步骤难题展示 Google Search AI Mode 如何理解追问、解释与指路，让功能演示变成生活中的实用情境。
+单篇来源：https://campaignbriefasia.com/2026/10/08/google-india-explores-the-questions-behind-the-questions-with-ai-mode-from-mccann-india
+自托管缩略图：assets/img/1012-10.jpg
+
+核验与去重备注：
+- Xfinity Mobile《The End of the World》：The Stable早于本期的2026-07-22单篇已报道，非10月11日新发布，未以新案收录。https://www.thestable.com.au/goodby-silverstein-partners-xfinity-stops-your-mobile-phone-being-end-of-the-world
+- Maybelline“瑞典3D DOOH”：现能追溯的瑞典3D睫毛膏全球延展是2023年项目；未找到所述Colossal Curl Bounce × Craft Spain在2026年瑞典两个地点的对应单篇，不将旧案冒充今日新作。https://www.dooh.com/news/maybellines-falsies-surreal-extensions-mascara-ukraine
+- Stella Artois 与 Häagen-Dazs 两个候选合为一案；多伦多互动发生于8—9月。https://strategyonline.ca/2026/09/03/haagen-dazs-response-to-stella-response
+- Zentera《Merino Deep Dive》在Campaign Brief 10月12日找到对应单篇，予以收录；先前检索未找到来源的结论已更正。
+- Schweppes《First Step on Mars》补搜时发现代理商网页图像路径含2025/03，不足以确证为2026年新项目；没有以10月新作收录。
