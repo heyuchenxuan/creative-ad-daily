@@ -180,7 +180,9 @@
   
   /* ===== 案例目录 ===== */
   .toc-section {
-    margin-bottom: 50px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    padding: 36px 40px 6px;
     position: relative;
   }
   .toc-title {
@@ -257,11 +259,33 @@
   }
   
   /* ===== 案例详情 ===== */
+  .issue-panel > .toc-section,
+  .issue-panel > .case-section {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
   .case-section {
-    margin-bottom: 70px;
-    padding-top: 30px;
-    border-top: 4px dashed var(--ink);
+    margin-bottom: 40px;
+    padding: 30px;
+    border: 3px solid var(--ink);
+    border-radius: 16px;
+    background: var(--white);
     position: relative;
+    overflow: hidden;
+    transition: all 0.25s;
+  }
+  .case-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 6px;
+    background: var(--blue);
+  }
+  .case-section:nth-child(odd)::before {
+    background: var(--pink);
   }
   .case-section:first-of-type {
     border-top: none;
