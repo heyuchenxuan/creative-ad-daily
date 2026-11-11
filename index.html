@@ -132,11 +132,15 @@
   .issue-nav {
     background: var(--yellow);
     padding: 14px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
     gap: 12px;
     align-items: center;
     flex-wrap: wrap;
-    border-bottom: 3px solid var(--ink);
+    border: 3px solid var(--ink);
+    border-bottom: none;
+    border-radius: 16px 16px 0 0;
   }
   .issue-nav .label {
     font-size: 12px;
@@ -181,8 +185,11 @@
   /* ===== 案例目录 ===== */
   .toc-section {
     max-width: 1100px;
-    margin: 0 auto 40px;
-    padding: 36px 40px 6px;
+    margin: 0 auto;
+    padding: 36px 40px 20px;
+    background: var(--white);
+    border-left: 3px solid var(--ink);
+    border-right: 3px solid var(--ink);
     position: relative;
   }
   .toc-title {
@@ -262,14 +269,19 @@
 
   .case-section {
     max-width: 1100px;
-    margin: 0 auto 40px;
+    margin: 0 auto 0;
     padding: 30px;
     border: 3px solid var(--ink);
-    border-radius: 16px;
+    border-top: none;
+    border-radius: 0;
     background: var(--white);
     position: relative;
     overflow: hidden;
     transition: all 0.25s;
+  }
+  .case-section:last-of-type {
+    border-radius: 0 0 16px 16px;
+    margin-bottom: 40px;
   }
   .case-section::before {
     content: '';
@@ -312,6 +324,17 @@
     font-size: 15px;
     color: var(--pink);
     font-weight: 700;
+  }
+  .case-desc p {
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+    text-align: justify;
+    font-weight: 400;
+  }
+  .case-desc p b {
+    color: var(--ink);
+    font-weight: 900;
   }
   .case-meta {
     display: flex;
