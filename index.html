@@ -4650,7 +4650,12 @@ function renderDaily(){
     wrap.appendChild(panel);
   });
 }
-renderDaily();
+// 确保DOM加载完成再渲染
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', renderDaily);
+} else {
+  renderDaily();
+}
 </script>
 
 </body>
