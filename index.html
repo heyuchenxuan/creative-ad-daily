@@ -167,6 +167,74 @@
     background: var(--ink);
     color: var(--yellow);
   }
+  /* 归档下拉菜单 */
+  .archive-dropdown {
+    position: relative;
+    margin-left: auto;
+  }
+  .archive-btn {
+    padding: 8px 20px;
+    background: var(--ink);
+    color: var(--yellow);
+    border: 3px solid var(--ink);
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .archive-btn:hover {
+    background: var(--pink);
+    color: white;
+    border-color: var(--pink);
+  }
+  .archive-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    background: var(--white);
+    border: 3px solid var(--ink);
+    border-radius: 12px;
+    padding: 12px;
+    min-width: 220px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 200;
+    display: none;
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .archive-menu.show {
+    display: block;
+  }
+  .archive-month {
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--pink);
+    margin: 8px 0 6px;
+    padding-bottom: 4px;
+    border-bottom: 2px dashed var(--ink);
+  }
+  .archive-menu .issue-tab-mini {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 6px 10px;
+    margin: 4px 0;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    color: var(--ink);
+  }
+  .archive-menu .issue-tab-mini:hover {
+    background: var(--yellow);
+  }
   .issue-tab.coming {
     opacity: 0.5;
     cursor: not-allowed;
@@ -950,27 +1018,35 @@
 
 <!-- ===== 期数导航 ===== -->
 <nav class="issue-nav">
-  <span class="label">ARCHIVE · 期数归档（从新到旧）</span>
+  <span class="label">ARCHIVE · 期数归档</span>
   <button class="issue-tab active" onclick="showIssue(20)">第020期 · 2026.11.11</button>
   <button class="issue-tab" onclick="showIssue(19)">第019期 · 2026.11.10</button>
   <button class="issue-tab" onclick="showIssue(18)">第018期 · 2026.11.09</button>
   <button class="issue-tab" onclick="showIssue(17)">第017期 · 2026.11.08</button>
   <button class="issue-tab" onclick="showIssue(16)">第016期 · 2026.11.07</button>
-  <button class="issue-tab" onclick="showIssue(15)">第015期 · 2026.11.06</button>
-  <button class="issue-tab" onclick="showIssue(14)">第014期 · 2026.11.05</button>
-  <button class="issue-tab" onclick="showIssue(13)">第013期 · 2026.09.23</button>
-  <button class="issue-tab" onclick="showIssue(12)">第012期 · 2026.09.22</button>
-  <button class="issue-tab" onclick="showIssue(11)">第011期 · 2026.09.21</button>
-  <button class="issue-tab" onclick="showIssue(10)">第010期 · 2026.09.20</button>
-  <button class="issue-tab" onclick="showIssue(9)">第009期 · 2026.09.19</button>
-  <button class="issue-tab" onclick="showIssue(8)">第008期 · 2026.09.18</button>
-  <button class="issue-tab" onclick="showIssue(7)">第007期 · 2026.09.16</button>
-  <button class="issue-tab" onclick="showIssue(6)">第006期 · 2026.09.15</button>
-  <button class="issue-tab" onclick="showIssue(5)">第005期 · 2026.09.14</button>
-  <button class="issue-tab" onclick="showIssue(4)">第004期 · 2026.09.11</button>
-  <button class="issue-tab" onclick="showIssue(3)">第003期 · 2026.09.10</button>
-  <button class="issue-tab" onclick="showIssue(2)">第002期 · 2026.09.04—09.10</button>
-  <button class="issue-tab" onclick="showIssue(1)">第001期 · 2026.08.27—09.03</button>
+  <div class="archive-dropdown">
+    <button class="archive-btn" onclick="toggleArchiveMenu()">📅 往期归档 ▾</button>
+    <div class="archive-menu" id="archiveMenu">
+      <div class="archive-month">2026年11月</div>
+      <button class="issue-tab-mini" onclick="showIssue(15);toggleArchiveMenu()">第015期 · 2026.11.06</button>
+      <button class="issue-tab-mini" onclick="showIssue(14);toggleArchiveMenu()">第014期 · 2026.11.05</button>
+      <div class="archive-month">2026年9月</div>
+      <button class="issue-tab-mini" onclick="showIssue(13);toggleArchiveMenu()">第013期 · 2026.09.23</button>
+      <button class="issue-tab-mini" onclick="showIssue(12);toggleArchiveMenu()">第012期 · 2026.09.22</button>
+      <button class="issue-tab-mini" onclick="showIssue(11);toggleArchiveMenu()">第011期 · 2026.09.21</button>
+      <button class="issue-tab-mini" onclick="showIssue(10);toggleArchiveMenu()">第010期 · 2026.09.20</button>
+      <button class="issue-tab-mini" onclick="showIssue(9);toggleArchiveMenu()">第009期 · 2026.09.19</button>
+      <button class="issue-tab-mini" onclick="showIssue(8);toggleArchiveMenu()">第008期 · 2026.09.18</button>
+      <button class="issue-tab-mini" onclick="showIssue(7);toggleArchiveMenu()">第007期 · 2026.09.16</button>
+      <button class="issue-tab-mini" onclick="showIssue(6);toggleArchiveMenu()">第006期 · 2026.09.15</button>
+      <button class="issue-tab-mini" onclick="showIssue(5);toggleArchiveMenu()">第005期 · 2026.09.14</button>
+      <button class="issue-tab-mini" onclick="showIssue(4);toggleArchiveMenu()">第004期 · 2026.09.11</button>
+      <button class="issue-tab-mini" onclick="showIssue(3);toggleArchiveMenu()">第003期 · 2026.09.10</button>
+      <button class="issue-tab-mini" onclick="showIssue(2);toggleArchiveMenu()">第002期 · 2026.09.04—09.10</button>
+      <div class="archive-month">2026年8月</div>
+      <button class="issue-tab-mini" onclick="showIssue(1);toggleArchiveMenu()">第001期 · 2026.08.27—09.03</button>
+    </div>
+  </div>
 </nav>
 
 <!-- ===== 第020期 · 2026.11.11 ===== -->
@@ -2136,9 +2212,24 @@
       if (t.getAttribute('onclick').indexOf(day) !== -1) t.classList.add('active');
     });
   }
-  // ESC关闭lightbox
+  // 归档菜单切换
+  function toggleArchiveMenu() {
+    document.getElementById('archiveMenu').classList.toggle('show');
+  }
+  // 点击其他地方关闭归档菜单
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('archiveMenu');
+    const btn = document.querySelector('.archive-btn');
+    if (menu && !menu.contains(e.target) && !btn.contains(e.target)) {
+      menu.classList.remove('show');
+    }
+  });
+  // ESC关闭lightbox和菜单
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'Escape') {
+      closeLightbox();
+      if (document.getElementById('archiveMenu')) document.getElementById('archiveMenu').classList.remove('show');
+    }
   });
 </script>
 
