@@ -729,6 +729,11 @@
     flex-wrap: wrap;
     border-bottom: 3px solid var(--ink);
   }
+  /* 全球资讯归档下拉 */
+  .daily-archive-dropdown {
+    position: relative;
+    margin-left: auto;
+  }
   .daily-date-nav .label {
     font-size: 12px;
     font-weight: 900;
@@ -2212,16 +2217,27 @@
       if (t.getAttribute('onclick').indexOf(day) !== -1) t.classList.add('active');
     });
   }
-  // 归档菜单切换
+  // 优秀案例归档菜单切换
   function toggleArchiveMenu() {
     document.getElementById('archiveMenu').classList.toggle('show');
   }
+  // 全球资讯归档菜单切换
+  function toggleDailyArchiveMenu() {
+    document.getElementById('dailyArchiveMenu').classList.toggle('show');
+  }
   // 点击其他地方关闭归档菜单
   document.addEventListener('click', function(e) {
+    // 优秀案例归档
     const menu = document.getElementById('archiveMenu');
-    const btn = document.querySelector('.archive-btn');
+    const btn = document.querySelector('.issue-nav .archive-btn');
     if (menu && !menu.contains(e.target) && !btn.contains(e.target)) {
       menu.classList.remove('show');
+    }
+    // 全球资讯归档
+    const dailyMenu = document.getElementById('dailyArchiveMenu');
+    const dailyBtn = document.querySelector('.daily-date-nav .archive-btn');
+    if (dailyMenu && !dailyMenu.contains(e.target) && !dailyBtn.contains(e.target)) {
+      dailyMenu.classList.remove('show');
     }
   });
   // ESC关闭lightbox和菜单
@@ -2229,6 +2245,7 @@
     if (e.key === 'Escape') {
       closeLightbox();
       if (document.getElementById('archiveMenu')) document.getElementById('archiveMenu').classList.remove('show');
+      if (document.getElementById('dailyArchiveMenu')) document.getElementById('dailyArchiveMenu').classList.remove('show');
     }
   });
 </script>
@@ -4747,13 +4764,24 @@ function esc(s){ var d=document.createElement('div'); d.textContent=s||''; retur
 function renderDaily(){
   var nav = document.getElementById('daily-date-nav');
   var wrap = document.getElementById('daily-panels');
+  // 默认只显示最近5天的按钮
+  const SHOW_DAYS = 5;
+  // 归档分组
+  const archiveGroups = {};
   DAILY_DATA.forEach(function(day, di){
     // date tab
     var btn = document.createElement('button');
     btn.className = 'date-tab' + (di===0 ? ' active' : '');
     btn.textContent = day.date.slice(5).replace('.','.') + ' ' + day.weekday;
     btn.setAttribute('onclick', "showDate('" + day.id + "')");
-    nav.appendChild(btn);
+    if (di < SHOW_DAYS) {
+      nav.appendChild(btn);
+    } else {
+      // 归档分组
+      const yearMonth = day.date.slice(0,7).replace('.','年') + '月';
+      if (!archiveGroups[yearMonth]) archiveGroups[yearMonth] = [];
+      archiveGroups[yearMonth].push(day);
+    }
     // panel
     var panel = document.createElement('div');
     panel.className = 'daily-panel' + (di===0 ? ' active' : '');
@@ -4773,6 +4801,31 @@ function renderDaily(){
     panel.innerHTML = '<div class="daily-head"><h2>全球创意资讯 · '+day.date+'</h2><p>全球广告创意动态精选 '+day.items.length+' 条，按重要性从高到低排序</p></div><div class="news-list">'+cards+'</div>';
     wrap.appendChild(panel);
   });
+  // 渲染归档下拉
+  if (Object.keys(archiveGroups).length > 0) {
+    const dropdown = document.createElement('div');
+    dropdown.className = 'daily-archive-dropdown';
+    dropdown.innerHTML = `
+      <button class="archive-btn" onclick="toggleDailyArchiveMenu()">📅 往期归档 ▾</button>
+      <div class="archive-menu" id="dailyArchiveMenu"></div>
+    `;
+    nav.appendChild(dropdown);
+    const menu = dropdown.querySelector('.archive-menu');
+    // 按月份倒序渲染
+    Object.keys(archiveGroups).sort().reverse().forEach(month => {
+      const monthDiv = document.createElement('div');
+      monthDiv.className = 'archive-month';
+      monthDiv.textContent = month;
+      menu.appendChild(monthDiv);
+      archiveGroups[month].forEach(day => {
+        const miniBtn = document.createElement('button');
+        miniBtn.className = 'issue-tab-mini';
+        miniBtn.textContent = day.date.slice(5) + ' ' + day.weekday;
+        miniBtn.setAttribute('onclick', `showDate('${day.id}');toggleDailyArchiveMenu()`);
+        menu.appendChild(miniBtn);
+      });
+    });
+  }
 }
 // 确保DOM加载完成再渲染
 if (document.readyState === 'loading') {
