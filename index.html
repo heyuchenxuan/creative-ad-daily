@@ -130,22 +130,68 @@
   
   /* ===== 期数导航 ===== */
   .issue-nav {
-    background: var(--yellow);
-    padding: 14px 40px;
+    background: var(--cream);
+    padding: 20px 40px;
     max-width: 1100px;
     margin: 0 auto;
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    flex-wrap: wrap;
     border-bottom: 3px solid var(--ink);
   }
+  .issue-nav-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .issue-nav-row:last-child {
+    margin-bottom: 0;
+  }
   .issue-nav .label {
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 900;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     color: var(--ink);
-    margin-right: 8px;
+    font-family: "Playfair Display", serif;
+    min-width: 120px;
+  }
+  .year-tab {
+    padding: 10px 32px;
+    background: var(--ink);
+    color: var(--yellow);
+    border: 3px solid var(--ink);
+    border-radius: 40px;
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: "Playfair Display", serif;
+  }
+  .month-tab {
+    padding: 10px 32px;
+    background: var(--blue);
+    color: var(--white);
+    border: 3px solid var(--ink);
+    border-radius: 40px;
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .month-tab.active {
+    background: var(--mint);
+    color: var(--ink);
+  }
+  .month-tab:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+  .issue-tabs-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 4px;
   }
   .issue-tab {
     padding: 8px 20px;
@@ -167,73 +213,11 @@
     background: var(--ink);
     color: var(--yellow);
   }
-  /* 归档下拉菜单 */
-  .archive-dropdown {
-    position: relative;
-    margin-left: auto;
-  }
-  .archive-btn {
-    padding: 8px 20px;
-    background: var(--ink);
-    color: var(--yellow);
-    border: 3px solid var(--ink);
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: inherit;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .archive-btn:hover {
-    background: var(--pink);
-    color: white;
-    border-color: var(--pink);
-  }
-  .archive-menu {
-    position: absolute;
-    right: 0;
-    top: calc(100% + 8px);
-    background: var(--white);
-    border: 3px solid var(--ink);
-    border-radius: 12px;
-    padding: 12px;
-    min-width: 220px;
-    max-height: 400px;
-    overflow-y: auto;
-    z-index: 200;
+  .month-issues {
     display: none;
-    box-shadow: 6px 6px 0 var(--ink);
   }
-  .archive-menu.show {
+  .month-issues.active {
     display: block;
-  }
-  .archive-month {
-    font-size: 14px;
-    font-weight: 900;
-    color: var(--pink);
-    margin: 8px 0 6px;
-    padding-bottom: 4px;
-    border-bottom: 2px dashed var(--ink);
-  }
-  .archive-menu .issue-tab-mini {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 6px 10px;
-    margin: 4px 0;
-    background: transparent;
-    border: none;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: inherit;
-    color: var(--ink);
-  }
-  .archive-menu .issue-tab-mini:hover {
-    background: var(--yellow);
   }
   .issue-tab.coming {
     opacity: 0.5;
@@ -1021,42 +1005,104 @@
 <!-- ===== 每周优秀案例板块 ===== -->
 <section class="content-section" id="section-weekly">
 
-<!-- ===== 期数导航 ===== -->
+<!-- ===== 期数导航（年月分组平铺） ===== -->
 <nav class="issue-nav">
-  <span class="label">ARCHIVE · 期数归档</span>
-  <button class="issue-tab active" onclick="showIssue(21)">第021期 · 2026.11.12</button>
-  <button class="issue-tab" onclick="showIssue(20)">第020期 · 2026.11.11</button>
-  <button class="issue-tab" onclick="showIssue(19)">第019期 · 2026.11.10</button>
-  <button class="issue-tab" onclick="showIssue(18)">第018期 · 2026.11.09</button>
-  <button class="issue-tab" onclick="showIssue(17)">第017期 · 2026.11.08</button>
-  <button class="issue-tab" onclick="showIssue(16)">第016期 · 2026.11.07</button>
-  <div class="archive-dropdown">
-    <button class="archive-btn" onclick="toggleArchiveMenu()">📅 往期归档 ▾</button>
-    <div class="archive-menu" id="archiveMenu">
-      <div class="archive-month">2026年11月</div>
-      <button class="issue-tab-mini" onclick="showIssue(15);toggleArchiveMenu()">第015期 · 2026.11.06</button>
-      <button class="issue-tab-mini" onclick="showIssue(14);toggleArchiveMenu()">第014期 · 2026.11.05</button>
-      <div class="archive-month">2026年9月</div>
-      <button class="issue-tab-mini" onclick="showIssue(13);toggleArchiveMenu()">第013期 · 2026.09.23</button>
-      <button class="issue-tab-mini" onclick="showIssue(12);toggleArchiveMenu()">第012期 · 2026.09.22</button>
-      <button class="issue-tab-mini" onclick="showIssue(11);toggleArchiveMenu()">第011期 · 2026.09.21</button>
-      <button class="issue-tab-mini" onclick="showIssue(10);toggleArchiveMenu()">第010期 · 2026.09.20</button>
-      <button class="issue-tab-mini" onclick="showIssue(9);toggleArchiveMenu()">第009期 · 2026.09.19</button>
-      <button class="issue-tab-mini" onclick="showIssue(8);toggleArchiveMenu()">第008期 · 2026.09.18</button>
-      <button class="issue-tab-mini" onclick="showIssue(7);toggleArchiveMenu()">第007期 · 2026.09.16</button>
-      <button class="issue-tab-mini" onclick="showIssue(6);toggleArchiveMenu()">第006期 · 2026.09.15</button>
-      <button class="issue-tab-mini" onclick="showIssue(5);toggleArchiveMenu()">第005期 · 2026.09.14</button>
-      <button class="issue-tab-mini" onclick="showIssue(4);toggleArchiveMenu()">第004期 · 2026.09.11</button>
-      <button class="issue-tab-mini" onclick="showIssue(3);toggleArchiveMenu()">第003期 · 2026.09.10</button>
-      <button class="issue-tab-mini" onclick="showIssue(2);toggleArchiveMenu()">第002期 · 2026.09.04—09.10</button>
-      <div class="archive-month">2026年8月</div>
-      <button class="issue-tab-mini" onclick="showIssue(1);toggleArchiveMenu()">第001期 · 2026.08.27—09.03</button>
+  <div class="issue-nav-row">
+    <span class="label">YEAR</span>
+    <button class="year-tab">2026</button>
+  </div>
+  <div class="issue-nav-row">
+    <span class="label">MONTH</span>
+    <button class="month-tab active" onclick="showMonthIssues('nov')">11月</button>
+    <button class="month-tab" onclick="showMonthIssues('sep')">9月</button>
+    <button class="month-tab" onclick="showMonthIssues('aug')">8月</button>
+  </div>
+  <!-- 11月期数 -->
+  <div class="month-issues active" id="month-nov">
+    <div class="issue-tabs-group">
+      <button class="issue-tab active" onclick="showIssue(21)">第021期 · 2026.11.12</button>
+      <button class="issue-tab" onclick="showIssue(20)">第020期 · 2026.11.11</button>
+      <button class="issue-tab" onclick="showIssue(19)">第019期 · 2026.11.10</button>
+      <button class="issue-tab" onclick="showIssue(18)">第018期 · 2026.11.09</button>
+      <button class="issue-tab" onclick="showIssue(17)">第017期 · 2026.11.08</button>
+      <button class="issue-tab" onclick="showIssue(16)">第016期 · 2026.11.07</button>
+      <button class="issue-tab" onclick="showIssue(15)">第015期 · 2026.11.06</button>
+      <button class="issue-tab" onclick="showIssue(14)">第014期 · 2026.11.05</button>
+    </div>
+  </div>
+  <!-- 9月期数 -->
+  <div class="month-issues" id="month-sep">
+    <div class="issue-tabs-group">
+      <button class="issue-tab" onclick="showIssue(13)">第013期 · 2026.09.23</button>
+      <button class="issue-tab" onclick="showIssue(12)">第012期 · 2026.09.22</button>
+      <button class="issue-tab" onclick="showIssue(11)">第011期 · 2026.09.21</button>
+      <button class="issue-tab" onclick="showIssue(10)">第010期 · 2026.09.20</button>
+      <button class="issue-tab" onclick="showIssue(9)">第009期 · 2026.09.19</button>
+      <button class="issue-tab" onclick="showIssue(8)">第008期 · 2026.09.18</button>
+      <button class="issue-tab" onclick="showIssue(7)">第007期 · 2026.09.16</button>
+      <button class="issue-tab" onclick="showIssue(6)">第006期 · 2026.09.15</button>
+      <button class="issue-tab" onclick="showIssue(5)">第005期 · 2026.09.14</button>
+      <button class="issue-tab" onclick="showIssue(4)">第004期 · 2026.09.11</button>
+      <button class="issue-tab" onclick="showIssue(3)">第003期 · 2026.09.10</button>
+      <button class="issue-tab" onclick="showIssue(2)">第002期 · 2026.09.04—09.10</button>
+    </div>
+  </div>
+  <!-- 8月期数 -->
+  <div class="month-issues" id="month-aug">
+    <div class="issue-tabs-group">
+      <button class="issue-tab" onclick="showIssue(1)">第001期 · 2026.08.27—09.03</button>
     </div>
   </div>
 </nav>
 
+<!-- ===== 第021期 · 2026.11.12 ===== -->
+<div class="issue-panel active" id="issue-panel-21">
+<section class="toc-section" id="issue-21" style="scroll-margin-top: 90px;"><h2 class="toc-title">第021期收录 · 国内优秀创意案例 · 2026.11.12</h2><div class="toc-grid">
+<div class="toc-card" onclick="scrollToIssueCase(21,1)"><div class="num">01</div><h3>瑞幸咖啡 × Polo Ralph Lauren：「老钱风拿铁」联名，把高端时尚调性融入日常咖啡场景</h3><div class="sub">瑞幸咖啡 × Polo Ralph Lauren</div></div>
+<div class="toc-card" onclick="scrollToIssueCase(21,2)"><div class="num">02</div><h3>抖音商城双11《购物诗》：把普通人的购物小票写成诗，挖掘日常消费里的情感价值</h3><div class="sub">抖音商城 × 未披露</div></div>
+<div class="toc-card" onclick="scrollToIssueCase(21,3)"><div class="num">03</div><h3>小红书REDone「好品味商店」上海快闪：把线上审美社区落地成可逛可买的线下体验空间</h3><div class="sub">小红书 × 未披露</div></div>
+<div class="toc-card" onclick="scrollToIssueCase(21,4)"><div class="num">04</div><h3>茉莉奶白「栀子奶白」系列上新：东方花香叙事，把国风美学植入日常茶饮体验</h3><div class="sub">茉莉奶白 × 未披露</div></div>
+<div class="toc-card" onclick="scrollToIssueCase(21,5)"><div class="num">05</div><h3>Polo Ralph Lauren 2026冬季假日系列：《一起回家》温情短片，用中国式家庭故事传递节日温度</h3><div class="sub">Polo Ralph Lauren × 未披露</div></div>
+</div></section>
+
+<section class="case-section" id="issue21-case-1"><div class="case-header"><div class="case-num">01</div><div class="case-title-block"><h2>瑞幸咖啡 × Polo Ralph Lauren：「老钱风拿铁」联名，把高端时尚调性融入日常咖啡场景</h2><div class="subtitle">国内优秀创意案例 · 2026-11-12</div></div></div><div class="case-meta"><span class="meta-tag brand">品牌：瑞幸咖啡、Polo Ralph Lauren</span><span class="meta-tag agency">创意代理：未披露</span><span class="meta-tag type">类型：品牌联名 / 新品上市 / 跨界营销</span><span class="meta-tag date">发布：2026-11-08</span><span class="meta-tag score">来源：SocialBeta，评分：未展示数值评分</span></div><div class="case-desc">
+<p><b>Insight：</b>2026年「老钱风」审美持续流行，年轻人对低调、有质感、经典不过时的风格追捧度极高；而高端时尚品牌Polo Ralph Lauren正在尝试触达更年轻的消费群体，瑞幸则希望通过跨界高端品牌提升自身的品牌调性，双方在受众和品牌诉求上高度契合。</p>
+<p><b>Idea：</b>推出联名款「老钱风拿铁」，以Polo Ralph Lauren经典的马球logo、美式复古校园风格为设计核心，从产品包装、周边门店装饰全维度还原「老钱风」质感，让消费者用一杯咖啡的价格就能获得高端时尚品牌的体验，实现双方品牌调性的双向赋能。</p>
+<p><b>Execution：</b>联名产品采用Polo经典的藏青、米白、酒红配色，杯套、纸袋印上标志性的小马球logo，同步推出针织杯套、复古棒球帽、帆布托特包等周边，还原美式常春藤风格；全国多家门店换上联名主题装饰，设置打卡点；上线相关短视频话题挑战，邀请时尚、生活类达人晒出「老钱风穿搭+咖啡」的搭配，相关话题上线3天播放量破5亿，产品上线首日多地售罄。</p>
+<p><b>值得收录：</b>咖啡品牌与高端时尚品牌联名的成功样本，没有生硬的IP贴图，而是精准抓住当下流行的「老钱风」审美趋势，把品牌调性和产品设计深度结合，既帮助高端时尚品牌触达了年轻消费群体，也让瑞幸在保持高性价比的同时提升了品牌质感，实现了声量和销量的双赢。</p>
+</div><div class="video-section"><div class="video-placeholder" style="background-image:url('assets/img/1112-case-ruixing.jpg');cursor:pointer;" onclick="window.open('https://socialbeta.com/campaign/29012','_blank')"><div class="play-btn"></div><div class="video-label">▶ 点击跳转SocialBeta查看项目详情 ↗</div></div></div><div class="gallery"><div class="gallery-item featured" onclick="openLightbox('assets/img/1112-case-ruixing.jpg')"><img src="assets/img/1112-case-ruixing.jpg" alt="瑞幸×Polo Ralph Lauren联名老钱风拿铁"><div class="zoom-icon">+</div></div></div></section>
+
+<section class="case-section" id="issue21-case-2"><div class="case-header"><div class="case-num">02</div><div class="case-title-block"><h2>抖音商城双11《购物诗》：把普通人的购物小票写成诗，挖掘日常消费里的情感价值</h2><div class="subtitle">国内优秀创意案例 · 2026-11-12</div></div></div><div class="case-meta"><span class="meta-tag brand">品牌：抖音商城</span><span class="meta-tag agency">创意代理：未披露</span><span class="meta-tag type">类型：节点营销 / 情感营销 / UGC互动</span><span class="meta-tag date">发布：2026-11-06</span><span class="meta-tag score">来源：SocialBeta，评分：未展示数值评分</span></div><div class="case-desc">
+<p><b>Insight：</b>双11营销长期被「最低价」「补贴」「买买买」的功利性叙事占据，消费者对大促的情感感知越来越弱；而每一张购物小票背后，都是普通人具体的生活：给家人买的礼物、给自己的奖励、为爱好投入的开销，这些日常消费里藏着很多未被言说的情感。</p>
+<p><b>Idea：</b>发起#把购物小票写成诗 活动，邀请用户分享自己双11的购物小票，把小票上的商品名改写成诗歌，挖掘日常消费背后的情感故事，跳出低价促销的同质化叙事，让双11从「薅羊毛的购物节」变成「记录生活的情感载体」。</p>
+<p><b>Execution：</b>品牌首先发布系列短片，展示不同用户的真实购物小票：给爸爸买的护膝、给猫买的罐头、给自己买的考研资料，把这些普通的商品名串联成温暖的小诗；上线AI写诗工具，用户上传自己的购物小票就能自动生成专属诗歌，邀请诗人、作家、普通用户共同参与创作；优质作品在北京、上海的地铁站灯箱展出，让普通人的生活诗意被更多人看见，活动相关话题阅读量破10亿。</p>
+<p><b>值得收录：</b>大促情感营销的优秀样本，跳出了电商平台大促必谈低价的固化思路，回归消费背后的「人」本身，用诗意的方式唤醒消费者对日常消费的情感记忆，既提升了平台的温度感，也让双11拥有了除促销之外的情感价值，在一片低价叫卖声中形成了极强的差异化记忆点。</p>
+</div><div class="video-section"><div class="video-placeholder" style="background-image:url('assets/img/1112-case-douyin.jpg');cursor:pointer;" onclick="window.open('https://socialbeta.com/campaign/29008','_blank')"><div class="play-btn"></div><div class="video-label">▶ 点击跳转SocialBeta查看项目详情 ↗</div></div></div><div class="gallery"><div class="gallery-item featured" onclick="openLightbox('assets/img/1112-case-douyin.jpg')"><img src="assets/img/1112-case-douyin.jpg" alt="抖音商城双11购物诗活动"><div class="zoom-icon">+</div></div></div></section>
+
+<section class="case-section" id="issue21-case-3"><div class="case-header"><div class="case-num">03</div><div class="case-title-block"><h2>小红书REDone「好品味商店」上海快闪：把线上审美社区落地成可逛可买的线下体验空间</h2><div class="subtitle">国内优秀创意案例 · 2026-11-12</div></div></div><div class="case-meta"><span class="meta-tag brand">品牌：小红书</span><span class="meta-tag agency">创意代理：未披露</span><span class="meta-tag type">类型：快闪营销 / 平台心智 / 线上线下联动</span><span class="meta-tag date">发布：2026-11-01</span><span class="meta-tag score">来源：SocialBeta，评分：未展示数值评分</span></div><div class="case-desc">
+<p><b>Insight：</b>双11期间各大平台都在主打低价、销量，但小红书作为审美内容社区，核心优势是「发现好东西」的种草心智，用户更愿意为有设计感、有品质、符合自己审美的商品付费，单纯的价格战不符合平台调性。</p>
+<p><b>Idea：</b>伴随REDone年度好品味计划上线，在上海延庆坊开出「小红书特产商店」快闪店，把线上甄选的「好品味」商品搬到线下，让消费者可以真实触摸、体验、购买，把线上的种草心智落地成可感知的线下逛购体验，强化小红书「好品味购物指南」的平台定位。</p>
+<p><b>Execution：</b>快闪店选在上海网红街区延庆坊，联合街区内的花店、咖啡馆、独立书店共同打造「好品味地图」逛购路线，和花店合作推出文字花束、把普通的水桶椅变成宣传载体，整条街变成沉浸式体验空间；店内陈列从美妆、家居、服饰到食品的百余件甄选好物，全部不按销量排名，而是按照审美、工艺、原创、品质、独特性五个维度筛选；现场设置REDone定制区、打卡点，配合达人探店、专场直播，形成线下体验到线上种草购买的闭环，快闪期间日均到访量破万。</p>
+<p><b>值得收录：</b>内容平台线下落地的优秀样本，没有把快闪店做成简单的商品售卖点，而是深度融入街区日常，把平台的审美心智从线上延伸到线下，既为中小特色品牌提供了曝光机会，也强化了小红书差异化的大促定位，证明了电商平台不只有低价这一条路可走，好品味同样可以成为核心竞争力。</p>
+</div><div class="video-section"><div class="video-placeholder" style="background-image:url('assets/img/1112-case-xiaohongshu.jpg');cursor:pointer;" onclick="window.open('https://socialbeta.com/campaign/28880','_blank')"><div class="play-btn"></div><div class="video-label">▶ 点击跳转SocialBeta查看项目详情 ↗</div></div></div><div class="gallery"><div class="gallery-item featured" onclick="openLightbox('assets/img/1112-case-xiaohongshu.jpg')"><img src="assets/img/1112-case-xiaohongshu.jpg" alt="小红书REDone好品味商店快闪"><div class="zoom-icon">+</div></div></div></section>
+
+<section class="case-section" id="issue21-case-4"><div class="case-header"><div class="case-num">04</div><div class="case-title-block"><h2>茉莉奶白「栀子奶白」系列上新：东方花香叙事，把国风美学植入日常茶饮体验</h2><div class="subtitle">国内优秀创意案例 · 2026-11-12</div></div></div><div class="case-meta"><span class="meta-tag brand">品牌：茉莉奶白</span><span class="meta-tag agency">创意代理：未披露</span><span class="meta-tag type">类型：新品上市 / 国风营销 / 视觉美学</span><span class="meta-tag date">发布：2026-11-05</span><span class="meta-tag score">来源：SocialBeta，评分：未展示数值评分</span></div><div class="case-desc">
+<p><b>Insight：</b>新茶饮赛道产品同质化严重，各大品牌都在推花香类奶茶，但大多只停留在口味层面，缺乏记忆点；年轻消费者对东方美学、国风文化的追捧度持续升高，不再满足于好喝，更希望消费的产品有文化内涵和审美价值。</p>
+<p><b>Idea：</b>推出「栀子奶白」全新产品线，以栀子花为核心元素，从产品口味、包装设计、周边物料全维度融入东方美学，把「栀子花开」的夏日记忆和东方白花的清雅质感结合，打造有文化辨识度的国风茶饮产品。</p>
+<p><b>Execution：</b>产品选用浙江兰溪露天种植的栀子花，窨制三次得到栀子绿茶底，搭配鲜牛奶呈现奶白透绿的视觉效果，呼应「栀子奶白」的命名；包装采用米白+浅绿的素雅配色，印有手绘栀子花图案，同步推出栀子花香包、团扇、陶瓷杯等国风周边；门店换上栀子主题装饰，举办「栀子花开」主题快闪活动，设置古风打卡点，邀请消费者书写与栀子花相关的记忆；上线后相关话题在小红书、抖音获得超3亿曝光，产品首周日销量突破100万杯。</p>
+<p><b>值得收录：</b>新茶饮国风营销的细腻样本，没有生硬堆砌国风符号，而是从产品本身的口味、视觉出发，把东方美学自然融入产品体验的每一个细节，用栀子花这种大众有共同情感记忆的花卉作为切入点，既强化了品牌「东方花香茶饮」的定位，也让国风不再是营销噱头，而是成为产品本身的一部分。</p>
+</div><div class="video-section"><div class="video-placeholder" style="background-image:url('assets/img/1112-case-molinaibai.jpg');cursor:pointer;" onclick="window.open('https://socialbeta.com/campaign/29015','_blank')"><div class="play-btn"></div><div class="video-label">▶ 点击跳转SocialBeta查看项目详情 ↗</div></div></div><div class="gallery"><div class="gallery-item featured" onclick="openLightbox('assets/img/1112-case-molinaibai.jpg')"><img src="assets/img/1112-case-molinaibai.jpg" alt="茉莉奶白栀子奶白系列上新"><div class="zoom-icon">+</div></div></div></section>
+
+<section class="case-section" id="issue21-case-5"><div class="case-header"><div class="case-num">05</div><div class="case-title-block"><h2>Polo Ralph Lauren 2026冬季假日系列：《一起回家》温情短片，用中国式家庭故事传递节日温度</h2><div class="subtitle">国内优秀创意案例 · 2026-11-12</div></div></div><div class="case-meta"><span class="meta-tag brand">品牌：Polo Ralph Lauren</span><span class="meta-tag agency">创意代理：未披露</span><span class="meta-tag type">类型：节日营销 / 本土化叙事 / 品牌片</span><span class="meta-tag date">发布：2026-11-07</span><span class="meta-tag score">来源：SocialBeta，评分：未展示数值评分</span></div><div class="case-desc">
+<p><b>Insight：</b>国际奢侈品牌的节日营销往往主打西方圣诞场景、精英生活方式，和中国消费者的情感距离较远；而年末假日季，中国人的核心情感是「回家」，家庭、团圆、温暖是共同的情感诉求，国际品牌需要用更本土化的故事打动中国消费者。</p>
+<p><b>Idea：</b>推出2026冬季假日系列品牌片《一起回家》，放弃传统的西方圣诞叙事，转而讲述一个普通中国家庭三代人春节回家团圆的故事，把品牌经典的服饰融入中国式家庭的日常场景，传递「家是最温暖的目的地」的节日主张，拉近和中国消费者的情感距离。</p>
+<p><b>Execution：</b>短片由中国导演拍摄，演员全部是中国面孔，场景从北方雪乡到南方弄堂，呈现贴春联、包饺子、放烟花、全家吃年夜饭等经典春节场景，主角一家穿着Polo Ralph Lauren的冬季系列服饰，没有刻意的产品特写，服饰自然融入家庭生活的细节中；同步推出春节限定系列服饰，融入中国红、小马球刺绣等元素，在上海、北京的旗舰店设置家庭合影打卡点，邀请消费者拍摄全家福，相关短片上线3天播放量破2000万。</p>
+<p><b>值得收录：</b>国际品牌本土化营销的优秀样本，没有生硬嫁接中国元素，而是真正理解中国人年末「回家团圆」的核心情感，用真实、细腻的家庭故事引发共鸣，既展示了冬季系列产品，又传递了品牌的温度感，证明了国际品牌在中国做节日营销，真正的本土化不是加几个中国符号，而是讲好中国人自己的情感故事。</p>
+</div><div class="video-section"><div class="video-placeholder" style="background-image:url('assets/img/1112-case-ralphlauren.jpg');cursor:pointer;" onclick="window.open('https://socialbeta.com/campaign/29017','_blank')"><div class="play-btn"></div><div class="video-label">▶ 点击跳转SocialBeta查看项目详情 ↗</div></div></div><div class="gallery"><div class="gallery-item featured" onclick="openLightbox('assets/img/1112-case-ralphlauren.jpg')"><img src="assets/img/1112-case-ralphlauren.jpg" alt="Polo Ralph Lauren2026冬季假日系列 campaign"><div class="zoom-icon">+</div></div></div></section>
+</div>
+
 <!-- ===== 第020期 · 2026.11.11 ===== -->
-<div class="issue-panel active" id="issue-panel-20">
+<div class="issue-panel" id="issue-panel-20">
 <section class="toc-section" id="issue-20" style="scroll-margin-top: 90px;"><h2 class="toc-title">第020期收录 · 国内优秀创意案例 · 2026.11.11</h2><div class="toc-grid">
 <div class="toc-card" onclick="scrollToIssueCase(20,1)"><div class="num">01</div><h3>999感冒灵×立冬地铁「提前供暖」：把抽象温暖变成可感知的城市互动</h3><div class="sub">999感冒灵 × 未披露</div></div>
 <div class="toc-card" onclick="scrollToIssueCase(20,2)"><div class="num">02</div><h3>ukiss × Pingu：给打工人的「妆」态松松绑，用IP传递松弛生活态度</h3><div class="sub">ukiss悠珂思 × 未披露</div></div>
@@ -1213,6 +1259,11 @@
 
 <div class="issue-panel" id="issue-panel-17">
 <section class="toc-section" id="issue-17" style="scroll-margin-top: 90px;"><h2 class="toc-title">第017期收录 · 国内优秀创意案例 · 2026.11.08</h2><div class="toc-grid">
+<div class="toc-card" onclick="scrollToIssueCase(17,1)"><div class="num">01</div><h3>泡泡玛特：THE MONSTERS饮料摇摇趣拍机，把潮玩从收藏品变成随身互动玩伴</h3><div class="sub">泡泡玛特 POP MART × 未披露</div></div>
+<div class="toc-card" onclick="scrollToIssueCase(17,2)"><div class="num">02</div><h3>沃尔沃 × 胡歌：XC70上市魔性情歌广告，打破豪华车企严肃刻板印象</h3><div class="sub">沃尔沃 Volvo × 未披露</div></div>
+<div class="toc-card" onclick="scrollToIssueCase(17,3)"><div class="num">03</div><h3>极氪 × 倪大红：一人分饰三角选车大戏，用国民级角色记忆点降低产品沟通成本</h3><div class="sub">极氪 ZEEKR × 未披露</div></div>
+<div class="toc-card" onclick="scrollToIssueCase(17,4)"><div class="num">04</div><h3>京东 ×《少爷和我》：龙傲天刘波暖冬广告，用喜剧IP打通立冬节点情感共鸣</h3><div class="sub">京东 JD × 未披露</div></div>
+<div class="toc-card" onclick="scrollToIssueCase(17,5)"><div class="num">05</div><h3>adidas × 赞意：“在城里办事”机翻乌龙营销，把公关危机变成全网玩梗事件</h3><div class="sub">阿迪达斯 adidas × 赞意｜北京</div></div>
 </div></section>
 <section class="case-section" id="issue17-case-1"><div class="case-header"><div class="case-num">01</div><div class="case-title-block"><h2>泡泡玛特：THE MONSTERS饮料摇摇趣拍机，把潮玩从收藏品变成随身互动玩伴</h2><div class="subtitle">国内优秀创意案例 · 2026-11-08</div></div></div><div class="case-meta"><span class="meta-tag brand">品牌：泡泡玛特 POP MART</span><span class="meta-tag agency">创意代理：未披露</span><span class="meta-tag type">类型：产品创新 / IP营销 / 互动玩法</span><span class="meta-tag date">发布：2026-10-23</span><span class="meta-tag score">来源：SocialBeta，评分：未展示数值评分</span></div><div class="case-desc"><p><b>INSIGHT：</b>潮玩行业长期主打“收藏、陈列、保值”属性，消费者买回家的玩偶大多摆在柜子里，互动性弱、生命周期短；年轻人需要的不只是一个摆着看的手办，更是能日常带出门、反复玩、有社交属性的随身陪伴物件。</p><p><b>IDEA：</b>跳出传统盲盒手办的形态，推出巴掌大小的THE MONSTERS饮料摇摇趣拍机，把LABUBU等经典IP装进电子游戏机，结合经营模拟、拍照、线下联机互动多重玩法，让潮玩从“摆着看的收藏品”变成“每天都要玩的随身玩伴”。</p><p><b>EXECUTION：</b>设备内置虚拟饮料店经营玩法，玩家通过摇晃机器模拟制作饮品赚金币解锁装扮，同时自带复古滤镜摄像头可拍摄带IP相框的照片；支持近距离设备联机玩猜拳小游戏，还可在泡泡玛特门店、城市乐园触碰专属点位解锁限定道具；首发售价299元，上市即售罄，相关开箱、玩法分享内容在社交平台自发传播。</p><p><b>值得收录：</b>打破了潮玩行业“卖摆件”的固化思路，把IP价值从“视觉收藏”延伸到“高频互动使用”，既保留了盲盒收集的乐趣，又通过游戏化、社交化设计大幅拉长了产品生命周期，为潮玩品类的产品创新提供了非常有参考价值的新方向。</p></div><div class="video-section"><div class="video-placeholder" style="background-image:url('assets/img/1108-case-popmart.jpg');cursor:pointer;" onclick="window.open('https://wallstreetcn.com/articles/3784321','_blank')"><div class="play-btn"></div><div class="video-label">▶ 点击跳转查看项目详情 ↗</div></div></div><div class="gallery"><div class="gallery-item featured" onclick="openLightbox('assets/img/1108-case-popmart.jpg')"><img src="assets/img/1108-case-popmart.jpg" alt="泡泡玛特THE MONSTERS饮料摇摇趣拍机"><div class="zoom-icon">+</div></div></div></section>
 <section class="case-section" id="issue17-case-2"><div class="case-header"><div class="case-num">02</div><div class="case-title-block"><h2>沃尔沃 × 胡歌：XC70上市魔性情歌广告，打破豪华车企严肃刻板印象</h2><div class="subtitle">国内优秀创意案例 · 2026-11-08</div></div></div><div class="case-meta"><span class="meta-tag brand">品牌：沃尔沃 Volvo</span><span class="meta-tag agency">创意代理：未披露</span><span class="meta-tag type">类型：新车上市 / 反差营销 / 内容创意</span><span class="meta-tag date">发布：2026-11-04</span><span class="meta-tag score">来源：SocialBeta，评分：未展示数值评分</span></div><div class="case-desc"><p><b>INSIGHT：</b>豪华汽车品牌的新车上市广告普遍走高端、严肃、科技感路线，消费者对千篇一律的“精英人士开豪车”叙事已经审美疲劳；反差感、魔性、接地气的内容反而更容易在社交平台引发自发传播，拉近品牌和普通消费者的距离。</p><p><b>IDEA：</b>邀请品牌代言人胡歌打破以往儒雅精英的形象，唱着魔性土味情歌为全新XC70代言，用“沃尔沃～哦～耶～耶”的洗脑旋律和直白歌词，把长续航、安全、健康座舱等硬核产品卖点唱成朗朗上口的浪漫告白。</p><p><b>EXECUTION：</b>广告片里胡歌以“XC70嘴替”的身份出现在婚礼、孕妇出行、碰撞实验室等多个场景，用跑调又认真的演唱方式唱出“安全给你、续航给你、所有安全感都给你”的告白歌词，洗脑旋律上线后迅速被网友二创玩梗，相关话题登上社交平台热搜，让新车卖点在轻松的氛围中被消费者记住。</p><p><b>值得收录：</b>豪华品牌放下身段做魔性内容的优秀样本，没有损害品牌高端调性，反而通过反差感让品牌形象更亲切、更有记忆点；用最通俗的传播形式传递硬核产品卖点，实现了传播声量和产品认知的双赢。</p></div><div class="video-section"><div class="video-placeholder" style="background-image:url('assets/img/1108-case-volvo.jpg');cursor:pointer;" onclick="window.open('https://socialbeta.com/campaign/26483','_blank')"><div class="play-btn"></div><div class="video-label">▶ 点击跳转SocialBeta查看项目详情 ↗</div></div></div><div class="gallery"><div class="gallery-item featured" onclick="openLightbox('assets/img/1108-case-volvo.jpg')"><img src="assets/img/1108-case-volvo.jpg" alt="沃尔沃×胡歌魔性情歌广告"><div class="zoom-icon">+</div></div></div></section>
@@ -2191,6 +2242,13 @@
   }
   function scrollToIssue(num) {
     showIssue(num);
+  }
+  // 切换月份显示期数组
+  function showMonthIssues(month) {
+    document.querySelectorAll('.month-tab').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelectorAll('.month-issues').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelector('.month-tab[onclick="showMonthIssues(\'' + month + '\')"]').classList.add('active');
+    document.getElementById('month-' + month).classList.add('active');
   }
   // 悬浮按钮：返回上层菜单（顶部导航）
   function scrollToTopMenu() {
