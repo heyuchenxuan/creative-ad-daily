@@ -703,15 +703,21 @@
 
   /* ===== 每日创意资讯板块 ===== */
   .daily-date-nav {
-    background: var(--yellow);
-    padding: 14px 40px;
+    background: var(--cream);
+    padding: 20px 40px;
     max-width: 1100px;
     margin: 0 auto;
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    flex-wrap: wrap;
     border-bottom: 3px solid var(--ink);
+  }
+  .daily-date-nav .nav-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .daily-date-nav .nav-row:last-child {
+    margin-bottom: 0;
   }
   /* 全球资讯归档下拉 */
   .daily-archive-dropdown {
@@ -719,11 +725,26 @@
     margin-left: auto;
   }
   .daily-date-nav .label {
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 900;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     color: var(--ink);
-    margin-right: 8px;
+    font-family: "Playfair Display", serif;
+    min-width: 120px;
+  }
+  .daily-month-group {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .daily-month-label {
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+    opacity: 0.7;
+    min-width: 40px;
   }
   .date-tab {
     padding: 8px 20px;
@@ -5064,24 +5085,16 @@ function esc(s){ var d=document.createElement('div'); d.textContent=s||''; retur
 function renderDaily(){
   var nav = document.getElementById('daily-date-nav');
   var wrap = document.getElementById('daily-panels');
-  // 默认只显示最近5天的按钮
-  const SHOW_DAYS = 5;
-  // 归档分组
-  const archiveGroups = {};
+  // 按年月分组，和优秀案例导航结构完全一致
+  const monthGroups = {};
   DAILY_DATA.forEach(function(day, di){
-    // date tab
-    var btn = document.createElement('button');
-    btn.className = 'date-tab' + (di===0 ? ' active' : '');
-    btn.textContent = day.date.slice(5).replace('.','.') + ' ' + day.weekday;
-    btn.setAttribute('onclick', "showDate('" + day.id + "')");
-    if (di < SHOW_DAYS) {
-      nav.appendChild(btn);
-    } else {
-      // 归档分组
-      const yearMonth = day.date.slice(0,7).replace('.','年') + '月';
-      if (!archiveGroups[yearMonth]) archiveGroups[yearMonth] = [];
-      archiveGroups[yearMonth].push(day);
-    }
+    const year = day.date.slice(0,4);
+    const monthNum = day.date.slice(5,7);
+    const yearMonth = year + '年' + parseInt(monthNum) + '月';
+    if (!monthGroups[yearMonth]) monthGroups[yearMonth] = [];
+    monthGroups[yearMonth].push({day, di});
+  });
+  DAILY_DATA.forEach(function(day, di){
     // panel
     var panel = document.createElement('div');
     panel.className = 'daily-panel' + (di===0 ? ' active' : '');
@@ -5101,31 +5114,31 @@ function renderDaily(){
     panel.innerHTML = '<div class="daily-head"><h2>全球创意资讯 · '+day.date+'</h2><p>全球广告创意动态精选 '+day.items.length+' 条，按重要性从高到低排序</p></div><div class="news-list">'+cards+'</div>';
     wrap.appendChild(panel);
   });
-  // 渲染归档下拉
-  if (Object.keys(archiveGroups).length > 0) {
-    const dropdown = document.createElement('div');
-    dropdown.className = 'daily-archive-dropdown';
-    dropdown.innerHTML = `
-      <button class="archive-btn" onclick="toggleDailyArchiveMenu()">📅 往期归档 ▾</button>
-      <div class="archive-menu" id="dailyArchiveMenu"></div>
-    `;
-    nav.appendChild(dropdown);
-    const menu = dropdown.querySelector('.archive-menu');
-    // 按月份倒序渲染
-    Object.keys(archiveGroups).sort().reverse().forEach(month => {
-      const monthDiv = document.createElement('div');
-      monthDiv.className = 'archive-month';
-      monthDiv.textContent = month;
-      menu.appendChild(monthDiv);
-      archiveGroups[month].forEach(day => {
-        const miniBtn = document.createElement('button');
-        miniBtn.className = 'issue-tab-mini';
-        miniBtn.textContent = day.date.slice(5) + ' ' + day.weekday;
-        miniBtn.setAttribute('onclick', `showDate('${day.id}');toggleDailyArchiveMenu()`);
-        menu.appendChild(miniBtn);
-      });
+  // 渲染年月分组导航，和优秀案例期数导航样式完全一致
+  const sortedMonths = Object.keys(monthGroups).sort().reverse();
+  sortedMonths.forEach((month, mi) => {
+    const row = document.createElement('div');
+    row.className = 'nav-row';
+    const label = document.createElement('span');
+    label.className = 'label';
+    label.textContent = mi === 0 ? '最新日期' : month;
+    row.appendChild(label);
+    const btnGroup = document.createElement('div');
+    btnGroup.className = 'daily-month-group';
+    const monthLabel = document.createElement('span');
+    monthLabel.className = 'daily-month-label';
+    monthLabel.textContent = month.replace(/^2026年/, '');
+    btnGroup.appendChild(monthLabel);
+    monthGroups[month].forEach(({day, di}) => {
+      const btn = document.createElement('button');
+      btn.className = 'date-tab issue-tab' + (di===0 ? ' active' : '');
+      btn.textContent = day.date.slice(5).replace(/^0/, '').replace('.','.') + ' ' + day.weekday;
+      btn.setAttribute('onclick', "showDate('" + day.id + "')");
+      btnGroup.appendChild(btn);
     });
-  }
+    row.appendChild(btnGroup);
+    nav.appendChild(row);
+  });
 }
 // 确保DOM加载完成再渲染
 if (document.readyState === 'loading') {
