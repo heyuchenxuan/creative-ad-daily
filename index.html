@@ -129,10 +129,20 @@
   }
   
   /* ===== 期数导航 ===== */
-  .issue-nav, .daily-date-nav {
+  /* 导航背景色块铺满全屏宽度，内容区居中对齐，拉伸窗口自动适配 */
+  .nav-bg {
+    width: 100%;
+    border-bottom: 3px solid var(--ink);
+  }
+  .nav-bg.issue-nav {
+    background: var(--cream);
+  }
+  .nav-bg.daily-date-nav {
+    background: var(--yellow);
+  }
+  .nav-bg nav {
     max-width: 1100px;
     margin: 0 auto;
-    border-bottom: 3px solid var(--ink);
     padding: 14px 40px;
   }
   .issue-nav-row, .daily-date-nav .nav-row {
@@ -154,9 +164,9 @@
     min-width: 60px;
     opacity: 0.8;
   }
-  /* 响应式适配：窄屏减少内边距 */
+  /* 响应式适配：窄屏减少内边距，按钮适配 */
   @media (max-width: 768px) {
-    .issue-nav, .daily-date-nav {
+    .nav-bg nav {
       padding: 12px 20px;
     }
     .year-tab, .month-tab, .issue-tab, .date-tab {
@@ -980,9 +990,10 @@
 
 <!-- ===== 每日创意资讯板块 ===== -->
 <section class="content-section active" id="section-daily">
-  <nav class="daily-date-nav" id="daily-date-nav">
-    <span class="label">DAILY ARCHIVE · 每日资讯归档（从新到旧）</span>
-  </nav>
+  <div class="nav-bg daily-date-nav">
+    <nav id="daily-date-nav">
+    </nav>
+  </div>
   <div id="daily-panels"></div>
 </section>
 
@@ -990,7 +1001,8 @@
 <section class="content-section" id="section-weekly">
 
 <!-- ===== 期数导航（年月分组平铺） ===== -->
-<nav class="issue-nav">
+<div class="nav-bg issue-nav">
+<nav>
   <div class="issue-nav-row">
     <span class="label">YEAR</span>
     <button class="year-tab">2026</button>
@@ -1039,6 +1051,7 @@
     </div>
   </div>
 </nav>
+</div>
 
 <!-- ===== 第022期 · 2026.11.13 ===== -->
 <div class="issue-panel active" id="issue-panel-22">
