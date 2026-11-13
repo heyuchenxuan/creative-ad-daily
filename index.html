@@ -730,12 +730,6 @@
     min-width: 180px;
     font-family: inherit;
   }
-  .daily-month-group {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
   /* 全球资讯按钮和优秀案例按钮大小一致，精致缩小 */
   .date-tab {
     padding: 6px 16px;
@@ -2347,6 +2341,13 @@
     document.getElementById('section-daily').classList.toggle('active', name === 'daily');
     document.getElementById('section-weekly').classList.toggle('active', name === 'weekly');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  // 每日资讯月份切换（和优秀案例逻辑完全一致）
+  function showDailyMonth(month) {
+    document.querySelectorAll('.daily-date-nav .month-tab').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelectorAll('.daily-month-group').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelector(`.daily-date-nav .month-tab[onclick="showDailyMonth('${month}')"]`).classList.add('active');
+    document.getElementById('daily-month-' + month).classList.add('active');
   }
   // 每日资讯日期切换
   function showDate(day) {
@@ -5128,29 +5129,58 @@ function renderDaily(){
     panel.innerHTML = '<div class="daily-head"><h2>全球创意资讯 · '+day.date+'</h2><p>全球广告创意动态精选 '+day.items.length+' 条，按重要性从高到低排序</p></div><div class="news-list">'+cards+'</div>';
     wrap.appendChild(panel);
   });
-  // 渲染导航，参考设计图结构：第一行左侧固定说明文字，后面排日期按钮
+  // 渲染导航，和优秀案例完全一致的YEAR→MONTH→DAY三级折叠结构
+  // YEAR行
+  const yearRow = document.createElement('div');
+  yearRow.className = 'nav-row issue-nav-row';
+  const yearLabel = document.createElement('span');
+  yearLabel.className = 'label';
+  yearLabel.textContent = 'YEAR';
+  yearRow.appendChild(yearLabel);
+  const yearBtn = document.createElement('button');
+  yearBtn.className = 'year-tab';
+  yearBtn.textContent = '2026';
+  yearRow.appendChild(yearBtn);
+  nav.appendChild(yearRow);
+
+  // MONTH行
+  const monthRow = document.createElement('div');
+  monthRow.className = 'nav-row issue-nav-row';
+  const monthLabel = document.createElement('span');
+  monthLabel.className = 'label';
+  monthLabel.textContent = 'MONTH';
+  monthRow.appendChild(monthLabel);
+
   const sortedMonths = Object.keys(monthGroups).sort().reverse();
+  const monthIdMap = {};
   sortedMonths.forEach((month, mi) => {
-    const row = document.createElement('div');
-    row.className = 'nav-row';
-    if (mi === 0) {
-      const label = document.createElement('span');
-      label.className = 'label';
-      label.textContent = 'DAY · 点击查看当日资讯';
-      row.appendChild(label);
-    }
+    // 月份id：11月→nov，9月→sep，8月→aug 和优秀案例保持一致
+    const monthNum = parseInt(month.match(/(\d+)月/)[1]);
+    const monthId = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'][monthNum-1];
+    monthIdMap[month] = monthId;
+    const monthBtn = document.createElement('button');
+    monthBtn.className = 'month-tab' + (mi===0 ? ' active' : '');
+    monthBtn.textContent = monthNum + '月';
+    monthBtn.setAttribute('onclick', `showDailyMonth('${monthId}')`);
+    monthRow.appendChild(monthBtn);
+
+    // 对应月份的日期按钮组（默认第一个月展开）
+    const monthPanel = document.createElement('div');
+    monthPanel.className = 'month-issues daily-month-group' + (mi===0 ? ' active' : '');
+    monthPanel.id = 'daily-month-' + monthId;
     const btnGroup = document.createElement('div');
-    btnGroup.className = 'daily-month-group';
+    btnGroup.className = 'issue-tabs-group';
     monthGroups[month].forEach(({day, di}) => {
       const btn = document.createElement('button');
-      btn.className = 'date-tab' + (di===0 ? ' active' : '');
+      btn.className = 'date-tab issue-tab' + (di===0 ? ' active' : '');
       btn.textContent = day.date.slice(5).replace(/^0/, '').replace('.','.') + ' ' + day.weekday;
       btn.setAttribute('onclick', "showDate('" + day.id + "')");
       btnGroup.appendChild(btn);
     });
-    row.appendChild(btnGroup);
-    nav.appendChild(row);
+    monthPanel.appendChild(btnGroup);
+    nav.appendChild(monthPanel);
   });
+  nav.appendChild(monthRow);
 }
 // 确保DOM加载完成再渲染
 if (document.readyState === 'loading') {
