@@ -129,62 +129,71 @@
   }
   
   /* ===== 期数导航 ===== */
-  .issue-nav {
-    background: var(--cream);
-    padding: 16px 40px;
+  .issue-nav, .daily-date-nav {
     max-width: 1100px;
     margin: 0 auto;
     border-bottom: 3px solid var(--ink);
+    padding: 14px 40px;
   }
-  .issue-nav-row {
+  .issue-nav-row, .daily-date-nav .nav-row {
     display: flex;
-    gap: 14px;
+    gap: 12px;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     flex-wrap: wrap;
   }
-  .issue-nav-row:last-child {
+  .issue-nav-row:last-child, .daily-date-nav .nav-row:last-child {
     margin-bottom: 0;
   }
-  .issue-nav .label {
-    font-size: 16px;
+  .issue-nav .label, .daily-date-nav .label {
+    font-size: 12px;
     font-weight: 900;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
     color: var(--ink);
     font-family: inherit;
-    min-width: 120px;
+    min-width: 60px;
+    opacity: 0.8;
+  }
+  /* 响应式适配：窄屏减少内边距 */
+  @media (max-width: 768px) {
+    .issue-nav, .daily-date-nav {
+      padding: 12px 20px;
+    }
+    .year-tab, .month-tab, .issue-tab, .date-tab {
+      padding: 4px 12px;
+      font-size: 11px;
+    }
+  }
+  /* 所有层级导航按钮统一小尺寸，精致一致 */
+  .year-tab, .month-tab, .issue-tab, .date-tab {
+    padding: 5px 14px;
+    border: 2px solid var(--ink);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.15);
   }
   .year-tab {
-    padding: 10px 32px;
     background: var(--ink);
-    color: var(--yellow);
-    border: 3px solid var(--ink);
-    border-radius: 40px;
-    font-size: 22px;
-    font-weight: 900;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: "Playfair Display", serif;
+    color: var(--white);
+    border: none;
   }
   .month-tab {
-    padding: 10px 32px;
-    background: var(--blue);
-    color: var(--white);
-    border: 3px solid var(--ink);
-    border-radius: 40px;
-    font-size: 22px;
-    font-weight: 900;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: inherit;
-  }
-  .month-tab.active {
-    background: var(--mint);
+    background: var(--white);
     color: var(--ink);
   }
+  .month-tab.active {
+    background: var(--blue);
+    color: var(--white);
+  }
   .month-tab:hover {
-    transform: translateY(-2px);
-    box-shadow: 4px 4px 0 var(--ink);
+    background: var(--blue);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
   }
   .issue-tabs-group {
     display: flex;
@@ -193,25 +202,13 @@
     flex-wrap: wrap;
     margin-top: 4px;
   }
-  .issue-tab {
-    padding: 6px 16px;
-    background: var(--white);
-    border: 2px solid var(--ink);
-    border-radius: 24px;
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: inherit;
-    box-shadow: 2px 2px 0 rgba(0,0,0,0.15);
-  }
-  .issue-tab:hover {
+  .issue-tab:hover, .date-tab:hover {
     background: var(--pink);
     color: var(--white);
     transform: translateY(-1px);
     box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
   }
-  .issue-tab.active {
+  .issue-tab.active, .date-tab.active {
     background: var(--ink);
     color: var(--yellow);
     box-shadow: 3px 3px 0 rgba(0,0,0,0.25);
@@ -707,30 +704,7 @@
   /* ===== 每日创意资讯板块 ===== */
   .daily-date-nav {
     background: var(--yellow);
-    padding: 16px 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-    border-bottom: 3px solid var(--ink);
   }
-  .daily-date-nav .nav-row {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-  }
-  .daily-date-nav .nav-row:last-child {
-    margin-bottom: 0;
-  }
-  .daily-date-nav .label {
-    font-size: 16px;
-    font-weight: 900;
-    letter-spacing: 0.05em;
-    color: var(--ink);
-    min-width: 180px;
-    font-family: inherit;
-  }
-  /* 全球资讯按钮和优秀案例按钮大小一致，精致缩小 */
   .date-tab {
     padding: 6px 16px;
     background: var(--white);
@@ -754,26 +728,7 @@
     color: var(--yellow);
     box-shadow: 3px 3px 0 rgba(0,0,0,0.25);
   }
-  .date-tab {
-    padding: 8px 20px;
-    background: var(--white);
-    border: 3px solid var(--ink);
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: inherit;
-  }
-  .date-tab:hover {
-    background: var(--pink);
-    color: white;
-    transform: translateY(-2px);
-  }
-  .date-tab.active {
-    background: var(--ink);
-    color: var(--yellow);
-  }
+
   .daily-panel {
     display: none;
   }
@@ -5153,6 +5108,9 @@ function renderDaily(){
 
   const sortedMonths = Object.keys(monthGroups).sort().reverse();
   const monthIdMap = {};
+  // 先把MONTH行加到YEAR下面
+  nav.appendChild(monthRow);
+
   sortedMonths.forEach((month, mi) => {
     // 月份id：11月→nov，9月→sep，8月→aug 和优秀案例保持一致
     const monthNum = parseInt(month.match(/(\d+)月/)[1]);
@@ -5164,15 +5122,15 @@ function renderDaily(){
     monthBtn.setAttribute('onclick', `showDailyMonth('${monthId}')`);
     monthRow.appendChild(monthBtn);
 
-    // 对应月份的日期按钮组（默认第一个月展开）
+    // 对应月份的日期按钮组（默认第一个月展开，放在MONTH行下面）
     const monthPanel = document.createElement('div');
-    monthPanel.className = 'month-issues daily-month-group' + (mi===0 ? ' active' : '');
+    monthPanel.className = 'month-issues' + (mi===0 ? ' active' : '');
     monthPanel.id = 'daily-month-' + monthId;
     const btnGroup = document.createElement('div');
     btnGroup.className = 'issue-tabs-group';
     monthGroups[month].forEach(({day, di}) => {
       const btn = document.createElement('button');
-      btn.className = 'date-tab issue-tab' + (di===0 ? ' active' : '');
+      btn.className = 'date-tab' + (di===0 ? ' active' : '');
       btn.textContent = day.date.slice(5).replace(/^0/, '').replace('.','.') + ' ' + day.weekday;
       btn.setAttribute('onclick', "showDate('" + day.id + "')");
       btnGroup.appendChild(btn);
@@ -5180,7 +5138,6 @@ function renderDaily(){
     monthPanel.appendChild(btnGroup);
     nav.appendChild(monthPanel);
   });
-  nav.appendChild(monthRow);
 }
 // 确保DOM加载完成再渲染
 if (document.readyState === 'loading') {
